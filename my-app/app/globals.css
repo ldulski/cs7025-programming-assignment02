@@ -28,10 +28,68 @@ body {
 } */
 
 /* colors start*/
-:root {}
+:root {
+  /* light mode colors  */
+  --lightmode-background: #FFF2E0;
+  --lightmode-text: #000;
+  --lightmode-button-bg: #7FC7CC;
+  --lightmode-button-text: #FFF2E0;
+  --lightmode-links: #092F33;
+  --lightmode-svg: #092F33;
+}
 
+.dark-mode {
+  /* dark mode colors */
+  --darkmode-background: #092F33;
+  --darkmode-text: #FFF2E0;
+  --darkmode-button-bg: #FFF2E0;
+  --darkmode-button-text: #092F33;
+  --darkmode-links: #FFF2E0;
+  --darkmode-svg: #FFF2E0;
+}
 
 /* colors end */
+
+/* theme switch start  */
+
+#theme-switch {
+  background-color: var(--variant-color);
+  max-width: 50px;
+  max-height: 50px;
+  margin: 0;
+  padding: 5px;
+  border-radius: 50%;
+  border: var(--text-color) solid 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#theme-switch svg:last-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+  display: block;
+}
+
+#logo img:last-child {
+  display: none;
+}
+
+.darkmode #logo img:first-child {
+  display: none;
+}
+
+.darkmode #logo img:last-child {
+  display: block;
+}
+
+/* theme switch end */
 /* text styles start */
 
 h1 {
@@ -108,3 +166,12 @@ a {
 }
 
 /* text styles end*/
+
+/* body styles start */
+
+body {
+  background-color: var(--lightmode-background);
+  color: var(--lightmode-text);
+}
+
+/* body styles end */
