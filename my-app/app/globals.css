@@ -29,23 +29,36 @@ body {
 
 /* colors start*/
 :root {
+  /* all colors */
+  --parchement-paper: #FFF2E0;
+  --sky-blue: #7FC7CC;
+  --deep-sea: #092F33;
+  --moss-grean: #4B5B34;
+  --terracotta: #AF5031;
+  --cherrry-blossom: #FDABA5;
+  --red-wine: #980204;
+  --sunshine-yellow: #EA8913;
+  --pure-black: #000;
+  --pure-white: #fff;
+
+
   /* light mode colors  */
-  --lightmode-background: #FFF2E0;
-  --lightmode-text: #000;
-  --lightmode-button-bg: #7FC7CC;
-  --lightmode-button-text: #FFF2E0;
-  --lightmode-links: #092F33;
-  --lightmode-svg: #092F33;
+  --lightmode-background: var(--parchement-paper);
+  --lightmode-text: var(--pure-black);
+  --lightmode-button-bg: var(--sky-blue);
+  --lightmode-button-text: var(--parchement-paper);
+  --lightmode-links: var(--deep-sea);
+  --lightmode-svg: var(--deep-sea);
 }
 
 .dark-mode {
   /* dark mode colors */
-  --darkmode-background: #092F33;
-  --darkmode-text: #FFF2E0;
-  --darkmode-button-bg: #FFF2E0;
-  --darkmode-button-text: #092F33;
-  --darkmode-links: #FFF2E0;
-  --darkmode-svg: #FFF2E0;
+  --darkmode-background: var(--deep-sea);
+  --darkmode-text: var(--parchement-paper);
+  --darkmode-button-bg: var(--parchement-paper);
+  --darkmode-button-text: var(--deep-sea);
+  --darkmode-links: var(--parchement-paper);
+  --darkmode-svg: var(--parchement-paper);
 }
 
 /* colors end */
@@ -53,13 +66,13 @@ body {
 /* theme switch start  */
 
 #theme-switch {
-  background-color: var(--variant-color);
+  background-color: var(--sky-blue);
   max-width: 50px;
   max-height: 50px;
   margin: 0;
   padding: 5px;
   border-radius: 50%;
-  border: var(--text-color) solid 2px;
+  border: var(--lightmode-text) solid 2px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -172,6 +185,8 @@ a {
 body {
   background-color: var(--lightmode-background);
   color: var(--lightmode-text);
+  max-width: 1440px;
+  margin: 25px 72px;
 }
 
 /* body styles end */
