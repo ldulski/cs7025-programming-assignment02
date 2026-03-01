@@ -7,4 +7,5 @@ Logan: Installed Next.js and Node.js (the latest versions and connected to VS Co
     - Added boilerlate HTML to all pages
     - Link for how to create tabs (HTML,CSS,JS): https://www.w3schools.com/howto/howto_js_tabs.asp
     - Copy any HTML needed from each others pages especially for the "tabs" we'll reuse for the in-section navigation
-    
+    - Added all colors to CSS files
+        -please use "var(--'colorname-here');" if you need to rename/edit styles for any reason
