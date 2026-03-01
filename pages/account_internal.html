@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+</head>
+<body>
+    <header>
+        <nav></nav>
+    </header>
+    <section class="tab">
+        <div class="tab-button">
+            <button class="tab-link" onclick="openAccount(event, 'General')"></button>
+            <button class="tab-link" onclick="openAccount(event, 'Notifications')"></button>
+            <button class="tab-link" onclick="openAccount(event, 'Password')"></button>
+        </div>
+        <div id="tab-general" class="tab-content">
+            <div>
+            <h4>My Account</h4>
+            <a href="#">Profile</a> 
+            <a href="#">General</a>
+            <hr>
+            </div>
+            <div>
+            <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)"></p>
+            <!-- change to have it be automatically updated to users name -->
+            <h5>Jane Doe</h5> 
+            </div>
+            <form>
+                <label for="fname">First Name</label><br>
+                <input type="text" id="fname" name="fname" value="Jane"><br>
+                <label for="lname">Last Name</label><br>
+                <input type="text" id="lname" name="lname" value="Doe"><br>
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" value="youremail@tcd.ie"><br>
+                <label for="quantity">TCD Student ID</label><br>
+                <input type="text" id="tcdId" name="tcdId" value="00000000"><br>
+            </form>
+        </div>
+        <div id="tab-notif" class="tab-content">
+            <div>
+            <h4>My Account</h4>
+            <a href="#">Profile</a> 
+            <a href="#">Notifications</a>
+            <hr>
+            </div>
+            <div>
+                <h5>Postd Notifications</h5>
+            </div>
+            <p class="subheader-02">I agree to notifications from Postd form:</p>
+            <form>
+                <input type="checkbox" id="emailnotif" name="email01">
+                <label for="option01">Email Notifications</label><br>
+                <input type="checkbox" id="option02" name="option02">
+                <label for="option02">Push Notifications for Inbox</label><br>
+                <input type="checkbox" id="option03" name="option03">
+                <label for="option03">Push Notifications for Like, Pins, and Comments</label><br>
+            </form>
+        </div>
+        <div id="tab-password" class="tab-content">
+            <div>
+            <h4>My Account</h4>
+            <a href="#">Profile</a> 
+            <a href="#">Password</a>
+            <hr>
+            </div>
+                <div>
+                    <h5>Change Password</h5>
+                </div>
+                <form>
+                    <label for="pwd">Current Password:</label><br>
+                    <input type="password" id="pwd" name="pwd"><br>
+                    <label for="pwd">New Password:</label><br>
+                    <input type="password" id="pwd" name="pwd"><br>
+                    <input type="submit" value="Submit">
+                </form>
+        </div>
+    </section>
+    <section class="footer">
+
+    </section>
+</body>
+</html>

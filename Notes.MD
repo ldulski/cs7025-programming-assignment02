@@ -1,6 +1,9 @@
-Notes For Project (Last Updated: 26/02/26)
+Notes For Project (Last Updated: (01/03/26)
 
 Logan: Installed Next.js and Node.js (the latest versions and connected to VS Code) 
     - please note I'm unsure if this installs for everyone or just for me we should try + review it as a group
     - added folder "/pages" for all HTML files
     - linking all CSS and JS files to HTML 
+    - Added boilerlate HTML to all pages
+    - Link for how to create tabs (HTML,CSS,JS): https://www.w3schools.com/howto/howto_js_tabs.asp
+    - 
