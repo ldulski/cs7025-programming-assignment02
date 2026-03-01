@@ -1,4 +1,4 @@
-Notes For Project (Last Updated: (01/03/26)
+Notes For Project Last Updated: (01/03/26)
 
 Logan: Installed Next.js and Node.js (the latest versions and connected to VS Code) 
     - please note I'm unsure if this installs for everyone or just for me we should try + review it as a group
