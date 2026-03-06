@@ -1,12 +1,44 @@
-body{
-    background-color: magenta;
+/* login page styles start */
+
+
+/* login page styles end */
+
+
+/* setup quiz page styles start */
+
+
+/* setup quiz page styles end */
+
+
+/* bulletin board page styles start */
+.bulletin-hero {
+    background-image: url(/app/Images/corkboard.png);
+    background-repeat: repeat;
+    background-position: center;
 }
 
-/* colors start*/
+/* bulletin board page styles end */
 
 
-
-/* colors end */
-/* text styles */
+/* account internal page styles start */
 
 
+/* account internal page styles end */
+
+
+/* account external page styles start */
+
+
+/* account external page styles end */
+
+
+/* message drafter page styles start */
+
+
+/* message drafter page styles end */
+
+
+/* messages page styles start */
+
+
+/* messagespage styles end */

@@ -189,4 +189,8 @@ body {
   margin: 25px 72px;
 }
 
+hr{
+  stroke-width: 2px;
+  color: var(--lightmode-text);
+}
 /* body styles end */
