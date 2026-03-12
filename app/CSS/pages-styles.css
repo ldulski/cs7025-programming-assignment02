@@ -350,7 +350,7 @@
       padding: 2px;
     }
 
-    /* ── MAIN ── */
+    /* ── main section - using classes for file managing sake ── */
     .quiz-main {
       flex: 1;
       padding: 48px 40px 32px;
@@ -422,7 +422,7 @@
     }
 
     .question-title {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Figtree', sans-serif;
       font-weight: 700;
       font-size: clamp(1.5rem, 3vw, 2rem);
       letter-spacing: -0.03em;
@@ -450,7 +450,7 @@
       border: 1.5px solid var(--gray-tone);
       border-radius: var(--radius);
       background: transparent;
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Figtree', sans-serif;
       font-size: 0.88rem;
       color: var(--pure-black);
       cursor: pointer;
@@ -485,7 +485,7 @@
       color: var(--pure-black);
       border: none;
       border-radius: var(--radius);
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Figtree', sans-serif;
       font-size: 0.9rem;
       font-weight: 500;
       cursor: pointer;
@@ -549,7 +549,7 @@
       color: #fff;
       border: none;
       border-radius: var(--radius);
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Figtree', sans-serif;
       font-size: 0.9rem;
       font-weight: 500;
       cursor: pointer;
