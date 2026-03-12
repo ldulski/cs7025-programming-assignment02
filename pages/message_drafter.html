@@ -2,15 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Message Drafter</title>
-    <link rel="stylesheet" href="/my-app/app/globals.css">
-    <link rel="stylesheet" href="/app/CSS/styles.css">
-    <script src="/app/JS/script.js" defer></script>
-    <script src="/my-app/app/layout.tsx" defer></script>
-    <script src="/my-app/app/page.tsx" defer></script>
+    <title>Postd - Message Drafter</title>
+    <link rel="stylesheet" href="drafter.css">
 </head>
 <body>
-    
+
+<header class="top-nav">
+    <div class="logo">Postd</div>
+
+    <nav>
+        <a href="#">Bulletin Board</a>
+        <a href="#" class="active">Message Drafter</a>
+        <a href="#">Messages</a>
+    </nav>
+
+    <div class="right-controls">
+        <span>Light Mode</span>
+        <label class="switch">
+            <input type="checkbox" id="modeToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+</header>
+
+<div class="layout">
+
+    <!-- LEFT TOOLBAR -->
+    <aside class="sidebar">
+        <ul>
+            <li><span class="icon">⬆</span> Upload</li>
+            <li><span class="icon">□</span> Templates</li>
+            <li><span class="icon">✦</span> Elements</li>
+            <li><span class="icon">▣</span> Backgrounds</li>
+            <li><span class="icon">☰</span> Drafts</li>
+        </ul>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <div class="preview-section">
+            <div class="preview-box" id="previewBox"></div>
+
+            <!-- Floating Buttons -->
+            <div class="floating-buttons">
+                <button class="circle-btn">↺</button>
+                <button class="circle-btn">＋</button>
+            </div>
+        </div>
+
+        <hr>
+
+        <input type="text" id="recipient" placeholder="Dear John Doe">
+
+        <textarea id="messageInput" placeholder="Write your message here..."></textarea>
+
+        <div class="word-counter">
+            <span id="wordCount">0</span>/300
+        </div>
+
+        <div class="action-buttons">
+            <button class="outline-btn">Save Message</button>
+            <button class="teal-btn" onclick="previewMessage()">Preview</button>
+            <button class="teal-btn">Send</button>
+        </div>
+
+    </main>
+</div>
+
+<footer>
+    <div>Account</div>
+    <div>Bulletin Board</div>
+    <div>Message Drafter</div>
+    <div>Messages</div>
+</footer>
+
+<script src="drafter.js"></script>
 </body>
 </html>
