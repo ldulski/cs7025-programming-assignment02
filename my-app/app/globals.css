@@ -33,7 +33,7 @@ body {
   --parchement-paper: #FFF2E0;
   --sky-blue: #7FC7CC;
   --deep-sea: #092F33;
-  --moss-grean: #4B5B34;
+  --moss-green: #4B5B34;
   --terracotta: #AF5031;
   --cherrry-blossom: #FDABA5;
   --red-wine: #980204;
@@ -143,6 +143,12 @@ nav {
 }
 
 p {
+  font-family: "Figtree", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+label {
   font-family: "Figtree", sans-serif;
   font-weight: 500;
   font-size: 1rem;
