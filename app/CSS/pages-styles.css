@@ -1,16 +1,4 @@
     :root {
-      --bg: #fdf3e7;
-      --white: #ffffff;
-      --pure-black: #111111;
-      --mid: #555555;
-      --light: #aaaaaa;
-      --accent: #6ecfce;
-      --accent-hover: #4db8b7;
-      --border: #d8d0c8;
-      --radius: 50px;
-    }
-
-    :root {
     /* all colors */
     --parchement-paper: #FFF2E0;
     --sky-blue: #7FC7CC;
