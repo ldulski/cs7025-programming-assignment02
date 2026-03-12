@@ -21,9 +21,9 @@
     --lightmode-links: var(--deep-sea);
     --lightmode-svg: var(--deep-sea);
     }
-
-    .dark-mode {
+   
     /* dark mode colors */
+    .dark-mode {
     --darkmode-background: var(--deep-sea);
     --darkmode-text: var(--parchement-paper);
     --darkmode-button-bg: var(--parchement-paper);
