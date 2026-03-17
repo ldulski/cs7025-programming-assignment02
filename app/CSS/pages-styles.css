@@ -1,37 +1,4 @@
-    :root {
-    /* all colors */
-    --parchement-paper: #FFF2E0;
-    --sky-blue: #7FC7CC;
-    --deep-sea: #092F33;
-    --moss-green: #4B5B34;
-    --terracotta: #AF5031;
-    --cherrry-blossom: #FDABA5;
-    --red-wine: #980204;
-    --sunshine-yellow: #EA8913;
-    --pure-black: #000;
-    --pure-white: #fff;
-    --gray-tone: #aaaaaa;
-
-
-    /* light mode colors  */
-    --lightmode-background: var(--parchement-paper);
-    --lightmode-text: var(--pure-black);
-    --lightmode-button-bg: var(--sky-blue);
-    --lightmode-button-text: var(--parchement-paper);
-    --lightmode-links: var(--deep-sea);
-    --lightmode-svg: var(--deep-sea);
-    }
-   
-    /* dark mode colors */
-    .dark-mode {
-    --darkmode-background: var(--deep-sea);
-    --darkmode-text: var(--parchement-paper);
-    --darkmode-button-bg: var(--parchement-paper);
-    --darkmode-button-text: var(--deep-sea);
-    --darkmode-links: var(--parchement-paper);
-    --darkmode-svg: var(--parchement-paper);
-    }
-    
+@import '/my-app/app/globals.css';
     
     /* login page styles start */
 
@@ -66,40 +33,6 @@
     .nav-signin:hover { text-decoration: underline; }
 
     /* Toggle */
-    .toggle-wrap {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.85rem;
-      color: var(--pure-black);
-    }
-
-    .toggle {
-      position: relative;
-      width: 44px;
-      height: 24px;
-      cursor: pointer;
-    }
-    .toggle input { opacity: 0; width: 0; height: 0; }
-    .toggle-track {
-      position: absolute;
-      inset: 0;
-      background: var(--pure-black);
-      border-radius: 12px;
-      transition: background 0.25s;
-    }
-    .toggle-thumb {
-      position: absolute;
-      top: 3px;
-      left: 3px;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: #fff;
-      transition: transform 0.25s;
-    }
-    .toggle input:checked ~ .toggle-track { background: #ccc; }
-    .toggle input:checked ~ .toggle-thumb { transform: translateX(20px); }
 
     /* ── MAIN ── */
     .index-main {
