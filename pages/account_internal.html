@@ -11,9 +11,18 @@
     <script src="/my-app/app/page.tsx" defer></script>
 </head>
 <body>
-    <header>
-        <nav></nav>
-    </header>
+<header class="top-nav">
+    <div class="logo">Postd</div>
+
+    <nav>
+        <ul>
+            <li><a href="#">Bulletin Board</a></li>
+            <li><a href="#" class="active">Message Drafter</a></li>
+            <li><a href="#">Messages</a></li>
+            <li>  <div class="toggle"></div></li>
+       </ul> 
+    </nav>
+</header>
     <section class="tab">
         <div class="tab-button">
             <button class="tab-link" onclick="openAccount(event, 'General')"></button>

@@ -11,11 +11,8 @@
     <script src="/my-app/app/page.tsx" defer></script>
 </head>
 <body>
+  
 <header>
-    <nav>
-    </nav>
-</header>
-
   <nav>
     <a href="#" class="logo">Postd</a>
     <div class="nav-right">
@@ -23,6 +20,9 @@
       <div class="toggle"></div>
     </div>
   </nav>
+</header>
+
+
 
   <!-- MAIN -->
   <main class="index-main">
@@ -94,17 +94,6 @@
       const input = document.getElementById('password');
       input.type = input.type === 'password' ? 'text' : 'password';
     }
-
-    // Light/dark mode toggle (cosmetic swap)
-    document.getElementById('modeToggle').addEventListener('change', function () {
-      if (this.checked) {
-        document.documentElement.style.setProperty('--bg', '#f0f0f0');
-        document.documentElement.style.setProperty('--white', '#e8e8e8');
-      } else {
-        document.documentElement.style.setProperty('--bg', '#fdf3e7');
-        document.documentElement.style.setProperty('--white', '#ffffff');
-      }
-    });
   </script> -->
 </body>
 </html>

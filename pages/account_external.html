@@ -11,11 +11,18 @@
     <script src="/my-app/app/page.tsx" defer></script>
 </head>
 <body>
-    <header>
-        <nav>
+<header class="top-nav">
+    <div class="logo">Postd</div>
 
-        </nav>
-    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Bulletin Board</a></li>
+            <li><a href="#" class="active">Message Drafter</a></li>
+            <li><a href="#">Messages</a></li>
+            <li>  <div class="toggle"></div></li>
+       </ul> 
+    </nav>
+</header>
     <section>
         <!-- this section must be updated with React to load users profile image, name, pronouns, and bio -->
         <img src="#"></img>
