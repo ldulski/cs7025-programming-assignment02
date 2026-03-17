@@ -1,36 +1,27 @@
 console.log('HELLO')
 
-// check for saved 'darkMode' in localStorage
-let darkMode = localStorage.getItem('darkMode');
+//light + dark mode toggle
+const body = document.querySelector("body");
+toggle = document.querySelector(".toggle");
 
-const darkModeToggle = document.querySelector('#theme-switch');
-
-const enableDarkMode = () => {
-    document.body.classList.add('darkmode');
-    localStorage.setItem('darkMode', 'enabled');
+//setting what color mode it's in
+let getMode = localStorage.getItem("mode");
+console.log(getMode);
+if (getMode && getMode === "dark"){
+    body.classList.toggle("dark");
+    toggle.classList.toggle("active")
 }
 
-const disableDarkMode = () => {
-    console.log("Running Disable Function")
-    document.body.classList.remove('darkmode');
-    localStorage.setItem('darkMode', null);
-}
+//toggling light vs dark mode
+toggle.addEventListener("click", () => {
+    body.classList.toggle("dark");
 
-// If the user already visited and enabled darkMode
-// start things off with it on
-if (darkMode === 'enabled') {
-    enableDarkMode();
-}
-
-// When someone clicks the button
-darkModeToggle.addEventListener('click', () => {
-    darkMode = localStorage.getItem('darkMode');
-    console.log(darkMode)
-    if (darkMode != 'enabled') {
-        console.log("Enabling");
-        enableDarkMode();
-    } else {
-        console.log("Disabling");
-        disableDarkMode();
+    if (!body.classList.contains("dark")) {
+        return localStorage.setItem("mode", "light");
     }
-});
+    localStorage.setItem("mode", "dark");
+})
+
+// activating toggle on click
+toggle.addEventListener("click", () => toggle.classList.toggle("active"));
+
