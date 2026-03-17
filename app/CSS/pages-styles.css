@@ -24,15 +24,6 @@ nav {
   gap: 20px;
 }
 
-.nav-signin {
-  font-size: 0.9rem;
-  text-decoration: none;
-  font-weight: 400;
-}
-
-.nav-signin:hover {
-  text-decoration: underline;
-}
 
 /* Toggle */
 
@@ -147,8 +138,6 @@ nav {
 }
 
 .checkbox-row label {
-  font-size: 0.82rem;
-  line-height: 1.5;
   cursor: pointer;
 }
 
@@ -228,7 +217,6 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.78rem;
 }
 
 .footer-links {
@@ -236,10 +224,6 @@ footer {
   gap: 20px;
 }
 
-.footer-links a {
-  text-decoration: none;
-  font-size: 0.82rem;
-}
 
 /* bulletin board page styles start */
 .bulletin-hero {

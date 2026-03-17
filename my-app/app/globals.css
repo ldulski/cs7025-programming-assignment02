@@ -300,6 +300,29 @@ a {
   font-size: 1.313rem;
 }
 
+footer{
+    font-size: 0.78rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-size: 0.82rem;
+}
+
+.nav-signin {
+  font-size: 0.9rem;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.nav-signin:hover {
+  text-decoration: underline;
+}
+
+.checkbox-row label{
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
 /* text styles end*/
 
 /* body styles start */
