@@ -300,8 +300,8 @@ a {
   font-size: 1.313rem;
 }
 
-footer{
-    font-size: 0.78rem;
+footer {
+  font-size: 0.78rem;
 }
 
 .footer-links a {
@@ -319,10 +319,11 @@ footer{
   text-decoration: underline;
 }
 
-.checkbox-row label{
+.checkbox-row label {
   font-size: 0.82rem;
   line-height: 1.5;
 }
+
 /* text styles end*/
 
 /* body styles start */
@@ -336,6 +337,39 @@ hr {
   stroke-width: 2px;
 }
 
-
 /* nav styles */
+nav{
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-end;
+  justify-content: center;
+}
+nav ul {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-end;
+  list-style-type: none;
+}
+
+nav li{
+  padding: 0px 25px;
+}
+
+nav .logo {
+  font-family: 'Figtree', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  margin: 0 auto;
+  left: 15px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 /* body styles end */

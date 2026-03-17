@@ -2,31 +2,6 @@
 
 /* login page styles start */
 
-/* nav */
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 48px;
-}
-
-.logo {
-  font-family: 'Figtree', sans-serif;
-  font-weight: 700;
-  font-size: 1.25rem;
-  letter-spacing: -0.02em;
-  text-decoration: none;
-}
-
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-
-/* Toggle */
-
 /* ── MAIN ── */
 .index-main {
   flex: 1;
