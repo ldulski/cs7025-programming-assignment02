@@ -328,8 +328,6 @@ footer{
 /* body styles start */
 
 body {
-  background-color: var(--lightmode-background);
-  color: var(--lightmode-text);
   max-width: 1440px;
   margin: 25px 72px;
 }
