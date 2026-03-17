@@ -7,7 +7,7 @@ toggle = document.querySelector(".toggle");
 //setting what color mode it's in
 let getMode = localStorage.getItem("mode");
 console.log(getMode);
-if (getMode && getMode === "dark"){
+if (getMode && getMode === "dark") {
     body.classList.toggle("dark");
     toggle.classList.toggle("active")
 }
