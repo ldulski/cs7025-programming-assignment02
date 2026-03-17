@@ -45,6 +45,18 @@ body {
     color: var(--lightmode-links);
   }
 
+  nav li a{
+    color: var(--lightmode-links);
+  }
+
+  nav li a:hover{
+    background-color: var(--deep-sea);
+    color: var(--parchement-paper);
+  }
+  nav li a:active{
+    stroke: solid 2px var(--deep-sea);
+  }
+  
   .btn-primary {
     background-color: var(--lightmode-button-bg);
     color: var(--lightmode-button-text);
@@ -116,6 +128,18 @@ body.dark {
 
   a {
     color: var(--darkmode-links);
+  }
+
+  nav li a{
+    color: var(--darkmode-links);
+  }
+
+  nav li a:hover{
+    background-color: var(--sky-blue);
+    color: var(--deep-sea);
+  }
+  nav li a:active{
+    stroke: solid 2px var(--parchement-paper);
   }
 
   .btn-primary {
@@ -300,8 +324,8 @@ a {
   font-size: 1.313rem;
 }
 
-footer{
-    font-size: 0.78rem;
+footer {
+  font-size: 0.78rem;
 }
 
 .footer-links a {
@@ -319,17 +343,16 @@ footer{
   text-decoration: underline;
 }
 
-.checkbox-row label{
+.checkbox-row label {
   font-size: 0.82rem;
   line-height: 1.5;
 }
+
 /* text styles end*/
 
 /* body styles start */
 
 body {
-  background-color: var(--lightmode-background);
-  color: var(--lightmode-text);
   max-width: 1440px;
   margin: 25px 72px;
 }
@@ -337,5 +360,50 @@ body {
 hr {
   stroke-width: 2px;
 }
+
+/* nav styles */
+nav {
+  margin: 0 auto;
+  padding: 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+
+}
+
+nav ul {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  list-style-type: none;
+  justify-content: flex-end;
+}
+nav li{
+  padding: 0px 25px;
+}
+nav li a {
+  text-decoration: none;
+}
+
+nav .logo a {
+  font-family: 'Figtree', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  margin: 0 auto;
+}
+
+nav li a:hover{
+  padding: 10px 12px;
+  transition: all 200ms ease-in-out;
+}
+
+nav li a:active{
+  text-decoration: underline 2px var(--deep-sea);
+  transition: all 200ms ease-in-out;
+}
+
+
 
 /* body styles end */

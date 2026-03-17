@@ -11,18 +11,21 @@
     <script src="/my-app/app/page.tsx" defer></script>
 </head>
 <body>
-<header>
+  
+<header class="top-nav">
     <nav>
+        <ul>
+            <li class="logo"><a href="#">Postd</a></li>
+            <li><a href="/pages/bulletinboard.html">Bulletin Board</a></li>
+            <li><a href="/pages/message_drafter.html">Message Drafter</a></li>
+            <li><a href="/pages/messages.html">Messages</a></li>
+            <li><a href="/pages/account_external.html">Profile</a></li>
+            <li>  <div class="toggle"></div></li>
+       </ul> 
     </nav>
 </header>
 
-  <nav>
-    <a href="#" class="logo">Postd</a>
-    <div class="nav-right">
-      <a href="#" class="nav-signin">Sign in</a>
-      <div class="toggle"></div>
-    </div>
-  </nav>
+
 
   <!-- MAIN -->
   <main class="index-main">
@@ -94,17 +97,6 @@
       const input = document.getElementById('password');
       input.type = input.type === 'password' ? 'text' : 'password';
     }
-
-    // Light/dark mode toggle (cosmetic swap)
-    document.getElementById('modeToggle').addEventListener('change', function () {
-      if (this.checked) {
-        document.documentElement.style.setProperty('--bg', '#f0f0f0');
-        document.documentElement.style.setProperty('--white', '#e8e8e8');
-      } else {
-        document.documentElement.style.setProperty('--bg', '#fdf3e7');
-        document.documentElement.style.setProperty('--white', '#ffffff');
-      }
-    });
   </script> -->
 </body>
 </html>
