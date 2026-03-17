@@ -73,6 +73,7 @@ body.dark {
   flex-flow: row nowrap;
   justify-items: flex-start;
 } */
+
 /* theme switch end */
 /* text styles start */
 
@@ -168,6 +169,5 @@ body {
 
 hr{
   stroke-width: 2px;
-  color: var(--lightmode-text);
 }
 /* body styles end */
