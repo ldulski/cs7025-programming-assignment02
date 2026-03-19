@@ -50,7 +50,7 @@ body {
     color: var(--lightmode-links);
   }
 
-  nav li a:hover {
+  ul li a:hover {
     background-color: var(--deep-sea);
     color: var(--parchement-paper);
   }
@@ -223,6 +223,22 @@ body.dark {
     border-color: var(--parchement-paper);
   }
 
+  /* tab color styles */
+
+  section .tab-button {
+    border-right: solid 2px var(--pure-white);
+    background-color: var(--darkmode-background);
+  }
+
+  .tab button:hover {
+    background-color: var(--default-gray);
+  }
+
+  .tab button.active {
+    background-color: var(--parchement-paper);
+    color: var(--darktmode-text);
+  }
+
 }
 
 /* colors end */
@@ -387,8 +403,8 @@ nav {
   margin: 0 auto;
   padding: 0 auto;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: space-between;
 
 }
 
@@ -408,10 +424,10 @@ nav li a {
   text-decoration: none;
 }
 
-nav .logo a {
+.logo a {
   font-family: 'Figtree', sans-serif;
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 2.250rem;
   letter-spacing: -0.02em;
   text-decoration: none;
   margin: 0 auto;
