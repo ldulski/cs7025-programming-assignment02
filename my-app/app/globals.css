@@ -56,7 +56,7 @@ body {
   nav li a:active{
     stroke: solid 2px var(--deep-sea);
   }
-  
+   /* button color styles */
   .btn-primary {
     background-color: var(--lightmode-button-bg);
     color: var(--lightmode-button-text);
@@ -83,7 +83,7 @@ body {
     background-color: var(--deep-sea);
     color: var(--parchement-paper)
   }
-
+/* footer color styles */
   footer {
     border-top: 1.5px solid var(--pure-black);
     color: var(--gray-tone);
@@ -116,7 +116,7 @@ body {
   .input-wrap input:focus {
     border-color: var(--pure-black);
   }
-
+  /* tab color styles */
   section .tab-button{
     border-right: solid 2px var(--pure-black);
   }
@@ -240,13 +240,8 @@ body.dark {
   left: calc(100% - 45px);
 }
 
-/* .toggle p{
-  display: flex;
-  flex-flow: row nowrap;
-  justify-items: flex-start;
-} */
-
 /* theme switch end */
+
 /* text styles start */
 
 h1 {
@@ -414,5 +409,42 @@ nav li a:active{
 }
 
 
+/* footer styles */
+footer {
+  padding: 16px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
 /* body styles end */
+
+/* button styles start */
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.btn-primary:active {
+  transform: scale(0.99);
+}
+
+.btn-secondary {
+  width: 100%;
+  padding: 13px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  letter-spacing: -0.01em;
+}
+/* button styles end */
