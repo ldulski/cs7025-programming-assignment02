@@ -25,15 +25,15 @@
 </header>
     <section class="tab">
         <div class="tab-button">
-            <button class="tab-link" onclick="openAccount(event, 'General')"></button>
-            <button class="tab-link" onclick="openAccount(event, 'Notifications')"></button>
-            <button class="tab-link" onclick="openAccount(event, 'Password')"></button>
+            <a class="tab-link" onclick="openAccount(event, 'General')">General</a>
+            <a class="tab-link" onclick="openAccount(event, 'Notifications')">Notification</a>
+            <a class="tab-link" onclick="openAccount(event, 'Password')">Password</a>
         </div>
-        <div id="tab-general" class="tab-content">
-            <div>
+        <div  class="tab-content">
+            <div id="tab-general">
+            <div class="tab-nav">
             <h4>My Account</h4>
-            <a href="#">Profile</a> 
-            <a href="#">General</a>
+            <span><a href="#">Profile</a> &#62; <a href="#">General</a></span>
             <hr>
             </div>
             <div>
@@ -51,8 +51,8 @@
                 <label for="quantity">TCD Student ID</label><br>
                 <input type="text" id="tcdId" name="tcdId" value="00000000"><br>
             </form>
-        </div>
-        <div id="tab-notif" class="tab-content">
+            </div>
+            <div id="tab-notif">
             <div>
             <h4>My Account</h4>
             <a href="#">Profile</a> 
@@ -71,8 +71,8 @@
                 <input type="checkbox" id="option03" name="option03">
                 <label for="option03">Push Notifications for Like, Pins, and Comments</label><br>
             </form>
-        </div>
-        <div id="tab-password" class="tab-content">
+            </div>
+            <div id="tab-password">
             <div>
             <h4>My Account</h4>
             <a href="#">Profile</a> 
@@ -89,9 +89,10 @@
                     <input type="password" id="pwd" name="pwd"><br>
                     <input type="submit" value="Submit">
                 </form>
+            </div>
         </div>
-    </section>
-    <section class="footer">
+        </section>
+        <section class="footer">
 
     </section>
 </body>

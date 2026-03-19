@@ -201,15 +201,40 @@ footer {
 
 
 /* bulletin board page styles start */
-.bulletin-hero {
-  background-image: url(/app/Images/corkboard.png);
-  background-repeat: repeat;
-}
 
 /* bulletin board page styles end */
 
 
 /* account internal page styles start */
+section .tab{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+section .tab-button{
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 200px;
+}
+
+section .tab-button a{
+  padding: 0px 15px;
+  text-decoration: none;
+
+}
+
+section .tab-content{
+  max-width: 1075px;
+}
+
+.tab-nav{
+  margin-bottom: 25px;
+  padding: 0px 0px 10px 25px;
+}
+
+.tab-nav a {
+  padding-right: 10px;
+}
 
 
 /* account internal page styles end */
