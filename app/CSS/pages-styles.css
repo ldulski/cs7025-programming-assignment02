@@ -236,6 +236,11 @@ section .tab-content{
   padding-right: 10px;
 }
 
+.user-info{
+  display: flex;
+  flex-flow: row nowrap;
+  min-height:125px;
+}
 
 /* account internal page styles end */
 
