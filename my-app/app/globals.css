@@ -39,7 +39,7 @@
 body {
   background-color: var(--lightmode-background);
   color: var(--lightmode-text);
-
+   
 
   a {
     color: var(--lightmode-links);

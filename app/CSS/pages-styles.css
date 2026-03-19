@@ -209,15 +209,18 @@ footer {
 section .tab{
   display: flex;
   flex-flow: column nowrap;
+  overflow: hidden;
+
 }
 
 section .tab-button{
   display: flex;
   flex-flow: row wrap;
   max-width: 200px;
+  
 }
 
-section .tab-button a{
+section button .tab-button{
   padding: 0px 15px;
   text-decoration: none;
 
