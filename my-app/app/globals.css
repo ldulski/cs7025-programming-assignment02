@@ -16,6 +16,7 @@
   --sunshine-yellow: #EA8913;
   --pure-black: #000;
   --pure-white: #fff;
+  --default-gray: #D9D9D9;
 
 
   /* light mode colors  */
@@ -39,24 +40,26 @@
 body {
   background-color: var(--lightmode-background);
   color: var(--lightmode-text);
-   
+
 
   a {
     color: var(--lightmode-links);
   }
 
-  nav li a{
+  nav li a {
     color: var(--lightmode-links);
   }
 
-  nav li a:hover{
+  nav li a:hover {
     background-color: var(--deep-sea);
     color: var(--parchement-paper);
   }
-  nav li a:active{
+
+  nav li a:active {
     stroke: solid 2px var(--deep-sea);
   }
-   /* button color styles */
+
+  /* button color styles */
   .btn-primary {
     background-color: var(--lightmode-button-bg);
     color: var(--lightmode-button-text);
@@ -83,7 +86,8 @@ body {
     background-color: var(--deep-sea);
     color: var(--parchement-paper)
   }
-/* footer color styles */
+
+  /* footer color styles */
   footer {
     border-top: 1.5px solid var(--pure-black);
     color: var(--gray-tone);
@@ -116,9 +120,21 @@ body {
   .input-wrap input:focus {
     border-color: var(--pure-black);
   }
+
   /* tab color styles */
-  section .tab-button{
+
+  section .tab-button {
     border-right: solid 2px var(--pure-black);
+    background-color: var(--lightmode-background);
+  }
+
+  .tab button:hover {
+    background-color: var(--default-gray);
+  }
+
+  .tab button.active {
+    background-color: var(--deep-sea);
+    color: var(--lightmode-text);
   }
 
 }
@@ -134,15 +150,16 @@ body.dark {
     color: var(--darkmode-links);
   }
 
-  nav li a{
+  nav li a {
     color: var(--darkmode-links);
   }
 
-  nav li a:hover{
+  nav li a:hover {
     background-color: var(--sky-blue);
     color: var(--deep-sea);
   }
-  nav li a:active{
+
+  nav li a:active {
     stroke: solid 2px var(--parchement-paper);
   }
 
@@ -382,9 +399,11 @@ nav ul {
   list-style-type: none;
   justify-content: flex-end;
 }
-nav li{
+
+nav li {
   padding: 0px 25px;
 }
+
 nav li a {
   text-decoration: none;
 }
@@ -398,12 +417,12 @@ nav .logo a {
   margin: 0 auto;
 }
 
-nav li a:hover{
+nav li a:hover {
   padding: 10px 12px;
   transition: all 200ms ease-in-out;
 }
 
-nav li a:active{
+nav li a:active {
   text-decoration: underline 2px var(--deep-sea);
   transition: all 200ms ease-in-out;
 }
@@ -421,6 +440,7 @@ footer {
   display: flex;
   gap: 20px;
 }
+
 /* body styles end */
 
 /* button styles start */
@@ -447,4 +467,5 @@ footer {
   transition: border-color 0.2s, background 0.2s;
   letter-spacing: -0.01em;
 }
+
 /* button styles end */

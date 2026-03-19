@@ -25,12 +25,13 @@
 </header>
     <section class="tab">
         <div class="tab-button">
-            <button class="tab-link" onclick="openAccount(event, 'General')">General</button>
-            <button class="tab-link" onclick="openAccount(event, 'Notifications')">Notification</button>
-            <button class="tab-link" onclick="openAccount(event, 'Password')">Password</button>
+            <button class="tab-link" data-tab-target="#tab-general">General</button>
+            <button class="tab-link" data-tab-target="#tab-notif">Notification</button>
+            <button class="tab-link" data-tab-target="#tab-password">Password</button>
         </div>
-        <div  class="tab-content">
-            <div id="tab-general">
+        <div class="tab-content">
+
+            <div id="tab-general" data-tab-content class="active">
             <div class="tab-nav">
             <h4>My Account</h4>
             <span><a href="#">Profile</a> &#62; <a href="#">General</a></span>
@@ -52,7 +53,7 @@
                 <input type="text" id="tcdId" name="tcdId" value="00000000"><br>
             </form>
             </div>
-            <div id="tab-notif">
+            <div id="tab-notif" data-tab-content>
             <div>
             <h4>My Account</h4>
             <a href="#">Profile</a> 
@@ -72,7 +73,7 @@
                 <label for="option03">Push Notifications for Like, Pins, and Comments</label><br>
             </form>
             </div>
-            <div id="tab-password">
+            <div id="tab-password"data-tab-content>
             <div>
             <h4>My Account</h4>
             <a href="#">Profile</a> 
@@ -90,8 +91,13 @@
                     <input type="submit" value="Submit">
                 </form>
             </div>
+
         </div>
         </section>
+
+
+
+        
         <section class="footer">
 
     </section>

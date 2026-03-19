@@ -170,9 +170,38 @@ nav {
 
 /* account internal page styles start */
 section .tab {
-  display: flex;
-  flex-flow: column nowrap;
-  overflow: hidden;
+  /* float: left;
+  width: 30%; */
+  display: flexbox;
+}
+
+.tab-content{
+  /* width: 70%;
+  float: left; */
+  padding: 0px 12px;
+}
+
+[data-tab-content] {
+  display: none;
+  padding: 6px 12px;
+}
+
+.active[data-tab-content]{
+  display: block;
+}
+
+.tab button {
+  font-family: "Figtree", sans-serif;
+  font-weight: 500;
+  font-size: 1.313rem;
+  text-decoration: none;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+
 
 }
 
@@ -180,26 +209,8 @@ section .tab-button {
   display: flex;
   flex-flow: row wrap;
   max-width: 200px;
+  /* min-height: 515px; */
 
-}
-
-section button .tab-button {
-  padding: 0px 15px;
-  text-decoration: none;
-}
-
-section .tab-content {
-  max-width: 1075px;
-}
-
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
 }
 
 .tab-nav {
