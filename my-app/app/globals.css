@@ -50,12 +50,12 @@ body {
     color: var(--lightmode-links);
   }
 
-  ul li a:hover {
+  .nav-links:hover {
     background-color: var(--deep-sea);
     color: var(--parchement-paper);
   }
 
-  nav li a:active {
+ .nav-links:active {
     stroke: solid 2px var(--deep-sea);
   }
 
@@ -433,17 +433,31 @@ nav li a {
   margin: 0 auto;
 }
 
-nav li a:hover {
+.nav-links:hover {
   padding: 10px 12px;
   transition: all 200ms ease-in-out;
 }
 
-nav li a:active {
+.nav-links:active {
   text-decoration: underline 2px var(--deep-sea);
   transition: all 200ms ease-in-out;
 }
-
-
+/* profile icon styles */
+  .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 37px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    /* -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased; */
+  }
 /* footer styles */
 footer {
   padding: 16px 40px;
