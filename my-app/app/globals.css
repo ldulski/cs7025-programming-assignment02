@@ -457,6 +457,13 @@ nav li a {
     top:100%;
     right: 10%;
     width: 320px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+  }
+
+  .sub-menu-wrap.open-menu{
+    max-height: 400px;
   }
   .sub-menu{
     padding: 5px;
