@@ -46,6 +46,7 @@ body {
     color: var(--lightmode-links);
   }
 
+  /* nav colors */
   nav li a {
     color: var(--lightmode-links);
   }
@@ -57,6 +58,14 @@ body {
 
  .nav-links:active {
     stroke: solid 2px var(--deep-sea);
+  }
+
+  .sub-menu-wrap{
+    background-color: var(--default-gray);
+  }
+  .sub-menu li a{
+    color: var(--deep-sea);
+    border-bottom: 2px solid var(--deep-sea);
   }
 
   /* button color styles */
@@ -443,21 +452,29 @@ nav li a {
   transition: all 200ms ease-in-out;
 }
 /* profile icon styles */
-  .material-symbols-outlined {
-    font-family: 'Material Symbols Outlined';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 37px;
-    line-height: 1;
-    letter-spacing: normal;
-    text-transform: none;
-    display: inline-block;
-    white-space: nowrap;
-    word-wrap: normal;
-    direction: ltr;
-    /* -webkit-font-feature-settings: 'liga';
-    -webkit-font-smoothing: antialiased; */
+  .sub-menu-wrap{
+    position:absolute;
+    top:100%;
+    right: 10%;
+    width: 320px;
   }
+  .sub-menu{
+    padding: 5px;
+    margin: 10px;
+  }
+  .sub-menu-link{
+    display: flex;
+    align-items: center;
+    margin: 12px 0px;
+  }
+  .sub-menu li a{
+    padding: 15px;
+  }
+
+  .sub-menu-link a{
+    width: 100%;
+  }
+
 /* footer styles */
 footer {
   padding: 16px 40px;
