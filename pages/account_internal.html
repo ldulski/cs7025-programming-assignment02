@@ -9,18 +9,31 @@
     <script src="/app/JS/script.js" defer></script>
     <script src="/my-app/app/layout.tsx" defer></script>
     <script src="/my-app/app/page.tsx" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0&icon_names=account_circle" />
 </head>
 <body>
 <header>
     <nav>
         <div class="logo"><a href="#">Postd</a></div>
         <ul>
-            <li><a href="/pages/bulletinboard.html">Bulletin Board</a></li>
-            <li><a href="/pages/message_drafter.html">Message Drafter</a></li>
-            <li><a href="/pages/messages.html">Messages</a></li>
-            <li><a href="/pages/account_external.html">Profile</a></li>
+            <li><a href="/pages/bulletinboard.html" class="nav-links">Bulletin Board</a></li>
+            <li><a href="/pages/message_drafter.html"class="nav-links">Message Drafter</a></li>
+            <li><a href="/pages/messages.html"class="nav-links">Messages</a></li>
+            <li><a href="#" on-click="toggleMenu('')"><span class="material-symbols-outlined">
+account_circle
+</span></a></li>
             <li>  <div class="toggle"></div></li>
        </ul> 
+       <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <ul>
+                    <li><a href="/pages/account_external.html" class="sub-menu-link">Profile</a></li>
+                    <li><a href="/pages/account_internal.html" class="sub-menu-link">Settings</a></li>
+                    <li><a href="#" class="sub-menu-link">Help</a></li>
+                    <li><a href="#" class="sub-menu-link">Logout</a></li>
+                </ul>
+            </div>
+       </div>
     </nav>
 </header>
     <section class="tab">

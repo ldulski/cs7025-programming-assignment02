@@ -41,3 +41,11 @@ tabs.forEach(tab => {
         target.classList.add('active');
     })
 })
+
+//profile in nav opening sub-menu 
+
+let subMenu = document.getElementById("subMenu");
+
+function toggleMenu(){
+    subMenu.classList.toggle("open-menu");
+}

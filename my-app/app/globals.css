@@ -46,17 +46,26 @@ body {
     color: var(--lightmode-links);
   }
 
+  /* nav colors */
   nav li a {
     color: var(--lightmode-links);
   }
 
-  ul li a:hover {
+  .nav-links:hover {
     background-color: var(--deep-sea);
     color: var(--parchement-paper);
   }
 
-  nav li a:active {
+ .nav-links:active {
     stroke: solid 2px var(--deep-sea);
+  }
+
+  .sub-menu-wrap{
+    background-color: var(--default-gray);
+  }
+  .sub-menu li a{
+    color: var(--deep-sea);
+    border-bottom: 2px solid var(--deep-sea);
   }
 
   /* button color styles */
@@ -433,16 +442,45 @@ nav li a {
   margin: 0 auto;
 }
 
-nav li a:hover {
+.nav-links:hover {
   padding: 10px 12px;
   transition: all 200ms ease-in-out;
 }
 
-nav li a:active {
+.nav-links:active {
   text-decoration: underline 2px var(--deep-sea);
   transition: all 200ms ease-in-out;
 }
+/* profile icon styles */
+  .sub-menu-wrap{
+    position:absolute;
+    top:100%;
+    right: 10%;
+    width: 320px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+  }
 
+  .sub-menu-wrap.open-menu{
+    max-height: 400px;
+  }
+  .sub-menu{
+    padding: 5px;
+    margin: 10px;
+  }
+  .sub-menu-link{
+    display: flex;
+    align-items: center;
+    margin: 12px 0px;
+  }
+  .sub-menu li a{
+    padding: 15px;
+  }
+
+  .sub-menu-link a{
+    width: 100%;
+  }
 
 /* footer styles */
 footer {
