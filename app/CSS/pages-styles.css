@@ -189,26 +189,24 @@ nav {
 }
 
 .tab button {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0px;
   font-family: "Figtree", sans-serif;
   font-weight: 500;
   font-size: 1.313rem;
+  text-align: left;
   text-decoration: none;
   float: left;
   border: none;
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
-  transition: 0.3s;
-
-
+  transition: 0.4s;
 }
 
-.tab-button {
-  display: flex;
-  flex-flow: row wrap;
+div.tab-button {
   max-width: 200px;
-  /* min-height: 515px; */
-
 }
 
 .tab-nav {
@@ -245,6 +243,31 @@ nav {
   font-family: "Figtree", sans-serif;
   font-weight: 400;
   font-size: 1rem;
+}
+
+
+.tab-header {
+  margin-bottom: 15px;
+}
+
+.checkbox-form {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 15px;
+}
+
+.checkbox-form label {
+  font-family: "Figtree", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+input#emailnotif.checkbox,
+input#option02,
+input#option03 {
+
+  width: 25px;
+  height: 25px;
 }
 
 /* account internal page styles end */
