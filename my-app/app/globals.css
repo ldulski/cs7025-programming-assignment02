@@ -138,12 +138,19 @@ body {
   }
 
   .tab button:hover {
-    background-color: var(--default-gray);
+    border-bottom: solid 2px var(--deep-sea);
   }
 
   .tab button.active {
     background-color: var(--deep-sea);
     color: var(--lightmode-text);
+  }
+
+  /* form color styles */
+  .account-form input{
+    background-color: var(--pure-white);
+    color: var(--pure-black);
+    border: 2px solid var(--pure-black);
   }
 
 }
@@ -232,7 +239,7 @@ body.dark {
     border-color: var(--parchement-paper);
   }
 
-  /* tab color styles */
+ /* tab color styles */
 
   section .tab-button {
     border-right: solid 2px var(--pure-white);
@@ -240,12 +247,19 @@ body.dark {
   }
 
   .tab button:hover {
-    background-color: var(--default-gray);
+    border-bottom: solid 2px var(--parchement-paper);
   }
 
   .tab button.active {
     background-color: var(--parchement-paper);
-    color: var(--darktmode-text);
+    color: var(--darkmode-text);
+  }
+
+  /* form color styles */
+  .account-form input{
+    background-color: var(--default-gray);
+    color: var(--pure-black);
+    border: 2px solid var(--pure-white);
   }
 
 }
@@ -338,6 +352,7 @@ label {
   font-family: "Figtree", sans-serif;
   font-weight: 500;
   font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
 .small-text {

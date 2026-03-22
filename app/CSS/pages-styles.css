@@ -169,15 +169,13 @@ nav {
 
 
 /* account internal page styles start */
-section .tab {
-  /* float: left;
-  width: 30%; */
-  display: flexbox;
+.tab {
+  display: flex;
+  gap: 32px;
+
 }
 
-.tab-content{
-  /* width: 70%;
-  float: left; */
+.tab-content {
   padding: 0px 12px;
 }
 
@@ -186,7 +184,7 @@ section .tab {
   padding: 6px 12px;
 }
 
-.active[data-tab-content]{
+.active[data-tab-content] {
   display: block;
 }
 
@@ -205,7 +203,7 @@ section .tab {
 
 }
 
-section .tab-button {
+.tab-button {
   display: flex;
   flex-flow: row wrap;
   max-width: 200px;
@@ -215,7 +213,6 @@ section .tab-button {
 
 .tab-nav {
   margin-bottom: 25px;
-  padding: 0px 0px 10px 25px;
 }
 
 .tab-nav a {
@@ -226,6 +223,28 @@ section .tab-button {
   display: flex;
   flex-flow: row nowrap;
   min-height: 125px;
+  margin: 0 auto;
+}
+
+.account-form {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 25px;
+}
+
+.account-form div {
+  min-width: 375px;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 10px;
+}
+
+.account-form input {
+  border-radius: 20px;
+  padding: 14px 16px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
 }
 
 /* account internal page styles end */
