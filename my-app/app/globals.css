@@ -56,14 +56,15 @@ body {
     color: var(--parchement-paper);
   }
 
- .nav-links:active {
+  .nav-links:active {
     stroke: solid 2px var(--deep-sea);
   }
 
-  .sub-menu-wrap{
+  .sub-menu-wrap {
     background-color: var(--default-gray);
   }
-  .sub-menu li a{
+
+  .sub-menu li a {
     color: var(--deep-sea);
     border-bottom: 2px solid var(--deep-sea);
   }
@@ -137,13 +138,25 @@ body {
     background-color: var(--lightmode-background);
   }
 
+  button.tab-link {
+    background-color: var(--lightmode-background);
+    color: var(--lightmode-text);
+  }
+
   .tab button:hover {
-    background-color: var(--default-gray);
+    border-bottom: solid 2px var(--deep-sea);
   }
 
   .tab button.active {
     background-color: var(--deep-sea);
     color: var(--lightmode-text);
+  }
+
+  /* form color styles */
+  .account-form input {
+    background-color: var(--pure-white);
+    color: var(--pure-black);
+    border: 2px solid var(--pure-black);
   }
 
 }
@@ -239,14 +252,27 @@ body.dark {
     background-color: var(--darkmode-background);
   }
 
+  button.tab-link {
+    background-color: var(--darkmode-background);
+    color: var(--darkmode-text);
+  }
+
   .tab button:hover {
-    background-color: var(--default-gray);
+    border-bottom: solid 2px var(--parchement-paper);
   }
 
   .tab button.active {
     background-color: var(--parchement-paper);
-    color: var(--darktmode-text);
+    color: var(--darkmode-text);
   }
+
+  /* form color styles */
+  .account-form input {
+    background-color: var(--default-gray);
+    color: var(--pure-black);
+    border: 2px solid var(--pure-white);
+  }
+
 
 }
 
@@ -338,6 +364,7 @@ label {
   font-family: "Figtree", sans-serif;
   font-weight: 500;
   font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
 .small-text {
@@ -451,36 +478,40 @@ nav li a {
   text-decoration: underline 2px var(--deep-sea);
   transition: all 200ms ease-in-out;
 }
+
 /* profile icon styles */
-  .sub-menu-wrap{
-    position:absolute;
-    top:100%;
-    right: 10%;
-    width: 320px;
-    max-height: 0px;
-    overflow: hidden;
-    transition: max-height 0.5s;
-  }
+.sub-menu-wrap {
+  position: absolute;
+  top: 100%;
+  right: 10%;
+  width: 320px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
 
-  .sub-menu-wrap.open-menu{
-    max-height: 400px;
-  }
-  .sub-menu{
-    padding: 5px;
-    margin: 10px;
-  }
-  .sub-menu-link{
-    display: flex;
-    align-items: center;
-    margin: 12px 0px;
-  }
-  .sub-menu li a{
-    padding: 15px;
-  }
+.sub-menu-wrap.open-menu {
+  max-height: 400px;
+}
 
-  .sub-menu-link a{
-    width: 100%;
-  }
+.sub-menu {
+  padding: 5px;
+  margin: 10px;
+}
+
+.sub-menu-link {
+  display: flex;
+  align-items: center;
+  margin: 12px 0px;
+}
+
+.sub-menu li a {
+  padding: 15px;
+}
+
+.sub-menu-link a {
+  width: 100%;
+}
 
 /* footer styles */
 footer {

@@ -47,7 +47,7 @@ account_circle
             <div id="tab-general" data-tab-content class="active">
             <div class="tab-nav">
             <h4>My Account</h4>
-            <span><a href="#">Profile</a> &#62; <a href="#">General</a></span>
+            <span><a href="#">Profile</a> <span>&#62;</span> <a href="#">General</a></span>
             <hr>
             </div>
             <div class="user-info">
@@ -55,61 +55,76 @@ account_circle
             <!-- change to have it be automatically updated to users name -->
             <h5>Jane Doe</h5> 
             </div>
-            <form>
-                <label for="fname">First Name</label><br>
-                <input type="text" id="fname" name="fname" value="Jane"><br>
-                <label for="lname">Last Name</label><br>
-                <input type="text" id="lname" name="lname" value="Doe"><br>
-                <label for="email">Email</label><br>
-                <input type="email" id="email" name="email" value="youremail@tcd.ie"><br>
-                <label for="quantity">TCD Student ID</label><br>
-                <input type="text" id="tcdId" name="tcdId" value="00000000"><br>
+            <form class="account-form">
+                <div>
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="fname" value="Jane">
+                </div>
+                <div>
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lname" value="Doe">
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" value="youremail@tcd.ie">
+                </div>
+                <div>
+                    <label for="quantity">TCD Student ID</label>
+                    <input type="text" id="tcdId" name="tcdId" value="00000000">
+                </div>
             </form>
             </div>
             <div id="tab-notif" data-tab-content>
-            <div>
+            <div class="tab-nav">
             <h4>My Account</h4>
-            <a href="#">Profile</a> 
-            <a href="#">Notifications</a>
-            <hr>
+                <span><a href="#">Profile</a><span>&#62;</span><a href="#">Notifications</a></span>
             </div>
+            <hr>
+
             <div>
                 <h5>Postd Notifications</h5>
             </div>
             <p class="subheader-02">I agree to notifications from Postd form:</p>
-            <form>
-                <input type="checkbox" id="emailnotif" name="email01">
-                <label for="option01">Email Notifications</label><br>
-                <input type="checkbox" id="option02" name="option02">
-                <label for="option02">Push Notifications for Inbox</label><br>
-                <input type="checkbox" id="option03" name="option03">
-                <label for="option03">Push Notifications for Like, Pins, and Comments</label><br>
+            <form class="checkbox-form">
+                <div>
+                    <input class="checkbox" type="checkbox" id="emailnotif" name="email01">
+                    <label for="option01">Email Notifications</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="option02" name="option02">
+                    <label for="option02">Push Notifications for Inbox</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="option03" name="option03">
+                    <label for="option03">Push Notifications for Like, Pins, and Comments</label>
+                </div>
+
             </form>
             </div>
             <div id="tab-password"data-tab-content>
-            <div>
+            <div class="tab-nav">
             <h4>My Account</h4>
-            <a href="#">Profile</a> 
-            <a href="#">Password</a>
+            <span><a href="#">Profile</a><span>&#62;</span><a href="#">Password</a></span>
             <hr>
             </div>
-                <div>
+                <div class="tab-header">
                     <h5>Change Password</h5>
                 </div>
-                <form>
-                    <label for="pwd">Current Password:</label><br>
-                    <input type="password" id="pwd" name="pwd"><br>
-                    <label for="pwd">New Password:</label><br>
-                    <input type="password" id="pwd" name="pwd"><br>
-                    <input type="submit" value="Submit">
+                <form class="account-form">
+                <div>
+                    <label for="pwd">Current Password:</label>
+                    <input type="password" id="pwd" name="pwd">
+                </div>
+                <div>
+                    <label for="pwd">New Password:</label>
+                    <input type="password" id="pwd" name="pwd">
+                </div>
+                    <button type="submit" value="Submit">Submit</button>
                 </form>
             </div>
 
         </div>
         </section>
-
-
-
 
         <section class="footer">
 
