@@ -18,7 +18,6 @@
   padding: 56px 52px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   min-height: 540px;
 }
 
@@ -27,12 +26,11 @@
 }
 
 .hero-title {
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 }
 
 .hero-body {
-  max-width: 380px;
-  margin-top: auto;
+  max-width: 425px;
 }
 
 /* ── RIGHT PANEL / FORM ── */
@@ -274,6 +272,43 @@ input#option03 {
 
 
 /* account external page styles start */
+
+.account-ext-header{
+  max-width: 500px;
+  margin-bottom: 32px;
+}
+
+#user-pronouns{
+  font-family: "Figtree", sans-serif;
+  font-weight: 500;
+  font-size: 1.313rem;
+}
+/* user profile photo image styles */
+
+#imageUpload{
+    display: none;
+  }
+
+#profileImage{
+    cursor: pointer;
+  }
+
+#profile-container {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+
+#profile-container img {
+    width: 150px;
+    height: 150px;
+  }
 
 
 /* account external page styles end */

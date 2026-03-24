@@ -9,9 +9,10 @@
     <script src="/app/JS/script.js" defer></script>
     <script src="/my-app/app/layout.tsx" defer></script>
     <script src="/my-app/app/page.tsx" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0&icon_names=account_circle" />
 </head>
 <body>
-<header>
+    <header>
     <nav>
         <div class="logo"><a href="/pages/bulletinboard.html">Postd</a></div>
         <ul>
@@ -22,12 +23,19 @@
             <li>  <div class="toggle"></div></li>
        </ul> 
     </nav>
-</header>
-    <section>
+    </header>
+    <section class="account-ext-header">
         <!-- this section must be updated with React to load users profile image, name, pronouns, and bio -->
-        <img src="#"></img>
+
+        <div id="profile-container">
+   <image id="profileImage" src="aDefaultImage.png" />
+    <form>
+        <input id="image" type="file" name="profile_photo" placeholder="Photo" required="" capture> 
+    </form>
+        </div>
+
         <h4>Jane Doe</h4>
-        <p>she/her</p>
+        <a href="#" id="user-pronouns">she/her</a>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, error ad. Ipsa eos consequatur recusandae. Reprehenderit deserunt dolor veritatis. A enim voluptates et consectetur aliquid vel sunt vero dolorem repellendus.</p>
     </section>
     <section>
@@ -35,5 +43,15 @@
         <hr>
         <div class="activity-cards"></div>
     </section>
+    <footer>
+    <p class=".small-text">© 2026 Postd</p>
+    <ul class="footer-links">
+    <li><a href="/pages/account_external.html">Account</a></li>
+    <li><a href="/pages/bulletinboard.html">Bulletin Board</a></li>
+    <li><a href="/pages/message_drafter.html">Message Drafter</a></li>
+     <li><a href="/pages/messages.html">Messages</a></li>
+    </ul>
+    <p class=".small-text">Created for academic purposes as part of the MSc Interactive Digital Media at Trinity College Dublin</p>
+</footer>
 </body>
 </html>

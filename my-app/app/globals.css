@@ -41,23 +41,20 @@ body {
   background-color: var(--lightmode-background);
   color: var(--lightmode-text);
 
+  /* links */
 
   a {
     color: var(--lightmode-links);
   }
 
-  /* nav colors */
+  /* nav + footer colors */
   nav li a {
     color: var(--lightmode-links);
   }
 
-  .nav-links:hover {
+  nav li a:hover {
     background-color: var(--deep-sea);
     color: var(--parchement-paper);
-  }
-
-  .nav-links:active {
-    stroke: solid 2px var(--deep-sea);
   }
 
   .sub-menu-wrap {
@@ -67,6 +64,14 @@ body {
   .sub-menu li a {
     color: var(--deep-sea);
     border-bottom: 2px solid var(--deep-sea);
+  }
+
+  footer {
+    border-top: 2px solid var(--deep-sea);
+  }
+
+  .footer-links li a:hover {
+    color: var(--terracotta);
   }
 
   /* button color styles */
@@ -92,23 +97,12 @@ body {
     color: var(--parchement-paper);
   }
 
-  .hero-panel {
-    background-color: var(--deep-sea);
-    color: var(--parchement-paper)
-  }
 
-  /* footer color styles */
-  footer {
-    border-top: 1.5px solid var(--pure-black);
-    color: var(--gray-tone);
-  }
-
-  .footer-links a {
-    color: var(--gray-tone);
-  }
-
-  .footer-links a:hover {
+  /* form color styles */
+  .account-form input {
+    background-color: var(--pure-white);
     color: var(--pure-black);
+    border: 2px solid var(--pure-black);
   }
 
   .checkbox-row label {
@@ -132,7 +126,6 @@ body {
   }
 
   /* tab color styles */
-
   section .tab-button {
     border-right: solid 2px var(--pure-black);
     background-color: var(--lightmode-background);
@@ -152,13 +145,21 @@ body {
     color: var(--lightmode-text);
   }
 
-  /* form color styles */
-  .account-form input {
-    background-color: var(--pure-white);
-    color: var(--pure-black);
-    border: 2px solid var(--pure-black);
+  /* user profile picture container styles */
+  #profile-container {
+    border: 2px solid var(--lightmode-text);
+    background-color: var(--cherrry-blossom);
   }
 
+  /* extra color styles */
+  .hero-panel {
+    background-color: var(--deep-sea);
+    color: var(--parchement-paper)
+  }
+
+  hr {
+    border: 2px solid var(--lightmode-text);
+  }
 }
 
 /*dark mode color styles*/
@@ -167,11 +168,13 @@ body.dark {
   background-color: var(--darkmode-background);
   color: var(--darkmode-text);
 
-
+  /* links*/
   a {
     color: var(--darkmode-links);
   }
 
+  /* nav + footer colors */
+  
   nav li a {
     color: var(--darkmode-links);
   }
@@ -183,6 +186,14 @@ body.dark {
 
   nav li a:active {
     stroke: solid 2px var(--parchement-paper);
+  }
+
+  footer {
+    border-top: 2px solid var(--parchement-paper);
+  }
+
+  .footer-links li a:hover {
+    color: var(--sky-blue);
   }
 
   .btn-primary {
@@ -207,22 +218,12 @@ body.dark {
     color: var(--parchement-paper);
   }
 
-  .hero-panel {
-    background-color: var(--parchement-paper);
-    color: var(--deep-sea)
-  }
 
-  footer {
-    border-top: 1.5px solid var(--parchement-paper);
-    color: var(--parchement-paper);
-  }
-
-  .footer-links a {
-    color: var(--parchement-paper);
-  }
-
-  .footer-links a:hover {
-    color: var(--parchement-paper);
+  /* form color styles */
+  .account-form input {
+    background-color: var(--default-gray);
+    color: var(--pure-black);
+    border: 2px solid var(--pure-white);
   }
 
   .checkbox-row label {
@@ -266,14 +267,21 @@ body.dark {
     color: var(--darkmode-text);
   }
 
-  /* form color styles */
-  .account-form input {
-    background-color: var(--default-gray);
-    color: var(--pure-black);
-    border: 2px solid var(--pure-white);
+  /* user profile picture container styles */
+  #profile-container {
+    border: 2px solid var(--darkmode-text);
+    background-color: var(--cherrry-blossom);
   }
 
+  /* extra color styles */
+  .hero-panel {
+    background-color: var(--parchement-paper);
+    color: var(--deep-sea)
+  }
 
+  hr {
+    border: 2px solid var(--darkmode-text);
+  }
 }
 
 /* colors end */
@@ -309,6 +317,8 @@ body.dark {
 }
 
 /* theme switch end */
+
+
 
 /* text styles start */
 
@@ -397,19 +407,21 @@ a {
   font-size: 1.313rem;
 }
 
-footer {
-  font-size: 0.78rem;
-}
-
 .footer-links a {
   text-decoration: none;
-  font-size: 0.82rem;
+  font-family: "Figtree", sans-serif;
+  font-weight: 500;
+  font-size: 1.313rem;
 }
 
 .nav-signin {
   font-size: 0.9rem;
   text-decoration: none;
   font-weight: 400;
+}
+
+nav li a {
+  text-decoration: none;
 }
 
 .nav-signin:hover {
@@ -423,20 +435,20 @@ footer {
 
 /* text styles end*/
 
-/* body styles start */
+
+
+
+/* general body styles start */
 
 body {
   max-width: 1440px;
   margin: 25px 72px;
 }
 
-hr {
-  stroke-width: 2px;
-}
 
 /* nav styles */
 nav {
-  margin: 0 auto;
+  margin-bottom: 45px;
   padding: 0 auto;
   display: flex;
   align-items: center;
@@ -456,8 +468,9 @@ nav li {
   padding: 0px 25px;
 }
 
-nav li a {
-  text-decoration: none;
+nav li a:hover {
+  padding: 10px 12px;
+  transition: all 200ms ease-in-out;
 }
 
 .logo a {
@@ -467,16 +480,6 @@ nav li a {
   letter-spacing: -0.02em;
   text-decoration: none;
   margin: 0 auto;
-}
-
-.nav-links:hover {
-  padding: 10px 12px;
-  transition: all 200ms ease-in-out;
-}
-
-.nav-links:active {
-  text-decoration: underline 2px var(--deep-sea);
-  transition: all 200ms ease-in-out;
 }
 
 /* profile icon styles */
@@ -515,15 +518,27 @@ nav li a {
 
 /* footer styles */
 footer {
-  padding: 16px 40px;
+  padding: 16px 0px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  padding-top: 32px;
 }
 
 .footer-links {
   display: flex;
   gap: 20px;
+  list-style-type: none;
+}
+
+.footer-links li a:hover {
+  transition: all 200ms ease-in-out;
+  text-decoration: underline;
+}
+
+footer p {
+  max-width: 250px;
+  ;
 }
 
 /* body styles end */
