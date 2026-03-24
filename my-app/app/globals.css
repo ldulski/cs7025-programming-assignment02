@@ -69,6 +69,10 @@ body {
     border-bottom: 2px solid var(--deep-sea);
   }
 
+  .footer-links li a:hover {
+    color: var(--terracotta);
+  }
+
   /* button color styles */
   .btn-primary {
     background-color: var(--lightmode-button-bg);
@@ -189,6 +193,10 @@ body.dark {
 
   nav li a:active {
     stroke: solid 2px var(--parchement-paper);
+  }
+
+  .footer-links li a:hover {
+    color: var(--sky-blue);
   }
 
   .btn-primary {
@@ -537,8 +545,15 @@ footer {
   gap: 20px;
   list-style-type: none;
 }
-footer p{
-  max-width: 250px;;
+
+.footer-links li a:hover {
+  transition: all 200ms ease-in-out;
+  text-decoration: underline;
+}
+
+footer p {
+  max-width: 250px;
+  ;
 }
 
 /* body styles end */
