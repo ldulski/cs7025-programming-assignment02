@@ -409,13 +409,12 @@ a {
   font-size: 1.313rem;
 }
 
-footer {
-  font-size: 0.78rem;
-}
 
 .footer-links a {
   text-decoration: none;
-  font-size: 0.82rem;
+  font-family: "Figtree", sans-serif;
+  font-weight: 500;
+  font-size: 1.313rem;
 }
 
 .nav-signin {
@@ -527,15 +526,19 @@ nav li a {
 
 /* footer styles */
 footer {
-  padding: 16px 40px;
+  padding: 16px 0px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 }
 
 .footer-links {
   display: flex;
   gap: 20px;
+  list-style-type: none;
+}
+footer p{
+  max-width: 250px;;
 }
 
 /* body styles end */
