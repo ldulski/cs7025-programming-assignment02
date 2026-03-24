@@ -41,7 +41,6 @@ body {
   --pure-black: #000;
   --pure-white: #fff;
 
-
   /* light mode colors  */
   --lightmode-background: var(--parchement-paper);
   --lightmode-text: var(--pure-black);
