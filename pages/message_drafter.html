@@ -29,7 +29,7 @@
     <!-- LEFT TOOLBAR -->
     <aside class="sidebar">
         <ul>
-            <li><span class="icon">⬆</span> Upload</li>
+            <li><span class="icon" id="sideUpload" onclick="document.getElementById('imageUpload').click()">⬆</span> Upload</li>
             <li><span class="icon">□</span> Templates</li>
             <li><span class="icon">✦</span> Elements</li>
             <li><span class="icon">▣</span> Backgrounds</li>
@@ -39,15 +39,38 @@
 
     <!-- MAIN CONTENT -->
     <main class="main-content">
-
         <div class="preview-section">
-            <div class="preview-box" id="previewBox"></div>
+            <div class="preview-scene">
+                <div class="preview-box" id="previewBox">
+
+                    <!-- Front for the image upload -->
+                    <div class="card-front" id="cardFront" onclick="document.getElementById('imageUpload').click()">
+                        <div class="upload-hint" id="uploadHint">
+                            <p>Click or drag images here<br>to decorate your postcard</p>
+                            <span>Upload JPG or PNG</span>
+                        </div>
+
+                        <div class="image-grid" id="imageGrid" style="display:none"></div>
+                    </div>
+
+                    <!-- Back for the message to preview the card after they write the content -->
+                    <div class="card-back" id="cardBack">
+                        <div class="card-back-message">
+                            <div class="card-back-recipient" id="cardRecipient">Dear Friend,</div>
+                            <div class="card-back-body" id="cardMessage">Your message will appear here after you click Preview.</div>
+                        </div>
+                        <div class="card-back-stamp">Stamp</div>
+                        <!-- add an image upload for the stamp -->
+                    </div>
+                </div>
+            </div>
 
             <!-- Floating Buttons -->
             <div class="floating-buttons">
-                <button class="circle-btn">↺</button>
-                <button class="circle-btn">＋</button>
+                <button class="circle-btn" onclick="flipCard()" title="Flip card">↺</button>
+                <button class="circle-btn" title="Add element">+</button>
             </div>
+        
         </div>
 
         <hr>
@@ -61,25 +84,99 @@
         </div>
 
         <div class="action-buttons">
-            <button class="outline-btn">Save Message</button>
+            <button class="outline-btn" onclick="saveMessage()">Save Message</button>
             <button class="teal-btn" onclick="previewMessage()">Preview</button>
-            <button class="teal-btn">Send</button>
+            <button class="teal-btn" onclick="sendMessage()">Send</button>
         </div>
-
     </main>
 </div>
 
 <footer>
     <p class=".small-text">© 2026 Postd</p>
-<ul class="footer-links">
-    <li><a href="/pages/account_external.html">Account</a></li>
-    <li><a href="/pages/bulletinboard.html">Bulletin Board</a></li>
-    <li><a href="/pages/message_drafter.html">Message Drafter</a></li>
-     <li><a href="/pages/messages.html">Messages</a></li>
-</ul>
-<p class=".small-text">Created for academic purposes as part of the MSc Interactive Digital Media at Trinity College Dublin</p>
+    <ul class="footer-links">
+        <li><a href="/pages/account_external.html">Account</a></li>
+        <li><a href="/pages/bulletinboard.html">Bulletin Board</a></li>
+        <li><a href="/pages/message_drafter.html">Message Drafter</a></li>
+        <li><a href="/pages/messages.html">Messages</a></li>
+    </ul>
+    <p class=".small-text">Created for academic purposes as part of the MSc Interactive Digital Media at Trinity College Dublin</p>
 </footer>
 
-<script src="drafter.js"></script>
+<script src="drafter.js"> //i can't find this file so ill put my js here for now
+
+    function flipCard() { //flips card
+        document.getElementById('previewBox').classList.toggle('flipped');
+    }
+
+    function previewMessage() {
+        const recipient = document.getElementById('recipient').value.trim();
+        const message   = document.getElementById('messageInput').value.trim();
+
+        document.getElementById('cardRecipient').textContent =
+        recipient || 'Dear Friend,';
+        document.getElementById('cardMessage').textContent =
+        message || 'Your message will appear here.';
+
+        // flip to show back
+        const card = document.getElementById('previewBox');
+        card.classList.add('flipped');
+    }
+
+    //uploads for the images
+    function handleImageUpload(event) {
+        loadImages(Array.from(event.target.files));
+    }
+    function loadImages(files) {
+        if (!files.length) return;
+        const front = document.getElementById('cardFront');
+        const grid  = document.getElementById('imageGrid');
+        const hint  = document.getElementById('uploadHint');
+
+        grid.innerHTML = '';
+        const count = Math.min(files.length, 3);
+        grid.className = `image-grid count-${count}`;
+
+        for (let i = 0; i < count; i++) {
+            const img = document.createElement('img');
+            img.src = URL.createObjectURL(files[i]);
+            img.alt = `Uploaded image ${i + 1}`;
+            grid.appendChild(img);
+        }
+
+        hint.style.display = 'none';
+        grid.style.display = 'grid';
+        front.classList.add('has-images');
+        front.onclick = null; // don't re-open picker if images present
+    }
+
+    const MAX_WORDS = 300;
+
+    function updateWordCount() {
+        const text  = document.getElementById('messageInput').value.trim();
+        const count = text === '' ? 0 : text.split(/\s+/).length;
+        const el    = document.getElementById('wordCounter');
+
+        el.textContent = `Word Count: ${count} / ${MAX_WORDS}`;
+        el.className   = 'word-counter';
+
+        if (count >= MAX_WORDS) {
+            el.classList.add('at-limit');
+        } 
+        else if (count >= MAX_WORDS * 0.85) {
+            el.classList.add('near-limit');
+        }
+    }
+
+    /* Save */
+    function saveMessage() {
+    // add later
+    }
+
+    /* Send */
+    function sendMessage() {
+    // add laterrrr
+    }
+
+</script>
 </body>
 </html>
