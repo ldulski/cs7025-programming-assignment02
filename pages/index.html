@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="/my-app/app/globals.css">
     <link rel="stylesheet" href="/app/CSS/pages-styles.css">
     <script src="/app/JS/script.js" defer></script>
+    <!--
     <script src="/my-app/app/layout.tsx" defer></script>
-    <script src="/my-app/app/page.tsx" defer></script>
+    <script src="/my-app/app/page.tsx" defer></script>-->
 </head>
 <body>
   
@@ -40,7 +41,7 @@
     <!-- RIGHT -->
     <div class="form-panel">
       <h2>Sign up</h2>
-      <p class="form-sub">or create your account or <a href="#">sign in</a></p>
+      <p class="form-sub">or create your account or <a href="/pages/sign-in.html">sign in</a></p>
 
       <div class="field">
         <label for="name">Your Name</label>
@@ -84,8 +85,8 @@
         <label for="terms">I agree to Postd's Conditions of Use and Privacy Notice</label>
       </div>
 
-      <button class="btn-primary" type="button">Create Account</button>
-      <button class="btn-secondary" type="button">Login with Trinity Email</button>
+      <button id="signupBtn" class="btn-primary" type="button">Create Account</button>
+      <button id="signinBtn" class="btn-secondary" type="button">Login with Trinity Email</button>
     </div>
 
   </main>
@@ -99,5 +100,7 @@
 </ul>
 <p class=".small-text">Created for academic purposes as part of the MSc Interactive Digital Media at Trinity College Dublin</p>
 </footer>
+<script src="/app/JS/firebase.js" type="module"></script>
+<script src="/app/JS/signup.js" type="module"></script>
 </body>
 </html>
