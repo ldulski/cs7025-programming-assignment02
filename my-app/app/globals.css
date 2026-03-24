@@ -159,6 +159,12 @@ body {
     border: 2px solid var(--pure-black);
   }
 
+  /* user profile picture container styles */
+  #profile-container {
+    border: 2px solid var(--lightmode-text);
+    background-color: var(--cherrry-blossom);
+  }
+
 }
 
 /*dark mode color styles*/
@@ -273,6 +279,12 @@ body.dark {
     border: 2px solid var(--pure-white);
   }
 
+
+  /* user profile picture container styles */
+  #profile-container {
+    border: 2px solid var(--darkmode-text);
+    background-color: var(--cherrry-blossom);
+  }
 
 }
 
@@ -436,7 +448,7 @@ hr {
 
 /* nav styles */
 nav {
-  margin: 0 auto;
+  margin-bottom: 45px;
   padding: 0 auto;
   display: flex;
   align-items: center;

@@ -79,22 +79,15 @@
 
   </main>
 
-  <script>
-    function togglePassword() {
-      const input = document.getElementById('password');
-      input.type = input.type === 'password' ? 'text' : 'password';
-    }
-
-    // Light/dark mode toggle (cosmetic swap)
-    document.getElementById('modeToggle').addEventListener('change', function () {
-      if (this.checked) {
-        document.documentElement.style.setProperty('--bg', '#f0f0f0');
-        document.documentElement.style.setProperty('--white', '#e8e8e8');
-      } else {
-        document.documentElement.style.setProperty('--bg', '#fdf3e7');
-        document.documentElement.style.setProperty('--white', '#ffffff');
-      }
-    });
-  </script>
+  <footer>
+    <p class=".small-text">© 2026 Postd</p>
+<ul class="footer-links">
+    <li><a href="/pages/account_external.html">Account</a></li>
+    <li><a href="/pages/bulletinboard.html">Bulletin Board</a></li>
+    <li><a href="/pages/message_drafter.html">Message Drafter</a></li>
+     <li><a href="/pages/messages.html">Messages</a></li>
+</ul>
+<p class=".small-text">Created for academic purposes as part of the MSc Interactive Digital Media at Trinity College Dublin</p>
+</footer>
 </body>
 </html>
