@@ -660,9 +660,9 @@
 
     /* sidebar */
     aside.sidebar {
-      width: 160px;
+      width: 200px;
       flex-shrink: 0;
-      border-right: 1px solid var(--default-gray);
+      border-right: 1px solid var(--gray-tone);
       padding: 2rem 0;
     }
 
@@ -754,7 +754,7 @@
       backface-visibility: hidden;
       border-radius: var(--radius);
       overflow: hidden;
-      background: var(--default-gray);
+      background: var(--gray-tone);
     }
 
     /* FRONT — image upload area */
@@ -762,14 +762,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 2px dashed var(--default-gray);
-      background: var(--default-gray);
+      border: 2px dashed var(--gray-tone);
+      background: var(--pure-white);
       cursor: pointer;
       transition: border-color 0.2s, background 0.2s;
     }
 
     .card-front:hover{
-      border-color: var(--sky-blue);
+      border-color: var(--gray-tone);
       background: linear-gradient(135deg, #DFF0EF 0%, #F0FAF9 50%, #D8EEEc 100%);
     }
 
@@ -821,7 +821,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      border: 1.5px solid var(--default-gray);
+      border: 1.5px solid var(--gray-tone);
     }
 
     /* postcard ruled lines on back */
@@ -829,7 +829,7 @@
       content: '';
       position: absolute;
       top: 0; bottom: 0; left: 55%; right: 0;
-      border-left: 1.5px solid var(--default-gray);
+      border-left: 1.5px solid var(--gray-tone);
       pointer-events: none;
     }
 
@@ -855,7 +855,7 @@
       position: absolute;
       top: 1.5rem; right: 1.5rem;
       width: 52px; height: 64px;
-      border: 1.5px solid var(--default-gray);
+      border: 1.5px solid var(--red-wine);
       border-radius: 4px;
       display: flex;
       align-items: center;
@@ -900,7 +900,7 @@
     /* divider */
     hr {
       border: none;
-      border-top: 1px solid var(--default-gray);
+      border-top: 1px solid var(--gray-tone);
     }
 
     /* input */
@@ -914,14 +914,14 @@
       left: 1rem; top: 50%;
       transform: translateY(-50%);
       font-style: italic;
-      color: var(--default-gray);
+      color: var(--gray-tone);
       pointer-events: none;
     }
 
     #recipient {
       width: 100%;
       padding: 0.75rem 1rem 0.75rem 2.5rem;
-      border: 1.5px solid var(--default-gray);
+      border: 1.5px solid var(--gray-tone);
       border-radius: 10px;
       background: var(--pure-white);
       color: var(--pure-black);
@@ -929,7 +929,7 @@
       transition: border-color 0.2s, box-shadow 0.2s;
     }
 
-    #recipient::placeholder { color: var(--default-gray); }
+    #recipient::placeholder { color: var(--gray-tone); }
 
     #recipient:focus {
       border-color: var(--sky-blue);
@@ -946,7 +946,7 @@
       min-height: 130px;
       padding: 1rem;
       padding-bottom: 2.25rem;
-      border: 1.5px solid var(--default-gray);
+      border: 1.5px solid var(--gray-tone);
       border-radius: 10px;
       background: var(--pure-white);
       line-height: 1.65;
@@ -956,7 +956,7 @@
       transition: border-color 0.2s, box-shadow 0.2s;
     }
 
-    #messageInput::placeholder { color: var(--default-gray); }
+    #messageInput::placeholder { color: var(--gray-tone); }
 
     #messageInput:focus {
       border-color: var(--sky-blue);
@@ -966,7 +966,7 @@
     .word-counter {
       position: absolute;
       bottom: 0.6rem; right: 0.85rem;
-      color: var(--default-gray);
+      color: var(--gray-tone);
       pointer-events: none;
     }
 
@@ -982,10 +982,10 @@
 
     .outline-btn {
       padding: 0.6rem 1.1rem;
-      border: 1.5px solid var(--default-gray);
+      border: 1.5px solid var(--gray-tone);
       border-radius: 8px;
       background: transparent;
-      color: var(--default-gray);
+      color: var(--gray-tone);
       cursor: pointer;
       display: flex;
       align-items: center;
