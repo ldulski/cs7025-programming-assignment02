@@ -566,5 +566,16 @@ footer p {
   transition: border-color 0.2s, background 0.2s;
   letter-spacing: -0.01em;
 }
-
 /* button styles end */
+
+/* svg icon styles start */
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 40
+}
+
+/* svg icon styles end */
