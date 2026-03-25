@@ -25,10 +25,13 @@
 </header>
 
 <div class="layout">
+    <!-- for the file upload -->
+    <input type="file" id="imageUpload" accept="image/*" multiple onchange="handleImageUpload(event)">
 
     <!-- LEFT TOOLBAR -->
     <aside class="sidebar">
         <ul>
+            <li id="sideUpload" onclick="document.getElementById('imageUpload').click()"><span class="icon">⬆</span> Upload</li>
             <li><span class="icon" id="sideUpload" onclick="document.getElementById('imageUpload').click()">⬆</span> Upload</li>
             <li><span class="icon">□</span> Templates</li>
             <li><span class="icon">✦</span> Elements</li>
@@ -60,6 +63,7 @@
                             <div class="card-back-body" id="cardMessage">Your message will appear here after you click Preview.</div>
                         </div>
                         <div class="card-back-stamp">Stamp</div>
+                        <!-- add an image upload for the stamp too -->
                         <!-- add an image upload for the stamp -->
                     </div>
                 </div>
@@ -102,6 +106,7 @@
     <p class=".small-text">Created for academic purposes as part of the MSc Interactive Digital Media at Trinity College Dublin</p>
 </footer>
 
+<script> //i can't find src="drafter.js" file so ill put my js here for now
 <script src="drafter.js"> //i can't find this file so ill put my js here for now
 
     function flipCard() { //flips card
