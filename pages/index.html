@@ -7,34 +7,24 @@
     <link rel="stylesheet" href="/my-app/app/globals.css">
     <link rel="stylesheet" href="/app/CSS/pages-styles.css">
     <script src="/app/JS/script.js" defer></script>
+    <!--
     <script src="/my-app/app/layout.tsx" defer></script>
-    <script src="/my-app/app/page.tsx" defer></script>
+    <script src="/my-app/app/page.tsx" defer></script>-->
 </head>
 <body>
+  
 <header>
     <nav>
-        <!-- please include toggle in all nav sections, I've added CSS and JS to make sure it'll change between light/dark mode. Thanks! - Logan -->
-    <button id="theme-switch">
-        <svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#353535"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
-        <svg  xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#FFFCF2"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
-    </button>
+        <div class="logo"><a href="/pages/bulletinboard.html">Postd</a></div>
+        <ul>
+            <li><a href="/pages/bulletinboard.html">Bulletin Board</a></li>
+            <li><a href="/pages/message_drafter.html">Message Drafter</a></li>
+            <li><a href="/pages/messages.html">Messages</a></li>
+            <li><a href="/pages/account_external.html">Profile</a></li>
+            <li>  <div class="toggle"></div></li>
+       </ul> 
     </nav>
 </header>
-
-  <nav>
-    <a href="#" class="logo">Postd</a>
-    <div class="nav-right">
-      <a href="#" class="nav-signin">Sign in</a>
-      <label class="toggle-wrap">
-        <span class="toggle">
-          <input type="checkbox" id="modeToggle" />
-          <span class="toggle-track"></span>
-          <span class="toggle-thumb"></span>
-        </span>
-        Light Mode
-      </label>
-    </div>
-  </nav>
 
   <!-- MAIN -->
   <main class="index-main">
@@ -42,16 +32,16 @@
     <!-- LEFT -->
     <div class="hero-panel">
       <div>
-        <p class="hero-eyebrow">Lorem ipsum dolor sit amet</p>
-        <h1 class="hero-title">Lorem ipsum<br>dolor sit amet<br>consectetur.</h1>
+        <p class="hero-eyebrow">Trinity's Digital Snail Mail App </p>
+        <h1 class="hero-title">You’ve Got Mail!</h1>
       </div>
-      <p class="hero-body">Lorem ipsum dolor sit amet consectetur. Donec praesent consequat arcu id convallis dignissim a diam. Quam elementum eu.</p>
+      <p class="hero-body"><b>Postd</b> is your online student-only pen-pal network. Create fun personalized postcards, exchange messages, and make connections across Trinity College Dublin.</p>
     </div>
 
     <!-- RIGHT -->
     <div class="form-panel">
       <h2>Sign up</h2>
-      <p class="form-sub">or create your account or <a href="#">sign in</a></p>
+      <p class="form-sub">or create your account or <a href="/pages/sign-in.html">sign in</a></p>
 
       <div class="field">
         <label for="name">Your Name</label>
@@ -95,28 +85,22 @@
         <label for="terms">I agree to Postd's Conditions of Use and Privacy Notice</label>
       </div>
 
-      <button class="btn-primary" type="button">Create Account</button>
-      <button class="btn-secondary" type="button">Login with Trinity Email</button>
+      <button id="signupBtn" class="btn-primary" type="button">Create Account</button>
+      <button id="signinBtn" class="btn-secondary" type="button">Login with Trinity Email</button>
     </div>
 
   </main>
-
-  <!-- <script>
-    function togglePassword() {
-      const input = document.getElementById('password');
-      input.type = input.type === 'password' ? 'text' : 'password';
-    }
-
-    // Light/dark mode toggle (cosmetic swap)
-    document.getElementById('modeToggle').addEventListener('change', function () {
-      if (this.checked) {
-        document.documentElement.style.setProperty('--bg', '#f0f0f0');
-        document.documentElement.style.setProperty('--white', '#e8e8e8');
-      } else {
-        document.documentElement.style.setProperty('--bg', '#fdf3e7');
-        document.documentElement.style.setProperty('--white', '#ffffff');
-      }
-    });
-  </script> -->
+<footer>
+    <p class=".small-text">© 2026 Postd</p>
+<ul class="footer-links">
+    <li><a href="/pages/account_external.html">Account</a></li>
+    <li><a href="/pages/bulletinboard.html">Bulletin Board</a></li>
+    <li><a href="/pages/message_drafter.html">Message Drafter</a></li>
+     <li><a href="/pages/messages.html">Messages</a></li>
+</ul>
+<p class=".small-text">Created for academic purposes as part of the MSc Interactive Digital Media at Trinity College Dublin</p>
+</footer>
+<script src="/app/JS/firebase.js" type="module"></script>
+<script src="/app/JS/signup.js" type="module"></script>
 </body>
 </html>

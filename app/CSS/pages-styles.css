@@ -1,641 +1,314 @@
-    :root {
-    /* all colors */
-    --parchement-paper: #FFF2E0;
-    --sky-blue: #7FC7CC;
-    --deep-sea: #092F33;
-    --moss-green: #4B5B34;
-    --terracotta: #AF5031;
-    --cherrry-blossom: #FDABA5;
-    --red-wine: #980204;
-    --sunshine-yellow: #EA8913;
-    --pure-black: #000;
-    --pure-white: #fff;
-    --gray-tone: #aaaaaa;
+@import '/my-app/app/globals.css';
+
+/* login page styles start */
+
+/* ── MAIN ── */
+.index-main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 40px;
+  padding: 16px 48px 48px;
+  align-items: start;
+}
+
+/* ── LEFT PANEL ── */
+.hero-panel {
+  border-radius: 20px;
+  padding: 56px 52px;
+  display: flex;
+  flex-direction: column;
+  min-height: 540px;
+}
+
+.hero-eyebrow {
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  margin-bottom: 25px;
+}
+
+.hero-body {
+  max-width: 425px;
+}
+
+/* ── RIGHT PANEL / FORM ── */
+.form-panel {
+  padding: 8px 0;
+}
+
+.form-panel h2 {
+  margin-bottom: 6px;
+}
+
+.form-sub {
+  margin-bottom: 28px;
+}
+
+.form-sub a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.field {
+  margin-bottom: 18px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 7px;
+}
+
+.input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrap .icon {
+  position: absolute;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.input-wrap input {
+  width: 100%;
+  border-radius: var(--radius);
+  padding: 13px 20px;
+  outline: none;
+  transition: 0.2s;
+}
 
 
-    /* light mode colors  */
-    --lightmode-background: var(--parchement-paper);
-    --lightmode-text: var(--pure-black);
-    --lightmode-button-bg: var(--sky-blue);
-    --lightmode-button-text: var(--parchement-paper);
-    --lightmode-links: var(--deep-sea);
-    --lightmode-svg: var(--deep-sea);
-    }
+.input-wrap.has-icon input {
+  padding-left: 44px;
+}
 
-    .dark-mode {
-    /* dark mode colors */
-    --darkmode-background: var(--deep-sea);
-    --darkmode-text: var(--parchement-paper);
-    --darkmode-button-bg: var(--parchement-paper);
-    --darkmode-button-text: var(--deep-sea);
-    --darkmode-links: var(--parchement-paper);
-    --darkmode-svg: var(--parchement-paper);
-    }
-    
-    
-    /* login page styles start */
+.eye-btn {
+  position: absolute;
+  right: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+}
 
-    /* nav */
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 48px;
-    }
+.eye-btn:hover {
+  color: var(--pure-black);
+}
 
-    .logo {
-      font-family: 'Figtree', sans-serif;
-      font-weight: 700;
-      font-size: 1.25rem;
-      letter-spacing: -0.02em;
-      color: var(--pure-black);
-      text-decoration: none;
-    }
+/* Checkbox */
+.checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 22px;
+}
 
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
+.checkbox-row label {
+  cursor: pointer;
+}
 
-    .nav-signin {
-      font-size: 0.9rem;
-      text-decoration: none;
-      font-weight: 400;
-    }
-    .nav-signin:hover { text-decoration: underline; }
 
-    /* Toggle */
-    .toggle-wrap {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.85rem;
-      color: var(--pure-black);
-    }
+/* Fade-in animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
 
-    .toggle {
-      position: relative;
-      width: 44px;
-      height: 24px;
-      cursor: pointer;
-    }
-    .toggle input { opacity: 0; width: 0; height: 0; }
-    .toggle-track {
-      position: absolute;
-      inset: 0;
-      background: var(--pure-black);
-      border-radius: 12px;
-      transition: background 0.25s;
-    }
-    .toggle-thumb {
-      position: absolute;
-      top: 3px;
-      left: 3px;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: #fff;
-      transition: transform 0.25s;
-    }
-    .toggle input:checked ~ .toggle-track { background: #ccc; }
-    .toggle input:checked ~ .toggle-thumb { transform: translateX(20px); }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    /* ── MAIN ── */
-    .index-main {
-      flex: 1;
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 40px;
-      padding: 16px 48px 48px;
-      align-items: start;
-    }
+nav {
+  animation: fadeUp 0.4s ease both;
+}
 
-    /* ── LEFT PANEL ── */
-    .hero-panel {
-      background: var(--pure-white);
-      border-radius: 20px;
-      padding: 56px 52px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 540px;
-    }
+.hero-panel {
+  animation: fadeUp 0.45s 0.05s ease both;
+}
 
-    .hero-eyebrow {
-      margin-bottom: 20px;
-    }
+.form-panel {
+  animation: fadeUp 0.45s 0.12s ease both;
+}
 
-    .hero-title {
-      margin-bottom: 40px;
-    }
+@media (max-width: 800px) {
+  .index-main {
+    grid-template-columns: 1fr;
+  }
 
-    .hero-body {
-      max-width: 380px;
-      margin-top: auto;
-    }
+  nav,
+  .index-main {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 
-    /* ── RIGHT PANEL / FORM ── */
-    .form-panel {
-      padding: 8px 0;
-    }
-
-    .form-panel h2 {
-      margin-bottom: 6px;
-    }
-
-    .form-sub {
-      margin-bottom: 28px;
-    }
-
-    .form-sub a {
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-
-    .field {
-      margin-bottom: 18px;
-    }
-
-    .field label {
-      display: block;
-      margin-bottom: 7px;
-    }
-
-    .input-wrap {
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
-
-    .input-wrap .icon {
-      position: absolute;
-      left: 16px;
-      display: flex;
-      align-items: center;
-      pointer-events: none;
-    }
-
-    .input-wrap input {
-      width: 100%;
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      padding: 13px 20px;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    .input-wrap input::placeholder { 
-        color: var(--gray-tone); 
-    }
-    
-    .input-wrap input:focus { 
-        border-color: var(--pure-black); 
-    }
-
-    .input-wrap.has-icon input { padding-left: 44px; }
-
-    .eye-btn {
-      position: absolute;
-      right: 14px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: var(--gray-tone);
-      display: flex;
-      align-items: center;
-      padding: 4px;
-    }
-    .eye-btn:hover { 
-        color: var(--pure-black); 
-    }
-
-    /* Checkbox */
-    .checkbox-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 22px;
-    }
-/* 
-    .checkbox-row input[type="checkbox"] {
-      appearance: none;
-      -webkit-appearance: none;
-      width: 20px;
-      height: 20px;
-      min-width: 20px;
-      border: 2px solid var(--parchement-paper);
-      border-radius: 5px;
-      background: var(--parchement-paper);
-      cursor: pointer;
-      position: relative;
-      margin-top: 1px;
-    }
-
-    .checkbox-row input[type="checkbox"]::after {
-      content: '';
-      position: absolute;
-      left: 4px;
-      top: 1px;
-      width: 7px;
-      height: 11px;
-      border: 2px solid white;
-      border-top: none;
-      border-left: none;
-    } */
-
-    .checkbox-row label {
-      font-size: 0.82rem;
-      color: var(--pure-black);
-      line-height: 1.5;
-      cursor: pointer;
-    }
-
-    /* Buttons */
-    .btn-primary {
-      width: 100%;
-      padding: 14px;
-      background: var(--accent);
-      color: var(--pure-black);
-      border: none;
-      border-radius: var(--radius);
-      cursor: pointer;
-      transition: background 0.2s, transform 0.1s;
-      margin-bottom: 12px;
-      letter-spacing: -0.01em;
-    }
-    .btn-primary:hover { 
-        background: var(--deep-sea); 
-    }
-    .btn-primary:active { 
-        transform: scale(0.99); 
-    }
-
-    .btn-secondary {
-      width: 100%;
-      padding: 13px;
-      background: transparent;
-      color: var(--pure-black);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      cursor: pointer;
-      transition: border-color 0.2s, background 0.2s;
-      letter-spacing: -0.01em;
-    }
-    .btn-secondary:hover { 
-        border-color: var(--pure-black); 
-        background: rgba(0,0,0,0.02); 
-    }
-
-    /* Fade-in animation */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(14px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    nav  { animation: fadeUp 0.4s ease both; }
-    .hero-panel { animation: fadeUp 0.45s 0.05s ease both; }
-    .form-panel { animation: fadeUp 0.45s 0.12s ease both; }
-
-    @media (max-width: 800px) {
-      .index-main { grid-template-columns: 1fr; }
-      nav, .index-main { padding-left: 24px; padding-right: 24px; }
-      .hero-panel { min-height: unset; }
-    }
-
+  .hero-panel {
+    min-height: unset;
+  }
+}
 
 /* login page styles end */
 
 
 
 
-
-/* setup quiz page styles start */
-
-
-    .logo {
-      font-weight: 700;
-      font-size: 1.2rem;
-      letter-spacing: -0.02em;
-      text-decoration: none;
-      color: var(--pure-black);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
-
-    .nav-links a {
-      font-size: 0.88rem;
-      color: var(--pure-black);
-      text-decoration: none;
-      font-weight: 400;
-    }
-    .nav-links a:hover { text-decoration: underline; }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .icon-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: var(--pure-black);
-      display: flex;
-      align-items: center;
-      padding: 2px;
-    }
-
-    /* ── main section - using classes for file managing sake ── */
-    .quiz-main {
-      flex: 1;
-      padding: 48px 40px 32px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .progress-bar-wrap {
-      width: 100%;
-      max-width: 500px;
-      height: 4px;
-      background: var(--gray-tone);
-      border-radius: 2px;
-      margin-bottom: 40px;
-      overflow: hidden;
-    }
-    .progress-bar-fill {
-      height: 100%;
-      background: var(--sky-blue);
-      border-radius: 2px;
-      transition: width 0.5s cubic-bezier(.4,0,.2,1);
-    }
-
-    /* Quiz stage */
-    .quiz-viewport {
-      overflow: hidden;
-      width: 100%;
-      max-width: 500px;
-      min-height: 420px;
-      position: relative;
-    }
-
-    .quiz-stage {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Animations */
-    @keyframes slideInRight {
-      from { opacity: 0; transform: translateX(60px); }
-      to   { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes slideOutLeft {
-      from { opacity: 1; transform: translateX(0); }
-      to   { opacity: 0; transform: translateX(-60px); }
-    }
-    @keyframes slideInLeft {
-      from { opacity: 0; transform: translateX(-60px); }
-      to   { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes slideOutRight {
-      from { opacity: 1; transform: translateX(0); }
-      to   { opacity: 0; transform: translateX(60px); }
-    }
-
-    .quiz-stage.enter-right { animation: slideInRight 0.42s cubic-bezier(.4,0,.2,1) both; }
-    .quiz-stage.exit-left   { animation: slideOutLeft  0.38s cubic-bezier(.4,0,.2,1) both; }
-    .quiz-stage.enter-left  { animation: slideInLeft   0.42s cubic-bezier(.4,0,.2,1) both; }
-    .quiz-stage.exit-right  { animation: slideOutRight 0.38s cubic-bezier(.4,0,.2,1) both; }
-
-    .eyebrow {
-      font-size: 0.88rem;
-      font-weight: 400;
-      color: var(--gray-tone);
-      margin-bottom: 12px;
-      letter-spacing: -0.01em;
-    }
-
-    .question-title {
-      font-family: 'Figtree', sans-serif;
-      font-weight: 700;
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      letter-spacing: -0.03em;
-      line-height: 1.2;
-      margin-bottom: 32px;
-      max-width: 560px;
-    }
-
-    /* Options */
-    .options {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 32px;
-    }
-
-    .option-btn {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      width: fit-content;
-      min-width: 260px;
-      max-width: 340px;
-      padding: 13px 22px;
-      border: 1.5px solid var(--gray-tone);
-      border-radius: var(--radius);
-      background: transparent;
-      font-family: 'Figtree', sans-serif;
-      font-size: 0.88rem;
-      color: var(--pure-black);
-      cursor: pointer;
-      transition: background 0.18s, border-color 0.18s, transform 0.12s;
-      text-align: left;
-    }
-    .option-btn:hover {
-      background: rgba(0,0,0,0.04);
-      transform: translateX(3px);
-    }
-    .option-btn.selected {
-      background: var(--sky-blue);
-      color: var(--parchement-paper);
-      border-color: var(--parchement-paper);
-    }
-
-    .option-num {
-      font-size: 0.75rem;
-      opacity: 0.45;
-      min-width: 18px;
-    }
-
-    /* Next button */
-    .btn-next {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      width: 160px;
-      padding: 13px 0;
-      background: var(--sky-blue);
-      color: var(--pure-black);
-      border: none;
-      border-radius: var(--radius);
-      font-family: 'Figtree', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background 0.2s, opacity 0.2s, transform 0.1s;
-      opacity: 0.4;
-      pointer-events: none;
-    }
-    .btn-next.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .btn-next.active:hover { background: var(--red-wine); color: var(--parchement-paper); }
-    .btn-next.active:active { transform: scale(0.98); }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1.5px solid var(--pure-black);
-      padding: 16px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.78rem;
-      color: var(--gray-tone);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 20px;
-    }
-    .footer-links a {
-      color: var(--gray-tone);
-      text-decoration: none;
-      font-size: 0.82rem;
-    }
-    .footer-links a:hover { color: var(--pure-black); }
-
-    /* ── RESULT SCREEN ── */
-    .result-screen {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 16px;
-      padding-top: 8px;
-    }
-    .result-screen .eyebrow { color: var(--sky-blue); font-weight: 600; }
-    .result-screen h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-    }
-    .result-screen p {
-      font-size: 0.92rem;
-      color: var(--mid);
-      max-width: 420px;
-      line-height: 1.6;
-    }
-    .btn-restart {
-      margin-top: 8px;
-      padding: 13px 28px;
-      background: var(--pure-black);
-      color: #fff;
-      border: none;
-      border-radius: var(--radius);
-      font-family: 'Figtree', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: opacity 0.2s;
-    }
-    .btn-restart:hover { opacity: 0.8; }
-
-    @media (max-width: 600px) {
-      nav, .quiz-main, footer { padding-left: 20px; padding-right: 20px; }
-      .nav-links { display: none; }
-    }
-
-    /* QUIZ VIEWPORT */
-
-    .quiz-viewport {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    }
-
-    /* STACK STAGES */
-
-    .quiz-stage {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    }
-
-    /* ANIMATIONS */
-
-    .enter-right {
-    animation: enterRight .45s ease forwards;
-    }
-
-    .enter-left {
-    animation: enterLeft .45s ease forwards;
-    }
-
-    .exit-left {
-    animation: exitLeft .45s ease forwards;
-    }
-
-    .exit-right {
-    animation: exitRight .45s ease forwards;
-    }
-
-    @keyframes enterRight {
-    from { transform: translateX(60px); opacity:0; }
-    to   { transform: translateX(0); opacity:1; }
-    }
-
-    @keyframes enterLeft {
-    from { transform: translateX(-60px); opacity:0; }
-    to   { transform: translateX(0); opacity:1; }
-    }
-
-    @keyframes exitLeft {
-    from { transform: translateX(0); opacity:1; }
-    to   { transform: translateX(-60px); opacity:0; }
-    }
-
-    @keyframes exitRight {
-    from { transform: translateX(0); opacity:1; }
-    to   { transform: translateX(60px); opacity:0; }
-    }
-
-/* setup quiz page styles end */
-
-
 /* bulletin board page styles start */
-.bulletin-hero {
-    background-image: url(/app/Images/corkboard.png);
-    background-repeat: repeat;
-}
 
 /* bulletin board page styles end */
 
 
 /* account internal page styles start */
+.tab {
+  display: flex;
+  gap: 32px;
 
+}
+
+.tab-content {
+  padding: 0px 12px;
+}
+
+[data-tab-content] {
+  display: none;
+  padding: 6px 12px;
+}
+
+.active[data-tab-content] {
+  display: block;
+}
+
+.tab button {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 500;
+  font-size: 1.313rem;
+  text-align: left;
+  text-decoration: none;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.4s;
+}
+
+div.tab-button {
+  max-width: 200px;
+}
+
+.tab-nav {
+  margin-bottom: 25px;
+}
+
+.tab-nav a {
+  padding-right: 10px;
+}
+
+.user-info {
+  display: flex;
+  flex-flow: row nowrap;
+  min-height: 125px;
+  margin: 0 auto;
+}
+
+.account-form {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 25px;
+}
+
+.account-form div {
+  min-width: 375px;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 10px;
+}
+
+.account-form input {
+  border-radius: 20px;
+  padding: 14px 16px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+
+.tab-header {
+  margin-bottom: 15px;
+}
+
+.checkbox-form {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 15px;
+}
+
+.checkbox-form label {
+  font-family: "Figtree", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+input#emailnotif.checkbox,
+input#option02,
+input#option03 {
+
+  width: 25px;
+  height: 25px;
+}
 
 /* account internal page styles end */
 
 
 /* account external page styles start */
+
+.account-ext-header{
+  max-width: 500px;
+  margin-bottom: 32px;
+}
+
+#user-pronouns{
+  font-family: "Figtree", sans-serif;
+  font-weight: 500;
+  font-size: 1.313rem;
+}
+/* user profile photo image styles */
+
+#imageUpload{
+    display: none;
+  }
+
+#profileImage{
+    cursor: pointer;
+  }
+
+#profile-container {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+
+#profile-container img {
+    width: 150px;
+    height: 150px;
+  }
 
 
 /* account external page styles end */

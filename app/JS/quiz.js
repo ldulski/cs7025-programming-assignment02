@@ -1,3 +1,6 @@
+import { auth, db } from "./firebase.js";
+import { doc, setDoc } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js"
+
 const questions = [
   {
     eyebrow: "Find Your Pen Pal",
@@ -41,6 +44,17 @@ const questions = [
   }
 ];
 
+const colorMap = [
+    ["blue", "yellow", "red"],
+    ["red", "blue", "yellow"],
+    ["yellow", "red", "blue"],
+    ["red", "blue", "yellow"],
+    ["blue", "red", "yellow"],
+    ["yellow", "red", "blue"],
+    ["red", "blue", "yellow"],
+    ["red", "blue", "yellow"]
+];
+
 let current = 0;
 let answers = Array(questions.length).fill(null);
 let isAnimating = false;
@@ -54,6 +68,49 @@ const optionHTML = (opt, i, saved) => `
     <span>${opt}</span>
   </button>
 `;
+
+function findColor() {
+  const counts = {};
+
+  answers.forEach((answer, i) => {
+    const color = colorMap[i][answer];
+    counts[color] = (counts[color] || 0) + 1;
+  });
+
+  //look for the most repeated color and return
+  let maxColor = null;
+  let maxCount = 0;
+
+  for (const color in counts) {
+    if (counts[color] > maxCount) {
+      maxColor = color;
+      maxCount = counts[color];
+    }
+  }
+
+  return maxColor;
+}
+
+async function saveUserColor(color){
+  const user = auth.currentUser;
+  
+  if(!user){
+    console.error("No user logged in");
+    return;
+  }
+
+  try{
+    //save the users info including answers - create new doc if it doesn't exist
+    await setDoc(doc(db, "users", user.uid),{
+      color: color,
+      answers: answers,
+      email: user.email,
+      createdAt: new Date()
+    }, {merge:true});
+  } catch(error){
+    console.error("error saving to database (firestore)", error);
+  }
+}
 
 function buildStage(index) {
   const { eyebrow, question, options } = questions[index];
@@ -79,18 +136,22 @@ function buildStage(index) {
 }
 
 function buildResultStage() {
+  const color = findColor();
+  
   const stage = document.createElement("div");
   stage.className = "quiz-stage";
+  
 
   stage.innerHTML = `
     <div class="result-screen">
       <p class="eyebrow">Your results are in...</p>
-      <h2>We've identitifed your group assignment!</h2>
+      <h2>We've identitifed your group assignment! You are in the <span class="color-${color}">${color}</span> group!</h2>
       <p>Based on your answers, blah blah blah.</p>
       <button class="btn-restart">Start Over</button>
     </div>
   `;
 
+  saveUserColor(color);
   return stage;
 }
 
@@ -178,3 +239,4 @@ document.getElementById("modeToggle").addEventListener("change", e => {
     e.target.checked ? "#f0ece6" : "#fdf3e7"
   );
 });
+
