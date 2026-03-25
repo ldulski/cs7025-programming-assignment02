@@ -25,11 +25,13 @@
 </header>
 
 <div class="layout">
+    <!-- for the file upload -->
+    <input type="file" id="imageUpload" accept="image/*" multiple onchange="handleImageUpload(event)">
 
     <!-- LEFT TOOLBAR -->
     <aside class="sidebar">
         <ul>
-            <li><span class="icon" id="sideUpload" onclick="document.getElementById('imageUpload').click()">⬆</span> Upload</li>
+            <li id="sideUpload" onclick="document.getElementById('imageUpload').click()"><span class="icon">⬆</span> Upload</li>
             <li><span class="icon">□</span> Templates</li>
             <li><span class="icon">✦</span> Elements</li>
             <li><span class="icon">▣</span> Backgrounds</li>
