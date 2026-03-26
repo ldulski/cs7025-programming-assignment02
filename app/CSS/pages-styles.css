@@ -339,7 +339,7 @@ input#option03 {
 aside.sidebar {
   max-width: 375px;
   flex-shrink: 0;
-  padding: 2rem 0;
+  padding: 2rem;
 }
 
 aside.sidebar ul {
