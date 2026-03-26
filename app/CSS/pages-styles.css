@@ -189,6 +189,7 @@ nav {
 .tab button {
   display: flex;
   flex-flow: row wrap;
+  gap: 15px;
   margin: 0px;
   font-family: "Figtree", sans-serif;
   font-weight: 500;
