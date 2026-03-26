@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Message Drafter</title>
-        <link rel="stylesheet" href="/my-app/app/globals.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="/my-app/app/globals.css">
     <link rel="stylesheet" href="/app/CSS/pages-styles.css">
     <script src="/app/JS/script.js" defer></script>
     <script src="/my-app/app/layout.tsx" defer></script>
     <script src="/my-app/app/page.tsx" defer></script>
     <script src="/app/JS/drafter.js" defer></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <body>
 
 <header>
@@ -32,17 +32,11 @@
     <!-- LEFT TOOLBAR -->
     <aside class="sidebar">
         <ul>
-            <li id="sideUpload" onclick="document.getElementById('imageUpload').click()"><span class="material-symbols-outlined">
-upload
-</span> Upload</li>
-            <li><span class="material-symbols-outlined">
-browse
-</span> Templates</li>
-            <li><span class="material-symbols-outlined">
-eec2
-</span> Elements</li>
-            <li><span class="icon">▣</span> Backgrounds</li>
-            <li><span class="icon">☰</span> Drafts</li>
+            <li id="sideUpload" onclick="document.getElementById('imageUpload').click()"><span class="material-icons-outlined">file_upload</span>Upload</li>
+            <li><span class="material-icons-outlined">auto_awesome_mosaic</span>Templates</li>
+            <li><span class="material-icons-outlined">add_box</span>Elements</li>
+            <li><span class="material-icons-outlined">fit_screen</span> Backgrounds</li>
+            <li><span class="material-icons-outlined">note</span> Drafts</li>
         </ul>
     </aside>
 
@@ -56,7 +50,7 @@ eec2
                     <div class="card-front" id="cardFront" onclick="document.getElementById('imageUpload').click()">
                         <div class="upload-hint" id="uploadHint">
                             <p>Click or drag images here<br>to decorate your postcard</p>
-                            <span>Upload JPG or PNG</span>
+                            <span class="small-text">Upload JPG or PNG</span>
                         </div>
 
                         <div class="image-grid" id="imageGrid" style="display:none"></div>

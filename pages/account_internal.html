@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="/my-app/app/globals.css">
     <link rel="stylesheet" href="/app/CSS/pages-styles.css">
     <script src="/app/JS/script.js" defer></script>
@@ -51,7 +52,12 @@ account_circle
             <hr>
             </div>
             <div class="user-info">
-            <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)"></p>
+                <div id="profile-container">
+                    <image id="profileImage" src="aDefaultImage.png" />
+                        <form>
+                            <input id="image" type="file" name="profile_photo" placeholder="Photo" required="" capture> 
+                        </form>
+                </div>
             <!-- change to have it be automatically updated to users name -->
             <h5>Jane Doe</h5> 
             </div>

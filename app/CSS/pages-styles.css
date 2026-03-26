@@ -218,8 +218,10 @@ div.tab-button {
 .user-info {
   display: flex;
   flex-flow: row nowrap;
+  align-items: center;
   min-height: 125px;
   margin: 0 auto;
+  gap: 15px;
 }
 
 .account-form {
