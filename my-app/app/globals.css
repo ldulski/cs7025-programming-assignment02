@@ -321,6 +321,22 @@ body {
     background-color: var(--pure-white);
   }
 
+  /* post it note colors */
+  .blue {
+    background-color: var(--sky-blue);
+    color: var(--deep-sea);
+  }
+
+  .yellow {
+    background-color: var(--sunshine-yellow);
+    color: var(--deep-sea);
+  }
+
+  .pink {
+    background-color: var(--cherrry-blossom);
+    color: var(--deep-sea);
+  }
+
   /* extra color styles */
   .hero-panel {
     background-color: var(--deep-sea);
@@ -611,6 +627,23 @@ body.dark {
   .backgrounds-dropdown-content,
   .drafts-dropdown-content {
     background-color: var(--pure-white);
+  }
+
+
+  /* post it note colors */
+  .blue {
+    background-color: var(--sky-blue);
+    color: var(--deep-sea);
+  }
+
+  .yellow {
+    background-color: var(--sunshine-yellow);
+    color: var(--deep-sea);
+  }
+
+  .pink {
+    background-color: var(--cherrry-blossom);
+    color: var(--deep-sea);
   }
 
   /* extra color styles */

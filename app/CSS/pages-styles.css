@@ -165,7 +165,41 @@ nav {
 
 
 /* bulletin board page styles start */
-  
+.bulletin-hero {
+  /* max-width: 1300px; */
+  background-image: url("/app/Images/corkboard.png");
+  height: auto;
+  background-image: repeat;
+  background-size: cover;
+
+}
+
+.postItContainer {
+  padding: 2rem;
+  display: flex;
+  gap: 25px;
+}
+
+.postIt {
+  width: 350px;
+  height: 350px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  padding: 2rem;
+
+}
+
+.like-save{
+  display: flex;
+}
+
+.addMsg{
+display: flex;
+justify-content: flex-end;
+padding: 2rem;
+
+}
 /* bulletin board page styles end */
 
 
