@@ -165,7 +165,41 @@ nav {
 
 
 /* bulletin board page styles start */
+.bulletin-hero {
+  /* max-width: 1300px; */
+  background-image: url("/app/Images/corkboard.png");
+  height: auto;
+  background-image: repeat;
+  background-size: cover;
 
+}
+
+.postItContainer {
+  padding: 2rem;
+  display: flex;
+  gap: 25px;
+}
+
+.postIt {
+  width: 350px;
+  height: 350px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  padding: 2rem;
+
+}
+
+.like-save{
+  display: flex;
+}
+
+.addMsg{
+display: flex;
+justify-content: flex-end;
+padding: 2rem;
+
+}
 /* bulletin board page styles end */
 
 
@@ -332,14 +366,13 @@ input#option03 {
   flex: 1;
   max-width: 1200px;
   margin: 0px 0px 45px 0px;
-  width: 100%;
-  padding: 0 2rem;
+  padding: 0;
   gap: 0;
 }
 
 /* sidebar */
 aside.sidebar {
-  max-width: 375px;
+  max-width: 350px;
   flex-shrink: 0;
   padding: 2rem;
 }
@@ -365,8 +398,6 @@ aside.sidebar li {
   font-size: 1.313rem;
 }
 
-
-
 aside.sidebar li svg {
   width: 17px;
   height: 17px;
@@ -379,19 +410,22 @@ aside.sidebar li svg {
 .elements-dropdown-content,
 .backgrounds-dropdown-content,
 .drafts-dropdown-content {
-  height: 400px;
-  padding-left: 32px;
+  display: none;
+  height: 250px;
+  max-width: 300px;
+  padding-left: 25px;
   border: 0;
   margin: 0;
   overflow-y: scroll;
   background: transparent;
+  border-radius: 20px;
 }
 
 .themeImgContainer {
   cursor: pointer;
   display: inline-block;
-  width: 190px;
-  height: 117px;
+  max-width: 100px;
+  height: auto;
   margin: 8px 8px 0px 0px;
   position: relative;
   box-sizing: border-box;

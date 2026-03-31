@@ -80,9 +80,8 @@ body {
   }
 
   .btn-primary:hover {
-    background-color: var(--parchement-paper);
-    color: var(--deep-sea);
-    stroke: solid 2px var(--deep-sea);
+    background-color: var(--deep-sea);
+    color: var(--parchement-paper);
   }
 
   .btn-secondary {
@@ -315,6 +314,29 @@ body {
     stroke: currentColor;
   }
 
+  .templates-dropdown-content,
+  .elements-dropdown-content,
+  .backgrounds-dropdown-content,
+  .drafts-dropdown-content {
+    background-color: var(--pure-white);
+  }
+
+  /* post it note colors */
+  .blue {
+    background-color: var(--sky-blue);
+    color: var(--deep-sea);
+  }
+
+  .yellow {
+    background-color: var(--sunshine-yellow);
+    color: var(--deep-sea);
+  }
+
+  .pink {
+    background-color: var(--cherrry-blossom);
+    color: var(--deep-sea);
+  }
+
   /* extra color styles */
   .hero-panel {
     background-color: var(--deep-sea);
@@ -361,20 +383,18 @@ body.dark {
   }
 
   .btn-primary {
-    background-color: var(--darkmode-button-bg);
+    background-color: var(--parchement-paper);
     color: var(--darkmode-button-text);
   }
 
   .btn-primary:hover {
-    background-color: var(--parchement-paper);
-    color: var(--deep-sea);
-    stroke: solid 2px var(--deep-sea);
+    background-color: var(--sky-blue);
+    color: var(--parchement-paper);
   }
 
   .btn-secondary {
-    background-color: var(--parchement-paper);
+    background-color: var(--sky-blue);
     color: var(--deep-sea);
-    stroke: solid 2px var(--deep-sea);
   }
 
   .btn-secondary:hover {
@@ -600,6 +620,30 @@ body.dark {
   .teal-btn svg,
   .outline-btn svg {
     stroke: currentColor;
+  }
+
+  .templates-dropdown-content,
+  .elements-dropdown-content,
+  .backgrounds-dropdown-content,
+  .drafts-dropdown-content {
+    background-color: var(--pure-white);
+  }
+
+
+  /* post it note colors */
+  .blue {
+    background-color: var(--sky-blue);
+    color: var(--deep-sea);
+  }
+
+  .yellow {
+    background-color: var(--sunshine-yellow);
+    color: var(--deep-sea);
+  }
+
+  .pink {
+    background-color: var(--cherrry-blossom);
+    color: var(--deep-sea);
   }
 
   /* extra color styles */

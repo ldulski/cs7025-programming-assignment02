@@ -11,3 +11,13 @@ Logan: Installed Next.js and Node.js (the latest versions and connected to VS Co
         -please use "var(--'colorname-here');" if you need to rename/edit styles for any reason
 
 -ask Joris about firebase tomorrow in class
+
+sticker attributes: 
+https://www.flaticon.com/free-stickers/planner
+https://www.flaticon.com/free-stickers/planner
+https://www.flaticon.com/free-stickers/email
+https://www.flaticon.com/free-stickers/contact
+https://www.flaticon.com/free-stickers/friendship
+https://www.flaticon.com/free-stickers/good-job
+https://www.flaticon.com/free-stickers/lips
+https://www.flaticon.com/free-stickers/love-and-romance
