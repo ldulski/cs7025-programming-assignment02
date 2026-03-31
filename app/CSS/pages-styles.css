@@ -394,6 +394,10 @@ aside.sidebar li svg {
   box-sizing: border-box;
 }
 
+.themeImgContainer img {
+  width: 100%;
+  height: 100%;
+}
 
 /* hidden file input */
 #imageUpload {
