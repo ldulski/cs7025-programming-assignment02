@@ -30,16 +30,41 @@
     <input type="file" id="imageUpload" accept="image/*" multiple onchange="handleImageUpload(event)">
 
     <!-- LEFT TOOLBAR -->
+    <div class="template-dropdown">
     <aside class="sidebar">
         <ul>
             <li id="sideUpload" onclick="document.getElementById('imageUpload').click()"><span class="material-icons-outlined">file_upload</span>Upload</li>
             <li><span class="material-icons-outlined">auto_awesome_mosaic</span>Templates</li>
+                <div class="templates-dropdown-content">
+                    <p class="small-text">Pick your template</p>
+                    <div class="themeImgContainer" id=""><img src=""></div>
+                    <div class="themeImgContainer" id=""><img src=""></div>
+                    <div class="themeImgContainer" id=""><img src=""></div>
+                    <div class="themeImgContainer" id=""><img src=""></div>
+                </div>
             <li><span class="material-icons-outlined">add_box</span>Elements</li>
+                <div class="elements-dropdown-content">
+                    <p class="small-text">Pick your element</p>
+                    <div class="themeImgContainer" id=""><img src=""></div>
+                    <div class="themeImgContainer" id=""><img src=""></div>
+                    <div class="themeImgContainer" id=""><img src=""></div>
+                    <div class="themeImgContainer" id=""><img src=""></div>
+                </div>
             <li><span class="material-icons-outlined">fit_screen</span> Backgrounds</li>
+                <div class="backgrounds-dropdown-content">
+                    <p class="small-text">Pick your background</p>
+                    <div class="themeImgContainer" id=""><img src=""></div>
+                    <div class="themeImgContainer" id=""><img src=""></div>
+                    <div class="themeImgContainer" id=""><img src=""></div>
+                    <div class="themeImgContainer" id=""><img src=""></div>
+                </div>
             <li><span class="material-icons-outlined">note</span> Drafts</li>
+                <div class="upload-dropdown-content">
+                    <p class="small-text">View your drafts</p>
+                </div>
         </ul>
     </aside>
-
+    </div>
     <!-- MAIN CONTENT -->
     <main class="main-content">
         <div class="preview-section">
