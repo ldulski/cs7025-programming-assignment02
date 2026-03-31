@@ -339,7 +339,7 @@ input#option03 {
 
 /* sidebar */
 aside.sidebar {
-  max-width: 375px;
+  max-width: 350px;
   flex-shrink: 0;
   padding: 2rem;
 }
@@ -365,8 +365,6 @@ aside.sidebar li {
   font-size: 1.313rem;
 }
 
-
-
 aside.sidebar li svg {
   width: 17px;
   height: 17px;
@@ -379,19 +377,20 @@ aside.sidebar li svg {
 .elements-dropdown-content,
 .backgrounds-dropdown-content,
 .drafts-dropdown-content {
-  height: 400px;
-  padding-left: 32px;
+  height: 250px;
+  padding-left: 25px;
   border: 0;
   margin: 0;
   overflow-y: scroll;
   background: transparent;
+  border-radius: 20px;
 }
 
 .themeImgContainer {
   cursor: pointer;
   display: inline-block;
-  width: 190px;
-  height: 117px;
+  max-width: 100px;
+  height: auto;
   margin: 8px 8px 0px 0px;
   position: relative;
   box-sizing: border-box;

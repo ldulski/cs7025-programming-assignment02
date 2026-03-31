@@ -315,6 +315,13 @@ body {
     stroke: currentColor;
   }
 
+  .templates-dropdown-content,
+  .elements-dropdown-content,
+  .backgrounds-dropdown-content,
+  .drafts-dropdown-content {
+    background-color: var(--pure-white);
+  }
+
   /* extra color styles */
   .hero-panel {
     background-color: var(--deep-sea);
@@ -600,6 +607,13 @@ body.dark {
   .teal-btn svg,
   .outline-btn svg {
     stroke: currentColor;
+  }
+
+  .templates-dropdown-content,
+  .elements-dropdown-content,
+  .backgrounds-dropdown-content,
+  .drafts-dropdown-content {
+    background-color: var(--pure-white);
   }
 
   /* extra color styles */
