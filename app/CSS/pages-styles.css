@@ -165,7 +165,7 @@ nav {
 
 
 /* bulletin board page styles start */
-
+  
 /* bulletin board page styles end */
 
 
@@ -332,8 +332,7 @@ input#option03 {
   flex: 1;
   max-width: 1200px;
   margin: 0px 0px 45px 0px;
-  width: 100%;
-  padding: 0 2rem;
+  padding: 0;
   gap: 0;
 }
 
@@ -377,7 +376,9 @@ aside.sidebar li svg {
 .elements-dropdown-content,
 .backgrounds-dropdown-content,
 .drafts-dropdown-content {
+  display: none;
   height: 250px;
+  max-width: 300px;
   padding-left: 25px;
   border: 0;
   margin: 0;

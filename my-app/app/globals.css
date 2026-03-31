@@ -80,9 +80,8 @@ body {
   }
 
   .btn-primary:hover {
-    background-color: var(--parchement-paper);
-    color: var(--deep-sea);
-    stroke: solid 2px var(--deep-sea);
+    background-color: var(--deep-sea);
+    color: var(--parchement-paper);
   }
 
   .btn-secondary {
@@ -368,20 +367,18 @@ body.dark {
   }
 
   .btn-primary {
-    background-color: var(--darkmode-button-bg);
+    background-color: var(--parchement-paper);
     color: var(--darkmode-button-text);
   }
 
   .btn-primary:hover {
-    background-color: var(--parchement-paper);
-    color: var(--deep-sea);
-    stroke: solid 2px var(--deep-sea);
+    background-color: var(--sky-blue);
+    color: var(--parchement-paper);
   }
 
   .btn-secondary {
-    background-color: var(--parchement-paper);
+    background-color: var(--sky-blue);
     color: var(--deep-sea);
-    stroke: solid 2px var(--deep-sea);
   }
 
   .btn-secondary:hover {
