@@ -375,7 +375,10 @@ aside.sidebar li svg {
 }
 
 /* submenu for upload, templates, etc. */
-.templates-dropdown-content {
+.templates-dropdown-content,
+.elements-dropdown-content,
+.backgrounds-dropdown-content,
+.drafts-dropdown-content {
   height: 400px;
   padding-left: 32px;
   border: 0;
