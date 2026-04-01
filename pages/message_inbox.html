@@ -27,16 +27,18 @@
     </header>
 
     <!-- Main Layout -->
-    <div aria-label="Messages Sub-Navigation"class="container">
+    <div aria-label="Messages Sub-Navigation"class="inbox-container">
 
         <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="menu-item active" onclick="showInbox()"><span class="material-icons-outlined">inbox</span> Inbox</div>
-            <div class="menu-item" onclick="showOutbox()"><span class="material-icons-outlined">outbox</span> Outbox</div>
+        <aside class="inbox-sidebar">
+            <ul>
+                <li class="menu-item active" onclick="showInbox()"><span class="material-icons-outlined">inbox</span> Inbox</li>
+                <li class="menu-item" onclick="showOutbox()"><span class="material-icons-outlined">outbox</span> Outbox</li>
+            </ul>
         </aside>
 
         <!-- Content Area -->
-        <main aria-label="Message Inbox"class="content">
+        <main aria-label="Message Inbox" class="messageStack-content">
 
             <div id="messageStack" class="message-stack">
                 <!-- Stacked Cards -->
