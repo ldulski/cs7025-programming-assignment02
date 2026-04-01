@@ -756,9 +756,6 @@ hr {
 
 
 /* messages page styles start */
-.inbox-container{
-   display:flex;
-}
 
 aside.inbox-sidebar {
   max-width: 350px;
@@ -787,18 +784,40 @@ aside.inbox-sidebar li {
   font-size: 1.313rem;
 }
 
-/* div.message-stack {
-  max-width: 750px;
-} */
+.inbox-container {
+  display: flex;
+  flex-flow: column nowrap;
+}
 
 .message-stack div.card {
   max-width: 750px;
   max-height: 500px;
-  /* position: absolute; */
-  inset: 0;
-  backface-visibility: hidden;
-  border-radius: var(--radius);
   overflow: hidden;
+  padding: 2rem;
+}
+
+.card-content {
+  max-width: 350px;
+  ;
+}
+
+.cardFront{
+  z-index: 1;
+}
+.cardBack-1 {
+  z-index: 0;
+  margin-left: 2rem;
+}
+
+.cardBack-2 {
+  z-index: 0;
+  margin-left: 4rem;
+
+}
+
+.cardBack-3 {
+  z-index: 0;
+  margin-left: 6rem;
 }
 
 /* messagespage styles end */
