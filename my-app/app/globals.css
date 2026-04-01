@@ -337,6 +337,49 @@ body {
     color: var(--deep-sea);
   }
 
+  /* message inbox styles */
+
+  aside.inbox-sidebar {
+    border-right: 1px solid var(--default-gray);
+  }
+
+  aside.inbox-sidebar li {
+    color: var(--lightmode-links);
+  }
+
+  aside.inbox-sidebar li:hover {
+    background: var(--sky-blue);
+    color: var(--deep-sea);
+  }
+
+  /* aside.inbox-sidebar li.active {
+    background: var(--sky-blue);
+    color: var(--deep-sea);
+  } */
+
+  aside.inbox-sidebar li svg {
+    color: var(--lightmode-links);
+  }
+
+  .cardFront {
+    border: 2px dashed var(--default-gray);
+    background: var(--pure-white);
+  }
+
+
+  .cardBack-1,
+  .cardBack-2,
+  .cardBack-3 {
+    background: var(--pure-white);
+    border: 2px solid var(--default-gray);
+  }
+
+  .cardBack-1::before,
+  .cardBack-2::before,
+  .cardBack-3::before {
+    border-left: 2px solid var(--default-gray);
+  }
+
   /* extra color styles */
   .hero-panel {
     background-color: var(--deep-sea);
@@ -645,6 +688,57 @@ body.dark {
     background-color: var(--cherrry-blossom);
     color: var(--deep-sea);
   }
+
+  /* message inbox styles */
+
+  aside.inbox-sidebar {
+    border-right: 1px solid var(--default-gray);
+  }
+
+  aside.inbox-sidebar li {
+    color: var(--darkmode-links);
+  }
+
+  aside.inbox-sidebar li:hover {
+    background: var(--sky-blue);
+    color: var(--deep-sea);
+  }
+
+  /* aside.inbox-sidebar li.active {
+    background: var(--sky-blue);
+    color: var(--deep-sea);
+  } */
+
+  aside.inbox-sidebar li svg {
+    color: var(--darkmode-links);
+  }
+
+  .cardFront {
+    border: 2px dashed var(--default-gray);
+    background: var(--pure-white);
+  }
+
+  .card-content h3 {
+    color: var(--deep-sea)
+  }
+
+  .card-content p {
+    color: var(--deep-sea)
+  }
+
+  .cardBack-1,
+  .cardBack-2,
+  .cardBack-3 {
+    background: var(--pure-white);
+    border: 2px solid var(--default-gray);
+  }
+
+  .cardBack-1::before,
+  .cardBack-2::before,
+  .cardBack-3::before {
+    border-left: 2px solid var(--default-gray);
+  }
+
 
   /* extra color styles */
   .hero-panel {

@@ -14,8 +14,8 @@
 </head>
 <body>
     <header>
-    <nav>
-        <div class="logo"><a href="/pages/bulletinboard.html">Postd</a></div>
+    <nav aria-label="Main Navigation">
+        <div aria-label="Postd Logomark"class="logo"><a href="/pages/bulletinboard.html">Postd</a></div>
         <ul>
             <li><a href="/pages/bulletinboard.html">Bulletin Board</a></li>
             <li><a href="/pages/message_drafter.html">Message Drafter</a></li>
@@ -25,7 +25,7 @@
        </ul> 
     </nav>
     </header>
-    <section class="account-ext-header">
+    <section aria-label="User Account Information" class="account-ext-header">
         <!-- this section must be updated with React to load users profile image, name, pronouns, and bio -->
 
         <div id="profile-container">
@@ -39,12 +39,12 @@
         <a href="#" id="user-pronouns">she/her</a>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, error ad. Ipsa eos consequatur recusandae. Reprehenderit deserunt dolor veritatis. A enim voluptates et consectetur aliquid vel sunt vero dolorem repellendus.</p>
     </section>
-    <section>
+    <section aria-label="User Saved Posts">
         <h4>Activity</h4>
         <hr>
         <div class="activity-cards"></div>
     </section>
-    <footer>
+    <footer aria-label="Main Footer">
     <p class=".small-text">© 2026 Postd</p>
     <ul class="footer-links">
     <li><a href="/pages/account_external.html">Account</a></li>

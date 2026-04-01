@@ -13,8 +13,8 @@
 <body>
 
 <header>
-    <nav>
-        <div class="logo"><a href="/pages/bulletinboard.html">Postd</a></div>
+    <nav aria-label="Main Navigation">
+        <div aria-label="Postd Logomark"class="logo"><a href="/pages/bulletinboard.html">Postd</a></div>
         <ul>
             <li><a href="/pages/bulletinboard.html">Bulletin Board</a></li>
             <li><a href="/pages/message_drafter.html">Message Drafter</a></li>
@@ -30,7 +30,7 @@
     <input type="file" id="imageUpload" accept="image/*" multiple onchange="handleImageUpload(event)">
 
     <!-- LEFT TOOLBAR -->
-<div class="template-dropdown"></div>
+<div aria-label="Message Drafter Sub-Navigation" class="template-dropdown"></div>
     <aside class="sidebar">
         <ul>
             <li id="sideUpload" onclick="document.getElementById('imageUpload').click()"><span class="material-icons-outlined">file_upload</span>Upload</li>
@@ -82,7 +82,7 @@
     </aside>
 </div>
     <!-- MAIN CONTENT -->
-    <main class="main-content">
+    <main aria-label="Postcard Designer" class="main-content">
         <div class="preview-section">
             <div class="preview-scene">
                 <div class="preview-box" id="previewBox">
@@ -136,7 +136,7 @@
     </main>
 </div>
 
-<footer>
+<footer aria-label="Main Footer">
     <p class=".small-text">© 2026 Postd</p>
     <ul class="footer-links">
         <li><a href="/pages/account_external.html">Account</a></li>

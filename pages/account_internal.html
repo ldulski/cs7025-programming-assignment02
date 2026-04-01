@@ -14,18 +14,16 @@
 </head>
 <body>
 <header>
-    <nav>
-        <div class="logo"><a href="#">Postd</a></div>
+    <nav aria-label="Main Navigation">
+        <div aria-label="Postd Logomark" class="logo"><a href="#">Postd</a></div>
         <ul>
             <li><a href="/pages/bulletinboard.html" class="nav-links">Bulletin Board</a></li>
             <li><a href="/pages/message_drafter.html"class="nav-links">Message Drafter</a></li>
             <li><a href="/pages/message_inbox.html"class="nav-links">Messages</a></li>
-            <li><a href="#" on-click="toggleMenu('')"><span class="material-symbols-outlined">
-account_circle
-</span></a></li>
+            <li><a href="#" on-click="toggleMenu('')"><span class="material-symbols-outlined">account_circle</span></a></li>
             <li>  <div class="toggle"></div></li>
        </ul> 
-       <div class="sub-menu-wrap" id="subMenu">
+       <div aria-label="Account Sub-Navigation" class="sub-menu-wrap" id="subMenu">
             <div class="sub-menu">
                 <ul>
                     <li><a href="/pages/account_external.html" class="sub-menu-link">Profile</a></li>
@@ -39,13 +37,13 @@ account_circle
 </header>
     <section class="tab">
         <div class="tab-button">
-            <button class="tab-link" data-tab-target="#tab-general"><span class="material-icons-outlined">settings</span>General</button>
+            <button  class="tab-link" data-tab-target="#tab-general"><span class="material-icons-outlined">settings</span>General</button>
             <button class="tab-link" data-tab-target="#tab-notif"><span class="material-icons-outlined">notifications</span>Notification</button>
-            <button class="tab-link" data-tab-target="#tab-password"><span class="material-icons-outlined">password</span>Password</button>
+            <button  class="tab-link" data-tab-target="#tab-password"><span class="material-icons-outlined">password</span>Password</button>
         </div>
         <div class="tab-content">
 
-            <div id="tab-general" data-tab-content class="active">
+            <div aria-label="Account General Settings"id="tab-general" data-tab-content class="active">
             <div class="tab-nav">
             <h4>My Account</h4>
             <span><a href="#">Profile</a> <span>&#62;</span> <a href="#">General</a></span>
@@ -80,7 +78,7 @@ account_circle
                 </div>
             </form>
             </div>
-            <div id="tab-notif" data-tab-content>
+            <div  aria-label="Account Notification Settings" id="tab-notif" data-tab-content>
             <div class="tab-nav">
             <h4>My Account</h4>
                 <span><a href="#">Profile</a><span>&#62;</span><a href="#">Notifications</a></span>
@@ -107,7 +105,7 @@ account_circle
 
             </form>
             </div>
-            <div id="tab-password"data-tab-content>
+            <div aria-label="Account Password Settings" id="tab-password"data-tab-content>
             <div class="tab-nav">
             <h4>My Account</h4>
             <span><a href="#">Profile</a><span>&#62;</span><a href="#">Password</a></span>
@@ -132,11 +130,7 @@ account_circle
         </div>
         </section>
 
-        <section class="footer">
-
-    </section>
-
-    <footer>
+    <footer aria-label="Main Footer">
     <p class=".small-text">© 2026 Postd</p>
 <ul class="footer-links">
     <li><a href="/pages/account_external.html">Account</a></li>

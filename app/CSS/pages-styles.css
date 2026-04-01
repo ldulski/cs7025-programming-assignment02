@@ -190,16 +190,17 @@ nav {
 
 }
 
-.like-save{
+.like-save {
   display: flex;
 }
 
-.addMsg{
-display: flex;
-justify-content: flex-end;
-padding: 2rem;
+.addMsg {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2rem;
 
 }
+
 /* bulletin board page styles end */
 
 
@@ -496,7 +497,7 @@ aside.sidebar li svg {
   backface-visibility: hidden;
   border-radius: var(--radius);
   overflow: hidden;
-  background: var(--gray-tone);
+  /* background: var(--gray-tone); */
 }
 
 /* FRONT — image upload area */
@@ -504,7 +505,6 @@ aside.sidebar li svg {
   display: flex;
   align-items: center;
   justify-content: center;
-
   cursor: pointer;
   transition: border-color 0.2s, background 0.2s;
 }
@@ -757,5 +757,67 @@ hr {
 
 /* messages page styles start */
 
+aside.inbox-sidebar {
+  max-width: 350px;
+  flex-shrink: 0;
+  padding: 2rem;
+}
+
+aside.inbox-sidebar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+aside.inbox-sidebar li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.15s, color 0.15s;
+  user-select: none;
+  font-family: "Figtree", sans-serif;
+  font-weight: 500;
+  font-size: 1.313rem;
+}
+
+.inbox-container {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.message-stack div.card {
+  max-width: 750px;
+  max-height: 500px;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.card-content {
+  max-width: 350px;
+  ;
+}
+
+.cardFront{
+  z-index: 1;
+}
+.cardBack-1 {
+  z-index: 0;
+  margin-left: 2rem;
+}
+
+.cardBack-2 {
+  z-index: 0;
+  margin-left: 4rem;
+
+}
+
+.cardBack-3 {
+  z-index: 0;
+  margin-left: 6rem;
+}
 
 /* messagespage styles end */
