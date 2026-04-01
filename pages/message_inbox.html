@@ -13,26 +13,21 @@
 </head>
 <body>
 
-    <!-- Top Navigation -->
-    <header class="top-nav">
-        <div class="logo">Postd</div>
-        <nav>
-            <a href="#">Bulletin Board</a>
-            <a href="#">Message Drafter</a>
-            <a href="#" class="active">Messages</a>
+    <header>
+        <nav aria-label="Main Navigation">
+            <div aria-label="Postd Logomark"class="logo"><a href="/pages/bulletinboard.html">Postd</a></div>
+            <ul>
+                <li><a href="/pages/bulletinboard.html">Bulletin Board</a></li>
+                <li><a href="/pages/message_drafter.html">Message Drafter</a></li>
+                <li><a href="/pages/message_inbox.html">Messages</a></li>
+                <li><a href="/pages/account_external.html">Profile</a></li>
+                <li>  <div class="toggle"></div></li>
+            </ul> 
         </nav>
-
-        <div class="right-controls">
-            <span>Light Mode</span>
-            <label class="switch">
-                <input type="checkbox" id="modeToggle">
-                <span class="slider"></span>
-            </label>
-        </div>
     </header>
 
     <!-- Main Layout -->
-    <div class="container">
+    <div aria-label="Messages Sub-Navigation"class="container">
 
         <!-- Sidebar -->
         <aside class="sidebar">
@@ -41,7 +36,7 @@
         </aside>
 
         <!-- Content Area -->
-        <main class="content">
+        <main aria-label="Message Inbox"class="content">
 
             <div id="messageStack" class="message-stack">
                 <!-- Stacked Cards -->
@@ -63,10 +58,15 @@
         </main>
     </div>
 
-    <footer>
-        <p>© 2026 Postd</p>
-    </footer>
-
-    <script src="script.js"></script>
+<footer aria-label="Main Footer">
+    <p class=".small-text">© 2026 Postd</p>
+    <ul class="footer-links">
+        <li><a href="/pages/account_external.html">Account</a></li>
+        <li><a href="/pages/bulletinboard.html">Bulletin Board</a></li>
+        <li><a href="/pages/message_drafter.html">Message Drafter</a></li>
+        <li><a href="/pages/message_inbox.html">Messages</a></li>
+    </ul>
+    <p class=".small-text">Created for academic purposes as part of the MSc Interactive Digital Media at Trinity College Dublin</p>
+</footer>
 </body>
 </html>
