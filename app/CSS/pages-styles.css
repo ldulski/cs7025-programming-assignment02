@@ -411,7 +411,6 @@ aside.sidebar li svg {
 .elements-dropdown-content,
 .backgrounds-dropdown-content,
 .drafts-dropdown-content {
-  display: none;
   height: 250px;
   max-width: 300px;
   padding-left: 25px;
