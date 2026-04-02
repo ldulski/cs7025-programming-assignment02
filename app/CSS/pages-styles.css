@@ -143,6 +143,15 @@
 
 .checkbox-row label {
   cursor: pointer;
+  font-family: "Figtree", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.checkbox-row label a{
+  font-family: "Figtree", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+
 }
 
 
@@ -848,3 +857,9 @@ aside.inbox-sidebar li {
 }
 
 /* messagespage styles end */
+
+/* privacy notice styles start */
+  .privacy-intro{
+    max-width: 875px;
+  }
+/* privacy notice styles end */

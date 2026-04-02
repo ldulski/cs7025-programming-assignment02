@@ -8,8 +8,11 @@
     <link rel="stylesheet" href="/my-app/app/globals.css">
     <link rel="stylesheet" href="/app/CSS/pages-styles.css">
     <script src="/app/JS/script.js" defer></script>
-    <script src="/my-app/app/layout.tsx" defer></script>
-    <script src="/my-app/app/page.tsx" defer></script>
+    <script src="/app/JS/firebase.js" type="module" defer></script>
+    <script src="/app/JS/signup.js" type="module" defer></script>
+    <!-- <script src="/my-app/app/layout.tsx" defer></script>
+    <script src="/my-app/app/page.tsx" defer></script> -->
+    
 </head>
 <body>
   
@@ -83,7 +86,7 @@
       <!-- add checkbox red mode where you need to check it -->
       <div class="checkbox-row">
         <input type="checkbox" id="terms">
-        <label for="terms">I agree to Postd's Conditions of Use and Privacy Notice</label>
+        <label for="terms">I agree to <a class="small-text" href="/pages/condit_privacy.html">Postd's Conditions of Use and Privacy Notice</a></label>
       </div>
 
       <button id="signupBtn" class="btn-primary" type="button">Create Account</button>
@@ -101,7 +104,5 @@
 </ul>
 <p class=".small-text">Created for academic purposes as part of the MSc Interactive Digital Media at Trinity College Dublin</p>
 </footer>
-<script src="/app/JS/firebase.js" type="module"></script>
-<script src="/app/JS/signup.js" type="module"></script>
 </body>
 </html>
