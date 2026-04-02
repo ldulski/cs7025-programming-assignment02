@@ -22,12 +22,12 @@
   min-height: 540px;
 }
 
-.postCard-content {
+.postCard-content{
   padding: 2rem;
   max-height: 450px;
 }
 
-#index-stamp {
+#index-stamp{
   position: absolute;
   top: 4rem;
   right: 2rem;
