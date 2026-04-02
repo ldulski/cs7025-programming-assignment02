@@ -15,10 +15,34 @@
 /* ── LEFT PANEL ── */
 .hero-panel {
   border-radius: 20px;
-  padding: 56px 52px;
+  /* padding: 56px 52px; */
   display: flex;
   flex-direction: column;
+  justify-content: center;
   min-height: 540px;
+}
+
+.postCard-content{
+  padding: 2rem;
+  max-height: 450px;
+}
+
+#index-stamp{
+  position: absolute;
+  top: 4rem;
+  right: 2rem;
+  width: 52px;
+  height: 64px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Figtree', sans-serif;
+  font-weight: 700;
+  font-size: 0.750rem;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  letter-spacing: 0.1em;
 }
 
 .hero-eyebrow {
@@ -30,7 +54,10 @@
 }
 
 .hero-body {
-  max-width: 425px;
+  max-width: 450px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 300;
+  font-size: 1.688rem;
 }
 
 /* ── RIGHT PANEL / FORM ── */
@@ -53,6 +80,7 @@
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+
 
 .field {
   margin-bottom: 18px;
