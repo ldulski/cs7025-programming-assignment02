@@ -9,7 +9,8 @@
   --parchement-paper: #FFF2E0;
   --sky-blue: #7FC7CC;
   --deep-sea: #092F33;
-  --moss-green: #4B5B34;
+  --moss-green: #02633A;
+  --light-green: #C7D9A0;
   --terracotta: #AF5031;
   --cherrry-blossom: #FDABA5;
   --red-wine: #980204;
@@ -121,6 +122,10 @@ body {
 
   .input-wrap input:focus {
     border-color: var(--pure-black);
+  }
+
+  .form-sub a:hover {
+    color: var(--sky-blue);
   }
 
   /* tab color styles */
@@ -382,8 +387,25 @@ body {
 
   /* extra color styles */
   .hero-panel {
-    background-color: var(--deep-sea);
-    color: var(--parchement-paper)
+    background-color: var(--moss-green);
+    color: var(--deep-sea);
+  }
+
+  #index-stamp {
+    border: 2px solid var(--moss-green);
+    color: var(--moss-green);
+    background: transparent;
+  }
+
+  .postCard-content {
+    background-color: var(--light-green);
+    aspect-ratio: 1;
+    /* background: linear-gradient(135deg,#1f005c, #5b0060, #870160, #ac255e, #ca485c, #e16b5c, #f39060, #ffb56b); */
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    --mask:
+      linear-gradient(0deg, #0000 50px, #000 0) 0 25px,
+      radial-gradient(25px, #000 98%, #0000) 50%/46.25px 50px repeat space;
   }
 
   hr {
@@ -471,6 +493,10 @@ body.dark {
 
   .input-wrap input:focus {
     border-color: var(--parchement-paper);
+  }
+
+  .form-sub a:hover {
+    color: var(--sky-blue);
   }
 
   /* tab color styles */
@@ -746,12 +772,32 @@ body.dark {
     color: var(--deep-sea)
   }
 
+  #index-stamp {
+    border: 2px solid var(--moss-green);
+    color: var(--moss-green);
+    background: transparent;
+  }
+
+  .postCard-content {
+    background-color: var(--light-green);
+    aspect-ratio: 1;
+    /* background: linear-gradient(135deg,#1f005c, #5b0060, #870160, #ac255e, #ca485c, #e16b5c, #f39060, #ffb56b); */
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    --mask:
+      linear-gradient(0deg, #0000 50px, #000 0) 0 25px,
+      radial-gradient(25px, #000 98%, #0000) 50%/46.25px 50px repeat space;
+  }
+
   hr {
     border: 2px solid var(--darkmode-text);
   }
 }
 
 /* colors end */
+
+
+
 
 /* theme switch start  */
 .toggle {
