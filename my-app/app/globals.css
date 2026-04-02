@@ -408,6 +408,27 @@ body {
       radial-gradient(25px, #000 98%, #0000) 50%/46.25px 50px repeat space;
   }
 
+  .privacy-containter a {
+    color: var(--moss-green)
+  }
+
+  .data-contents {
+    border: solid 5px var(--terracotta);
+  }
+
+  .data-contents:hover {
+    box-shadow: 10px 8px 10px var(--deep-sea);
+    transition: ease-in-out 300ms;
+  }
+
+  table,
+  th,
+  td {
+    border: 2px solid var(--deep-sea);
+    border-collapse: collapse;
+  }
+
+
   hr {
     border: 2px solid var(--lightmode-text);
   }
@@ -788,6 +809,28 @@ body.dark {
       linear-gradient(0deg, #0000 50px, #000 0) 0 25px,
       radial-gradient(25px, #000 98%, #0000) 50%/46.25px 50px repeat space;
   }
+
+  .privacy-containter a {
+    color: var(--sky-blue)
+  }
+
+  .data-contents {
+    border: solid 5px var(--terracotta);
+  }
+
+  .data-contents:hover {
+    box-shadow: 10px 8px 10px var(--deep-sea);
+    transition: ease-in-out 300ms;
+  }
+
+
+  table,
+  th,
+  td {
+    border: 2px solid var(--parchement-paper);
+    border-collapse: collapse;
+  }
+
 
   hr {
     border: 2px solid var(--darkmode-text);

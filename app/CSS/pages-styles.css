@@ -143,6 +143,16 @@
 
 .checkbox-row label {
   cursor: pointer;
+  font-family: "Figtree", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.checkbox-row label a {
+  font-family: "Figtree", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+
 }
 
 
@@ -828,9 +838,10 @@ aside.inbox-sidebar li {
   ;
 }
 
-.cardFront{
+.cardFront {
   z-index: 1;
 }
+
 .cardBack-1 {
   z-index: 0;
   margin-left: 2rem;
@@ -848,3 +859,63 @@ aside.inbox-sidebar li {
 }
 
 /* messagespage styles end */
+
+/* privacy notice styles start */
+.privacy-intro {
+  max-width: 875px;
+  margin-bottom: 2rem;
+}
+
+.privacy-containter ul {
+  font-family: "Figtree", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.data-collection {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+
+}
+
+.data-contents {
+  max-width: 445px;
+  padding: 2rem;
+
+}
+
+.privacy-containter a {
+  font-family: "Figtree", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: underline;
+}
+
+table {
+  padding: 0.5rem;
+}
+
+thead {
+  font-family: "Figtree", sans-serif;
+  font-weight: 700;
+  font-size: 1.313rem;
+  margin-bottom: 1rem;
+}
+
+th,
+td {
+  padding: 0.5rem;
+  max-width: 350px;
+}
+
+tbody {
+  font-family: "Figtree", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+
+
+/* privacy notice styles end */
