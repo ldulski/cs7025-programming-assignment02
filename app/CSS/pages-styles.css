@@ -303,8 +303,10 @@ div.tab-button {
 
 .account-form {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
+  justify-content: center;
   gap: 25px;
+  max-height: 450px;
 }
 
 .account-form div {
@@ -365,12 +367,14 @@ input#option03 {
 
 /* user profile photo image styles */
 
+
 #imageUpload {
   display: none;
 }
 
 #profileImage {
   cursor: pointer;
+  
 }
 
 #profile-container {
