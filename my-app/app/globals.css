@@ -57,14 +57,16 @@ body {
     color: var(--parchement-paper);
   }
 
+  .dropdown-button {
+    background-color: transparent;
+    border: none;
+    color: var(--deep-sea);
+  }
+
   .sub-menu-wrap {
     background-color: var(--default-gray);
   }
 
-  .sub-menu li a {
-    color: var(--deep-sea);
-    border-bottom: 2px solid var(--deep-sea);
-  }
 
   footer {
     border-top: 2px solid var(--deep-sea);
@@ -156,8 +158,10 @@ body {
 
 
   /* icon color styles */
-  material-icons-outlined {
+  span.material-icons-outlined {
     color: var(--deep-sea);
+    width: 50px;
+    height: 50px;
   }
 
   /* message drafter color styles */
@@ -460,6 +464,14 @@ body.dark {
     stroke: solid 2px var(--parchement-paper);
   }
 
+
+/* .dropdown-button {
+    background-color: transparent;
+    border: none;
+    margin: none;
+    padding: none;
+  } */
+
   footer {
     border-top: 2px solid var(--parchement-paper);
   }
@@ -468,6 +480,7 @@ body.dark {
     color: var(--sky-blue);
   }
 
+  /* button style colors */
   .btn-primary {
     background-color: var(--parchement-paper);
     color: var(--darkmode-button-text);
@@ -548,8 +561,10 @@ body.dark {
   }
 
   /* icon color styles */
-  material-icons-outlined {
+  span.material-icons-outlined {
     color: var(--parchement-paper);
+    width: 32px;
+    height: 32px;
   }
 
 
@@ -1043,7 +1058,7 @@ nav li a:hover {
   position: absolute;
   top: 100%;
   right: 10%;
-  width: 320px;
+  width: 150px;
   max-height: 0px;
   overflow: hidden;
   transition: max-height 0.5s;
@@ -1053,24 +1068,37 @@ nav li a:hover {
   max-height: 400px;
 }
 
+/* #userProfileMini {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  margin-bottom: 15px;
+} */
+
 .sub-menu {
-  padding: 5px;
-  margin: 10px;
+  padding: 10px;
+  margin: 20px;
 }
+
+/* user-info {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+} */
 
 .sub-menu-link {
   display: flex;
   align-items: center;
   margin: 12px 0px;
+  text-decoration: none;
 }
 
-.sub-menu li a {
-  padding: 15px;
-}
-
-.sub-menu-link a {
-  width: 100%;
-}
+.sub-menu-link
 
 /* footer styles */
 footer {

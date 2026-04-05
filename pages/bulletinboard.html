@@ -14,14 +14,30 @@
 <body>
 <header>
     <nav aria-label="Main Navigation">
-        <div aria-label="Postd Logomark" class="logo"><a href="/pages/bulletinboard.html">Postd</a></div>
+        <div aria-label="Postd Logomark" class="logo"><a href="#">Postd</a></div>
         <ul>
-            <li><a href="/pages/bulletinboard.html">Bulletin Board</a></li>
-            <li><a href="/pages/message_drafter.html">Message Drafter</a></li>
-            <li><a href="/pages/message_inbox.html">Messages</a></li>
-            <li><a href="/pages/account_external.html">Profile</a></li>
-            <li>  <div class="toggle"></div></li>
+            <li><a href="/pages/bulletinboard.html" class="nav-links">Bulletin Board</a></li>
+            <li><a href="/pages/message_drafter.html"class="nav-links">Message Drafter</a></li>
+            <li><a href="/pages/message_inbox.html"class="nav-links">Messages</a></li>
+            <li><a class="dropdown-button" onclick="toggleMenu()"><span class="material-icons-outlined">account_circle</span></a></li>
+            <li><div class="toggle"></div></li>
        </ul> 
+       <div aria-label="Account Sub-Navigation" class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <!-- <div class="user-info"><div id="userProfileMini">
+                        <image id="profileImage" width ="50px" height= "50px" src="/app/Images/placeholder_user.jpg" />
+                            <form>
+                                <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" required="" capture>
+                            </form>
+                    <p>Jane Doe</p>
+                    </div> -->
+                <a href="/pages/account_external.html" class="sub-menu-link">Profile</a>
+                <a href="/pages/account_internal.html" class="sub-menu-link">Settings</a>
+                <a href="#" class="sub-menu-link">Help</a>
+                <a href="#" class="sub-menu-link">Logout</a>
+                </div>
+            </div>
+       </div>
     </nav>
 </header>
     <section aria-label="Bulletin Board">

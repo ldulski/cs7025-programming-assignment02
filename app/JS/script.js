@@ -43,7 +43,6 @@ tabs.forEach(tab => {
 })
 
 //profile in nav opening sub-menu 
-
 let subMenu = document.getElementById("subMenu");
 
 function toggleMenu(){
