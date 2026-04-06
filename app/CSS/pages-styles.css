@@ -448,6 +448,17 @@ aside.sidebar li svg {
   flex-shrink: 0;
 }
 
+.sidebar-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding-left: 25px;
+}
+
+.sidebar-dropdown.dropdown-open {
+  max-height: 250px;
+}
+
 /* submenu for upload, templates, etc. */
 .templates-dropdown-content,
 .elements-dropdown-content,

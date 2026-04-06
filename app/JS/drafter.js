@@ -245,3 +245,18 @@ function applyBackground(src) {
     imageGrid.style.opacity = '0.75';
   }
 }
+
+
+//dropdowns for the templates stuff
+
+document.querySelectorAll('.sidebar li[data-toggle]').forEach(li => {
+  li.addEventListener('click', () => {
+    const target = document.querySelector(li.dataset.toggle);
+    const isOpen = target.classList.toggle('dropdown-open');
+    
+    //gets for all the .sidebardropdown ones thorugh the data toggle + id
+    document.querySelectorAll('.sidebar-dropdown').forEach(d => {
+      if (d !== target) d.classList.remove('dropdown-open');
+    });
+  });
+});
