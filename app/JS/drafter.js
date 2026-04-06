@@ -20,6 +20,8 @@ function previewMessage() {
 //uploads for the images
 function handleImageUpload(event) {
     loadImages(Array.from(event.target.files));
+    document.getElementById('cardFront').style.backgroundImage = '';
+    document.getElementById('imageGrid').style.opacity = '1';
 }
 function loadImages(files) {
     if (!files.length) return;
@@ -219,5 +221,27 @@ function makeDraggable(el, bounds) {
     isDragging = false;
     document.removeEventListener('mousemove', onMouseMove);
     document.removeEventListener('mouseup', onMouseUp);
+  }
+}
+
+
+//background function 
+function applyBackground(src) {
+  const front = document.getElementById('cardFront');
+  const imageGrid = document.getElementById('imageGrid');
+  const uploadHint = document.getElementById('uploadHint');
+
+  // Apply the background image to the card front
+  front.style.backgroundImage = `url('${src}')`;
+  front.style.backgroundSize = 'cover';
+  front.style.backgroundPosition = 'center';
+
+  // Hide the upload hint since we now have a background
+  uploadHint.style.display = 'none';
+
+  // If there's an image grid showing, keep it but make it
+  // slightly transparent so the background shows through
+  if (imageGrid.style.display !== 'none') {
+    imageGrid.style.opacity = '0.75';
   }
 }
