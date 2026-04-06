@@ -90,59 +90,61 @@ const templates = [
   {
     name: "Classic",
     cardBack: {
-      background: "#fffdf5",
+      background: "var(--pure-white)",
       padding: "2rem 2.5rem"
     },
     recipient: {
       fontFamily: "'Georgia', serif",
       fontSize: "1.1rem",
-      color: "#2c2c2c",
+      color: "var(--pure-black)",
       fontStyle: "italic"
     },
     body: {
       fontFamily: "'Georgia', serif",
       fontSize: "1rem",
-      color: "#2c2c2c",
+      color: "var(--pure-black)",
       lineHeight: "1.8"
     }
   },
   {
     name: "Modern",
     cardBack: {
-      background: "#f0f4ff",
+      background: "var(--sky-blue)",
       padding: "2rem"
     },
     recipient: {
       fontFamily: "'Figtree', sans-serif",
       fontSize: "1.2rem",
-      color: "#1a1a2e",
+      color: "var(--pure-black)",
       fontStyle: "normal"
     },
     body: {
       fontFamily: "'Figtree', sans-serif",
       fontSize: "1rem",
-      color: "#1a1a2e",
+      color: "var(--pure-black)",
       lineHeight: "1.6"
     }
   },
   {
     name: "Vintage",
     cardBack: {
-      background: "#fdf3e3",
+      background: "var(--parchement-paper)",
       padding: "2.5rem"
     },
     recipient: {
       fontFamily: "'Courier New', monospace",
       fontSize: "1rem",
-      color: "#5c4033",
+      color: "var(--pure-black)",
       fontStyle: "normal"
     },
     body: {
       fontFamily: "'Courier New', monospace",
       fontSize: "0.9rem",
-      color: "#5c4033",
+      color: "var(--pure-black)",
       lineHeight: "1.7"
     }
+
+    //add more, for the rest
   }
 ];
 
@@ -155,4 +157,67 @@ function applyTemplate(index) {
   Object.assign(cardBack.style, t.cardBack);
   Object.assign(recipient.style, t.recipient);
   Object.assign(body.style, t.body);
+}
+
+
+//adding sticker elements to the postcards
+function addSticker(src) {
+  const isFlipped = document.getElementById('previewBox').classList.contains('flipped');
+  const target = isFlipped
+    ? document.getElementById('cardBack')
+    : document.getElementById('cardFront');
+
+  const sticker = document.createElement('img');
+  sticker.src = src;
+  sticker.className = 'sticker';
+
+  sticker.style.left = '40%';
+  sticker.style.top = '35%';
+
+  target.appendChild(sticker);
+  makeDraggable(sticker, target);
+}
+
+function makeDraggable(el, bounds) {
+  let isDragging = false;
+  let startMouseX, startMouseY, startLeft, startTop;
+
+  el.addEventListener('mousedown', (e) => {
+    e.preventDefault();
+    isDragging = true;
+
+    
+    startMouseX = e.clientX;
+    startMouseY = e.clientY;
+
+    // Where the sticker started (parseInt strips 'px')
+    startLeft = parseInt(el.style.left) || 0;
+    startTop = parseInt(el.style.top) || 0;
+
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+  });
+
+  function onMouseMove(e) {
+    if (!isDragging) return;
+
+    const dx = e.clientX - startMouseX;
+    const dy = e.clientY - startMouseY;
+
+    // within bounds so sticker can't leave the card
+    const maxLeft = bounds.offsetWidth - el.offsetWidth;
+    const maxTop = bounds.offsetHeight - el.offsetHeight;
+
+    const newLeft = Math.max(0, Math.min(startLeft + dx, maxLeft));
+    const newTop = Math.max(0, Math.min(startTop + dy, maxTop));
+
+    el.style.left = newLeft + 'px';
+    el.style.top = newTop + 'px';
+  }
+
+  function onMouseUp() {
+    isDragging = false;
+    document.removeEventListener('mousemove', onMouseMove);
+    document.removeEventListener('mouseup', onMouseUp);
+  }
 }
