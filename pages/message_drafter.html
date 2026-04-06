@@ -50,25 +50,31 @@
     <aside class="sidebar">
         <ul>
             <li id="sideUpload" onclick="document.getElementById('imageUpload').click()"><span class="material-icons-outlined">file_upload</span>Upload</li>
-            <li><span class="material-icons-outlined">auto_awesome_mosaic</span>Templates</li>
-                <div class="templates-dropdown-content">
+            <li data-toggle="templates-drop"><span class="material-icons-outlined">auto_awesome_mosaic</span>Templates</li>
+                <div class="sidebar-dropdown templates-dropdown-content" id="templates-drop">
                     <p class="small-text">Pick your template</p>
-                    <div class="themeImgContainer" id=""><img src=""></div>
-                    <div class="themeImgContainer" id=""><img src=""></div>
-                    <div class="themeImgContainer" id=""><img src=""></div>
-                    <div class="themeImgContainer" id=""><img src=""></div>
+                    <div class="themeImgContainer" onclick="applyTemplate(0)" id=""><img src="">Classic</div>
+                    <div class="themeImgContainer" onclick="applyTemplate(1)" id=""><img src="">Modern</div>
+                    <div class="themeImgContainer" onclick="applyTemplate(2)" id=""><img src="">Vintage</div>
+                    <div class="themeImgContainer" onclick="applyTemplate(3)" id=""><img src="">Techno</div>
+                    <div class="themeImgContainer" onclick="applyTemplate(4)" id=""><img src="">Techno</div>
+                    <div class="themeImgContainer" onclick="applyTemplate(5)" id=""><img src="">Techno</div>
+                    <div class="themeImgContainer" onclick="applyTemplate(6)" id=""><img src="">Techno</div>
+                    <div class="themeImgContainer" onclick="applyTemplate(7)" id=""><img src="">Techno</div>
+                    <div class="themeImgContainer" onclick="applyTemplate(8)" id=""><img src="">Techno</div>
+
                 </div>
             <li><span class="material-icons-outlined">add_box</span>Elements</li>
                 <div class="elements-dropdown-content">
                     <p class="small-text">Pick your element</p>
-                    <div class="themeImgContainer" id=""><img src="/app/Images/awesome.png"></div>
-                    <div class="themeImgContainer" id=""><img src="/app/Images/best-friends.png"></div>
-                    <div class="themeImgContainer" id=""><img src="/app/Images/coffee-cup.png"></div>
-                    <div class="themeImgContainer" id=""><img src="/app/Images/mail-box.png"></div>
-                    <div class="themeImgContainer" id=""><img src="/app/Images/no.png"></div>
-                    <div class="themeImgContainer" id=""><img src="/app/Images/send-message.png"></div>
-                    <div class="themeImgContainer" id=""><img src="/app/Images/lips.png"></div>
-                    <div class="themeImgContainer" id=""><img src="/app/Images/match.png"></div>                                      
+                    <div class="themeImgContainer" onclick="addSticker('/app/Images/awesome.png')" id=""><img src="/app/Images/awesome.png"></div>
+                    <div class="themeImgContainer" onclick="addSticker('/app/Images/best-friends.png')" id=""><img src="/app/Images/best-friends.png"></div>
+                    <div class="themeImgContainer" onclick="addSticker('/app/Images/best-friends.png')" id=""><img src="/app/Images/c.png"></div>
+                    <div class="themeImgContainer" onclick="addSticker('/app/Images/mail-box.png')" id=""><img src="/app/Images/mail-box.png"></div>
+                    <div class="themeImgContainer" onclick="addSticker('/app/Images/no.png')" id=""><img src="/app/Images/no.png"></div>
+                    <div class="themeImgContainer" onclick="addSticker('/app/Images/send-message.png')" id=""><img src="/app/Images/send-message.png"></div>
+                    <div class="themeImgContainer" onclick="addSticker('/app/Images/lips.png')" id=""><img src="/app/Images/lips.png"></div>
+                    <div class="themeImgContainer" onclick="addSticker('/app/Images/match.png')" id=""><img src="/app/Images/match.png"></div>                                      
                 </div>
             <li><span class="material-icons-outlined">fit_screen</span> Backgrounds</li>
                 <div class="backgrounds-dropdown-content">
@@ -96,7 +102,7 @@
                 </div>
         </ul>
     </aside>
-</div>
+
     <!-- MAIN CONTENT -->
     <main aria-label="Postcard Designer" class="main-content">
         <div class="preview-section">

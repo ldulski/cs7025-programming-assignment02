@@ -478,6 +478,17 @@ aside.sidebar li svg {
   height: 100%;
 }
 
+/* .sidebar-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding-left: 25px;
+}
+
+.sidebar-dropdown.dropdown-open {
+  max-height: 250px;
+} */
+
 /* hidden file input */
 #imageUpload {
   display: none;
@@ -539,6 +550,7 @@ aside.sidebar li svg {
   border-radius: var(--radius);
   overflow: hidden;
   /* background: var(--gray-tone); */
+  /* position: relative; */
 }
 
 /* FRONT — image upload area */
@@ -550,6 +562,18 @@ aside.sidebar li svg {
   transition: border-color 0.2s, background 0.2s;
 }
 
+.sticker {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  cursor: grab;
+  user-select: none;
+  z-index: 10;
+}
+
+.sticker:active {
+  cursor: grabbing;
+}
 
 
 .upload-hint {
