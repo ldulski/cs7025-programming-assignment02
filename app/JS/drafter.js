@@ -155,9 +155,9 @@ const templates = [
     }
 
     //add more, for the rest
-      color: "#5c4033",
-      lineHeight: "1.7"
-    }
+    //   color: "#5c4033",
+    //   lineHeight: "1.7"
+    // }
   }
 ];
 
