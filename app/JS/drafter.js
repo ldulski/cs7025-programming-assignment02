@@ -93,18 +93,21 @@ const templates = [
     name: "Classic",
     cardBack: {
       background: "var(--pure-white)",
+      background: "#fffdf5",
       padding: "2rem 2.5rem"
     },
     recipient: {
       fontFamily: "'Georgia', serif",
       fontSize: "1.1rem",
       color: "var(--pure-black)",
+      color: "#2c2c2c",
       fontStyle: "italic"
     },
     body: {
       fontFamily: "'Georgia', serif",
       fontSize: "1rem",
       color: "var(--pure-black)",
+      color: "#2c2c2c",
       lineHeight: "1.8"
     }
   },
@@ -112,18 +115,21 @@ const templates = [
     name: "Modern",
     cardBack: {
       background: "var(--sky-blue)",
+      background: "#f0f4ff",
       padding: "2rem"
     },
     recipient: {
       fontFamily: "'Figtree', sans-serif",
       fontSize: "1.2rem",
       color: "var(--pure-black)",
+      color: "#1a1a2e",
       fontStyle: "normal"
     },
     body: {
       fontFamily: "'Figtree', sans-serif",
       fontSize: "1rem",
       color: "var(--pure-black)",
+      color: "#1a1a2e",
       lineHeight: "1.6"
     }
   },
@@ -131,12 +137,14 @@ const templates = [
     name: "Vintage",
     cardBack: {
       background: "var(--parchement-paper)",
+      background: "#fdf3e3",
       padding: "2.5rem"
     },
     recipient: {
       fontFamily: "'Courier New', monospace",
       fontSize: "1rem",
       color: "var(--pure-black)",
+      color: "#5c4033",
       fontStyle: "normal"
     },
     body: {
@@ -147,6 +155,9 @@ const templates = [
     }
 
     //add more, for the rest
+      color: "#5c4033",
+      lineHeight: "1.7"
+    }
   }
 ];
 

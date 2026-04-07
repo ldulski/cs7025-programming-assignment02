@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="/my-app/app/globals.css">
     <link rel="stylesheet" href="/app/CSS/pages-styles.css">
     <script src="/app/JS/script.js" defer></script>
@@ -13,18 +14,34 @@
 </head>
 <body>
     <header>
-    <nav>
-        <div class="logo"><a href="/pages/bulletinboard.html">Postd</a></div>
+    <nav aria-label="Main Navigation">
+        <div aria-label="Postd Logomark" class="logo"><a href="#">Postd</a></div>
         <ul>
-            <li><a href="/pages/bulletinboard.html">Bulletin Board</a></li>
-            <li><a href="/pages/message_drafter.html">Message Drafter</a></li>
-            <li><a href="/pages/messages.html">Messages</a></li>
-            <li><a href="/pages/account_external.html">Profile</a></li>
-            <li>  <div class="toggle"></div></li>
+            <li><a href="/pages/bulletinboard.html" class="nav-links">Bulletin Board</a></li>
+            <li><a href="/pages/message_drafter.html"class="nav-links">Message Drafter</a></li>
+            <li><a href="/pages/message_inbox.html"class="nav-links">Messages</a></li>
+            <li><a class="dropdown-button" onclick="toggleMenu()"><span class="material-icons-outlined">account_circle</span></a></li>
+            <li><div class="toggle"></div></li>
        </ul> 
+       <div aria-label="Account Sub-Navigation" class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <!-- <div class="user-info"><div id="userProfileMini">
+                        <image id="profileImage" width ="50px" height= "50px" src="/app/Images/placeholder_user.jpg" />
+                            <form>
+                                <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" required="" capture>
+                            </form>
+                    <p>Jane Doe</p>
+                    </div> -->
+                <a href="/pages/account_external.html" class="sub-menu-link">Profile</a>
+                <a href="/pages/account_internal.html" class="sub-menu-link">Settings</a>
+                <a href="#" class="sub-menu-link">Help</a>
+                <a href="#" class="sub-menu-link">Logout</a>
+                </div>
+            </div>
+       </div>
     </nav>
     </header>
-    <section class="account-ext-header">
+    <section aria-label="User Account Information" class="account-ext-header">
         <!-- this section must be updated with React to load users profile image, name, pronouns, and bio -->
 
         <div id="profile-container">
@@ -38,18 +55,18 @@
         <a href="#" id="user-pronouns">she/her</a>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, error ad. Ipsa eos consequatur recusandae. Reprehenderit deserunt dolor veritatis. A enim voluptates et consectetur aliquid vel sunt vero dolorem repellendus.</p>
     </section>
-    <section>
+    <section aria-label="User Saved Posts">
         <h4>Activity</h4>
         <hr>
         <div class="activity-cards"></div>
     </section>
-    <footer>
+    <footer aria-label="Main Footer">
     <p class=".small-text">© 2026 Postd</p>
     <ul class="footer-links">
     <li><a href="/pages/account_external.html">Account</a></li>
     <li><a href="/pages/bulletinboard.html">Bulletin Board</a></li>
     <li><a href="/pages/message_drafter.html">Message Drafter</a></li>
-     <li><a href="/pages/messages.html">Messages</a></li>
+     <li><a href="/pages/message_inbox.html">Messages</a></li>
     </ul>
     <p class=".small-text">Created for academic purposes as part of the MSc Interactive Digital Media at Trinity College Dublin</p>
 </footer>

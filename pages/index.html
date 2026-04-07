@@ -4,25 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Postd</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="/my-app/app/globals.css">
     <link rel="stylesheet" href="/app/CSS/pages-styles.css">
     <script src="/app/JS/script.js" defer></script>
-    <!--
-    <script src="/my-app/app/layout.tsx" defer></script>
-    <script src="/my-app/app/page.tsx" defer></script>-->
+    <script src="/app/JS/firebase.js" type="module" defer></script>
+    <script src="/app/JS/signup.js" type="module" defer></script>
+    <!-- <script src="/my-app/app/layout.tsx" defer></script>
+    <script src="/my-app/app/page.tsx" defer></script> -->
+    
 </head>
 <body>
   
 <header>
-    <nav>
-        <div class="logo"><a href="/pages/bulletinboard.html">Postd</a></div>
+    <nav aria-label="Main Navigation">
+        <div aria-label="Postd Logomark" class="logo"><a href="#">Postd</a></div>
         <ul>
-            <li><a href="/pages/bulletinboard.html">Bulletin Board</a></li>
-            <li><a href="/pages/message_drafter.html">Message Drafter</a></li>
-            <li><a href="/pages/messages.html">Messages</a></li>
-            <li><a href="/pages/account_external.html">Profile</a></li>
-            <li>  <div class="toggle"></div></li>
+            <li><a href="/pages/bulletinboard.html" class="nav-links">Bulletin Board</a></li>
+            <li><a href="/pages/message_drafter.html"class="nav-links">Message Drafter</a></li>
+            <li><a href="/pages/message_inbox.html"class="nav-links">Messages</a></li>
+            <li><a class="dropdown-button" onclick="toggleMenu()"><span class="material-icons-outlined">account_circle</span></a></li>
+            <li><div class="toggle"></div></li>
        </ul> 
+       <div aria-label="Account Sub-Navigation" class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <!-- <div class="user-info"><div id="userProfileMini">
+                        <image id="profileImage" width ="50px" height= "50px" src="/app/Images/placeholder_user.jpg" />
+                            <form>
+                                <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" required="" capture>
+                            </form>
+                    <p>Jane Doe</p>
+                    </div> -->
+                <a href="/pages/account_external.html" class="sub-menu-link">Profile</a>
+                <a href="/pages/account_internal.html" class="sub-menu-link">Settings</a>
+                <a href="#" class="sub-menu-link">Help</a>
+                <a href="#" class="sub-menu-link">Logout</a>
+                </div>
+            </div>
+       </div>
     </nav>
 </header>
 
@@ -31,17 +50,18 @@
 
     <!-- LEFT -->
     <div class="hero-panel">
-      <div>
+      <div class="postCard-content">
+        <div id="index-stamp">Stamp</div>
         <p class="hero-eyebrow">Trinity's Digital Snail Mail App </p>
         <h1 class="hero-title">You’ve Got Mail!</h1>
+        <p class="hero-body"><b>Postd</b> is Trinity's only digital pen-pal app. Create custom personalized postcards, exchange letters, and make friends across campus.</p>
       </div>
-      <p class="hero-body"><b>Postd</b> is your online student-only pen-pal network. Create fun personalized postcards, exchange messages, and make connections across Trinity College Dublin.</p>
     </div>
 
     <!-- RIGHT -->
     <div class="form-panel">
       <h2>Sign up</h2>
-      <p class="form-sub">or create your account or <a href="/pages/sign-in.html">sign in</a></p>
+      <p class="form-sub">or create your account or <a class="form-sub" href="/pages/sign-in.html">sign in</a></p>
 
       <div class="field">
         <label for="name">Your Name</label>
@@ -82,7 +102,7 @@
       <!-- add checkbox red mode where you need to check it -->
       <div class="checkbox-row">
         <input type="checkbox" id="terms">
-        <label for="terms">I agree to Postd's Conditions of Use and Privacy Notice</label>
+        <label for="terms">I agree to <a class="small-text" href="/pages/condit_privacy.html">Postd's Conditions of Use and Privacy Notice</a></label>
       </div>
 
       <button id="signupBtn" class="btn-primary" type="button">Create Account</button>
@@ -96,11 +116,9 @@
     <li><a href="/pages/account_external.html">Account</a></li>
     <li><a href="/pages/bulletinboard.html">Bulletin Board</a></li>
     <li><a href="/pages/message_drafter.html">Message Drafter</a></li>
-     <li><a href="/pages/messages.html">Messages</a></li>
+     <li><a href="/pages/message_inbox.html">Messages</a></li>
 </ul>
 <p class=".small-text">Created for academic purposes as part of the MSc Interactive Digital Media at Trinity College Dublin</p>
 </footer>
-<script src="/app/JS/firebase.js" type="module"></script>
-<script src="/app/JS/signup.js" type="module"></script>
 </body>
 </html>
