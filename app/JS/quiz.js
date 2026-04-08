@@ -91,7 +91,7 @@ function findColor() {
   return maxColor;
 }
 
-async function saveUserColor(color){
+async function saveUserData(color){
   const user = auth.currentUser;
   
   if(!user){
@@ -104,7 +104,6 @@ async function saveUserColor(color){
     await setDoc(doc(db, "users", user.uid),{
       color: color,
       answers: answers,
-      email: user.email,
       createdAt: new Date()
     }, {merge:true});
   } catch(error){
@@ -145,13 +144,13 @@ function buildResultStage() {
   stage.innerHTML = `
     <div class="result-screen">
       <p class="eyebrow">Your results are in...</p>
-      <h2>We've identitifed your group assignment! You are in the <span class="color-${color}">${color}</span> group!</h2>
-      <p>Based on your answers, blah blah blah.</p>
+      <h2>We've identitifed your group assignment! You are in the <span class="color-${color}">${color}</span> color group!</h2>
+      <p>Based on your answers, this color reflects your vibe, unique personality and the way you engage with the world!</p>
       <button class="btn-restart">Start Over</button>
     </div>
   `;
 
-  saveUserColor(color);
+  saveUserData(color);
   return stage;
 }
 
