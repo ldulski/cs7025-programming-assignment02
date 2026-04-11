@@ -19,7 +19,76 @@
     </nav>
 </header>
 
+<main>
+<div class="progress-bar-wrap">
+      <div class="progress-bar-fill" id="progressFill" style="width: 16.67%"></div>
+</div>
+<!-- add js here to move through the account set up one step at a time -->
+<section class="setup-container">
+    <article class="setup-card">
+        <div class="setup-bg">
+            <div>
+                <h2>Welcome to Postd!</h2>
+                <p class="subheader-02">Let's finish getting your account set up</p>
+            </div>
+            <div>
+                <form>
+                    <label> Create a Username</label></br>
+                    <p class="small-text">Usernames must be fewer than 15 characters</p></br>
+                    <input type="text" maxlength="15" required="required"></br>
+                    <input type="submit" name="Next">
+                </form>
+            </div>
+        </div>
+    </article>
 
+    <article class="setup-card">
+        <div class="setup-bg">
+            <div>
+                <h2>Almost There!</h2>
+                <p class="subheader-02">Let's put a face with a name</p>
+            </div>
+            <form>
+                <label>Upload a Profile Picture</label></br>
+                <p class="small-text">Maximum upload size is...</p></br>
+                <input type="file" accept="image/*" required="required"></br>
+                <input type="submit" name="Next">
+            </form>
+        </div>
+    </article>
+
+    <article class="setup-card">
+        <div class="setup-bg">
+            <div>
+                <h2>Who are you?</h2>
+                <p class="subheader-02">Enter your information for your bio below</p>
+            </div>
+            <form>
+                <label>Short Bio</label></br>
+                <p class="small-text">Maximum 160 characters</p></br>
+                <input type="text" maxlength="160" required="required"></br>
+                <label>Prefered Pronouns</label></br>
+                <p class="small-text">He/him, She/her, They/Them, Ze/Zir</p></br>
+                <input type="checkbox">
+                <label>He/Him</label>
+                <input type="checkbox">
+                <label>She/Her</label>
+                <input type="checkbox">
+                <label>They/Them</label>
+                <input type="checkbox">
+                <label>Ze/Zir</label>
+                <input type="checkbox">
+                <label>He/They</label>
+                <input type="checkbox">
+                <label>She/They</label>
+                <input type="checkbox">
+                <label>Ze/They</label>        
+                <input type="submit" name="Done">
+            </form>
+        </div>
+    </article>    
+</section>
+</main>
 <footer aria-label="Main Footer">
     <p class=".small-text">© 2026 Postd</p>
 <ul class="footer-links">
