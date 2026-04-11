@@ -390,7 +390,7 @@ input#option03 {
 
 #profileImage {
   cursor: pointer;
-  
+
 }
 
 #profile-container {
@@ -916,18 +916,44 @@ aside.inbox-sidebar li {
 /* messagespage styles end */
 
 /* privacy notice styles start */
-.privacy-intro {
-  max-width: 875px;
-  margin-bottom: 2rem;
+.privacy-containter {
+  display: flex;
+  gap: 3.75rem;
+  margin-top: 0;
+}
+
+
+.privacyTOC-container {
+  min-width: 300px;
+  cursor: pointer;
+}
+
+.privacyTOC-container ul {
+  font-family: "Figtree", sans-serif;
+  font-weight: 500;
+  font-size: 1.8rem;
+  margin: 0px;
+  padding: 0;
+  list-style-type: none;
+}
+
+.privacyTOC-container li {
+  margin: 10px 0px;
 }
 
 .privacy-containter ul {
   font-family: "Figtree", sans-serif;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.8rem;
 }
 
-.data-collection {
+
+#privacy-intro {
+  max-width: 875px;
+  margin-bottom: 2rem;
+}
+
+#data-collection {
   display: flex;
   flex-flow: row nowrap;
   gap: 2rem;
@@ -938,14 +964,32 @@ aside.inbox-sidebar li {
 .data-contents {
   max-width: 445px;
   padding: 2rem;
+  border-radius: 20px;
 
+}
+
+#privacy-define {
+  max-width: 750px;
+}
+
+#privacy-define ul li {
+  line-height: 2;
+  margin-bottom: 1rem;
+}
+
+.privacy-containter p {
+  font-size: 1.8rem;
 }
 
 .privacy-containter a {
   font-family: "Figtree", sans-serif;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.8rem;
   text-decoration: underline;
+}
+
+#data-storage table {
+  margin: 2rem 0;
 }
 
 table {
@@ -955,7 +999,7 @@ table {
 thead {
   font-family: "Figtree", sans-serif;
   font-weight: 700;
-  font-size: 1.313rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
@@ -965,22 +1009,27 @@ td {
   max-width: 350px;
 }
 
+td li {
+  list-style-type: none;
+}
+
 tbody {
   font-family: "Figtree", sans-serif;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.8rem;
 }
 
-.data-rights {
-  max-width: 850px;
+#data-rights {
   display: flex;
   flex-flow: row wrap;
   gap: 1rem;
 }
 
 .rights {
-  max-width: 375px;
+  max-width: 400px;
   margin: 1rem 0px;
+  padding: 2rem;
+  border-radius: 20px;
 }
 
 span.address-en,
