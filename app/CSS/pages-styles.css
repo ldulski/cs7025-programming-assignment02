@@ -937,6 +937,10 @@ aside.inbox-sidebar li {
   text-decoration: underline;
 }
 
+#data-storage table {
+  margin: 2rem 0;
+}
+
 table {
   padding: 0.5rem;
 }
@@ -954,6 +958,10 @@ td {
   max-width: 350px;
 }
 
+td li {
+  list-style-type: none;
+}
+
 tbody {
   font-family: "Figtree", sans-serif;
   font-weight: 500;
@@ -961,15 +969,16 @@ tbody {
 }
 
 #data-rights {
-  max-width: 850px;
   display: flex;
   flex-flow: row wrap;
   gap: 1rem;
 }
 
 .rights {
-  max-width: 375px;
+  max-width: 400px;
   margin: 1rem 0px;
+  padding: 2rem;
+  border-radius: 20px;
 }
 
 span.address-en,

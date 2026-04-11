@@ -425,6 +425,15 @@ body {
     transition: ease-in-out 300ms;
   }
 
+  .rights {
+    border: solid 5px var(--moss-green);
+  }
+
+  .rights:hover {
+    box-shadow: 10px 8px 10px var(--deep-sea);
+    transition: ease-in-out 300ms;
+  }
+
   table,
   th,
   td {
@@ -465,7 +474,7 @@ body.dark {
   }
 
 
-/* .dropdown-button {
+  /* .dropdown-button {
     background-color: transparent;
     border: none;
     margin: none;
@@ -834,6 +843,15 @@ body.dark {
   }
 
   .data-contents:hover {
+    box-shadow: 10px 8px 10px var(--deep-sea);
+    transition: ease-in-out 300ms;
+  }
+
+  .rights {
+    border: solid 5px var(--moss-green);
+  }
+
+  .rights:hover {
     box-shadow: 10px 8px 10px var(--deep-sea);
     transition: ease-in-out 300ms;
   }
