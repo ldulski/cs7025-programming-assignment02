@@ -16,11 +16,16 @@ onAuthStateChanged(auth, async (user) => {
     if (docSnap.exists()) {
       const data = docSnap.data();
 
-      const name = data.name || "Anonymous";
+      //load name
+      document.getElementById("username").innerText = data.name || "not set";
 
-      document.getElementById("username").innerText = name;
+      //load pronouns
+      document.getElementById("user-pronouns").innerText = data.pronouns || "not set";
 
-      console.log("Loaded name:", name);
+      //load bio
+      document.getElementById("user-bio").innerText = data.bio || "not set";
+
+      console.log("Loaded data:", data);
 
     } else {
       console.log("No user document found");
