@@ -224,6 +224,13 @@ nav {
   padding: 4rem;
 }
 
+.accountSetup-label {
+  font-family: "Figtree", sans-serif;
+  font-weight: 500;
+  font-size: 1.333rem;
+  margin-bottom: 1rem;
+}
+
 /* account set up styles end */
 
 
