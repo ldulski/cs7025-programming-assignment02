@@ -848,11 +848,11 @@ hr {
 
 
 /* messages page styles start */
-
 aside.inbox-sidebar {
-  max-width: 350px;
+  max-width: 200px;
   flex-shrink: 0;
-  padding: 2rem;
+  padding: 1.5rem 1rem;
+  border-right: 1px solid var(--default-gray);
 }
 
 aside.inbox-sidebar ul {
@@ -878,7 +878,59 @@ aside.inbox-sidebar li {
 
 .inbox-container {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row nowrap; 
+  align-items: flex-start;
+  height: 100vh;
+}
+
+.messageStack-content {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  /* padding: 2rem 3rem; */
+  height: 100%;
+}
+
+.message-swiper {
+  width: 100%;
+  max-width: 1000px;
+  padding-bottom: 3rem;
+}
+
+.message-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  width: 600px;
+}
+
+.message-swiper .card {
+  border-radius: 12px;
+  border: 1px solid var(--default-gray);
+  /* padding: 2rem; */
+  width: 100%;
+  min-height: 450px;
+}
+
+.message-swiper .swiper-button-next,
+.message-swiper .swiper-button-prev {
+  --swiper-navigation-color: var(--sky-blue);
+  --swiper-navigation-size: 24px;
+  background: #ffffff;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  /* padding: 0.5rem; */
+}
+
+.swiper-slide-shadow {
+  display: none !important;
+}
+
+.message-swiper .swiper-button-next:hover,
+.message-swiper .swiper-button-prev:hover {
+  background: var(--sky-blue);
+  --swiper-navigation-color: var(--pure-white);
 }
 
 .message-stack div.card {
@@ -889,8 +941,8 @@ aside.inbox-sidebar li {
 }
 
 .card-content {
-  max-width: 350px;
-  ;
+  padding: 15px;
+  padding-right: 45px;
 }
 
 .cardFront {
@@ -905,7 +957,6 @@ aside.inbox-sidebar li {
 .cardBack-2 {
   z-index: 0;
   margin-left: 4rem;
-
 }
 
 .cardBack-3 {
@@ -913,7 +964,7 @@ aside.inbox-sidebar li {
   margin-left: 6rem;
 }
 
-/* messagespage styles end */
+/* messages page styles end */
 
 /* privacy notice styles start */
 .privacy-intro {
