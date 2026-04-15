@@ -27,22 +27,16 @@
   max-height: 450px;
 }
 
-#index-stamp {
+#index-stamp img {
   position: absolute;
   top: 4rem;
   right: 2rem;
-  width: 52px;
-  height: 64px;
+  max-width: 150px;
+  height: auto;
   border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Figtree', sans-serif;
-  font-weight: 700;
-  font-size: 0.750rem;
-  text-transform: uppercase;
-  writing-mode: vertical-rl;
-  letter-spacing: 0.1em;
 }
 
 .hero-eyebrow {
@@ -566,11 +560,12 @@ aside.sidebar li svg {
 .themeImgContainer {
   cursor: pointer;
   display: inline-block;
-  max-width: 100px;
+  max-width: 75px;
   height: auto;
-  margin: 8px 8px 0px 0px;
+  margin: 8px 8px 8px 0px;
   position: relative;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .themeImgContainer img {
