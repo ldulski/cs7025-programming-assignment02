@@ -63,11 +63,6 @@ body {
     color: var(--deep-sea);
   }
 
-  .sub-menu-wrap {
-    background-color: var(--default-gray);
-  }
-
-
   footer {
     border-top: 2px solid var(--deep-sea);
   }
@@ -373,6 +368,10 @@ body {
   }
 
   /* message inbox styles */
+
+  .inbox-container{
+    margin-top: 80px;
+  }
 
   aside.inbox-sidebar {
     border-right: 1px solid var(--default-gray);
@@ -1140,7 +1139,7 @@ nav li .dropdown-button .material-icons-outlined {
 }
 
 nav li .dropdown-button:hover {
-  background-color: rgba(0, 0, 0, 0.07);
+  background-color: var(--sky-blue);
 }
 
 .logo a {
@@ -1153,18 +1152,25 @@ nav li .dropdown-button:hover {
 }
 
 .sub-menu-wrap {
-  position: fixed;
-  z-index: 9999;
-  top: 60px;
-  right: 20px; 
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: auto;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity 200ms ease, transform 200ms ease;
 }
 
 .sub-menu-wrap.open-menu {
-  display: block;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 /* profile icon styles */
-.sub-menu-wrap {
+/* .sub-menu-wrap {
   position: absolute;
   top: 100%;
   right: 10%;
@@ -1172,7 +1178,7 @@ nav li .dropdown-button:hover {
   max-height: 0px;
   overflow: hidden;
   transition: max-height 0.5s;
-}
+} */
 
 .sub-menu-wrap.open-menu {
   max-height: 400px;
@@ -1191,8 +1197,15 @@ nav li .dropdown-button:hover {
 } */
 
 .sub-menu {
-  padding: 10px;
-  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  padding: 6px;
+  border: 1px solid var(--default-gray);
+  border-radius: 8px;
+  white-space: nowrap;
+  width: 300px;
 }
 
 /* user-info {
@@ -1204,8 +1217,15 @@ nav li .dropdown-button:hover {
 .sub-menu-link {
   display: flex;
   align-items: center;
-  margin: 12px 0px;
+  padding: 8px 14px;
+  border-radius: 6px;
   text-decoration: none;
+  white-space: nowrap; 
+  font-size: 0.9rem;
+  transition: background-color 200ms ease-in-out;
+}
+.sub-menu-link:hover {
+  background-color: var(--sky-blue);
 }
 
 /* footer styles */
