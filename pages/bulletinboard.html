@@ -42,9 +42,15 @@
 </header>
     <section aria-label="Bulletin Board">
     <h2>Bulletin Board</h2>
+    <!--Form where user populates title and content!!-->
+    <div id="postForm" style="display: none;">
+        <input id="postTitle" placeholder="Title"/>
+        <textarea id="postContent" placeholder="Write something..."></textarea>
+        <button id="savePost">Save</button>
+    </div>
         <div class="bulletin-hero">
          <!-- insert post-it note HTML here -->
-        <div class="postItContainer">
+        <div class="postItContainer" id="board">
             <div class="postIt blue" id="">
                 <div>
                     <h5>Lorem Ipsum</h5>
@@ -81,7 +87,7 @@
 
         </div>
             <div class="addMsg">
-                <button class="circle-btn" title="Add element">+</button>
+                <button class="circle-btn" id="addPostBtn" title="Add element">+</button>
             </div>
         </div>
     </section>
@@ -97,4 +103,5 @@
         <p class=".small-text">Created for academic purposes as part of the MSc Interactive Digital Media at Trinity College Dublin</p>
     </footer>
 </body>
+<script type="module" src="/app/JS/postit.js"></script>
 </html>
