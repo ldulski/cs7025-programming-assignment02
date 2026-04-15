@@ -348,19 +348,28 @@ body {
   }
 
   /* post it note colors */
-  .blue {
+  #postForm.blue {
     background-color: var(--sky-blue);
     color: var(--deep-sea);
   }
 
-  .yellow {
+  #postForm.yellow {
     background-color: var(--sunshine-yellow);
     color: var(--deep-sea);
   }
 
-  .pink {
+  #postForm.pink {
     background-color: var(--cherrry-blossom);
     color: var(--deep-sea);
+  }
+
+  /* post it form styles */
+
+  #postTitle,
+  #postContent {
+    background-color: var(--pure-white);
+    color: var(--default-gray);
+    border-color: var(--deep-sea);
   }
 
   /* message inbox styles */
@@ -592,7 +601,7 @@ body.dark {
     width: 32px;
     height: 32px;
     align-items: center;
-    
+
   }
 
 
@@ -764,19 +773,36 @@ body.dark {
 
 
   /* post it note colors */
-  .blue {
+  #postForm.blue {
     background-color: var(--sky-blue);
     color: var(--deep-sea);
   }
 
-  .yellow {
+  #postForm.yellow {
     background-color: var(--sunshine-yellow);
     color: var(--deep-sea);
   }
 
-  .pink {
+  #postForm.pink {
     background-color: var(--cherrry-blossom);
     color: var(--deep-sea);
+  }
+
+  /* post it form styles */
+
+  #postTitle,
+  #postContent {
+    background-color: var(--pure-white);
+    color: var(--default-gray);
+    border-color: var(--deep-sea);
+  }
+
+  #likePost button:hover {
+    background-color: var(--cherrry-blossom);
+  }
+
+  #savePost button:hover {
+    background-color: var(--deep-sea);
   }
 
   /* message inbox styles */
@@ -991,6 +1017,13 @@ label {
   font-size: 0.750rem;
 }
 
+.xt-small-text {
+  font-family: "Figtree", sans-serif;
+  font-weight: 400;
+  font-size: 0.694rem;
+  margin: 2px 0px 10px 0px;
+}
+
 .subheader-01 {
   font-family: "Figtree", sans-serif;
   font-weight: 700;
@@ -1003,11 +1036,6 @@ label {
   font-size: 1.688rem;
 }
 
-.primary-button {
-  font-family: "Figtree", sans-serif;
-  font-weight: 500;
-  font-size: 1.313rem;
-}
 
 a {
   font-family: "Figtree", sans-serif;
@@ -1140,7 +1168,8 @@ footer {
   padding: 16px 0px;
   padding-top: 32px;
   display: flex;
-  flex-direction: row; /* explicitly force row */
+  flex-direction: row;
+  /* explicitly force row */
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;

@@ -10,6 +10,7 @@
     <script src="/app/JS/script.js" defer></script>
     <script src="/my-app/app/layout.tsx" defer></script>
     <script src="/my-app/app/page.tsx" defer></script>
+    <script type="module" src="/app/JS/postit.js" defer></script> 
 </head>
 <body>
 <header>
@@ -42,48 +43,21 @@
 </header>
     <section aria-label="Bulletin Board">
     <h2>Bulletin Board</h2>
-    <!--Form where user populates title and content!!-->
-    <div id="postForm" style="display: none;">
-        <input id="postTitle" placeholder="Title"/>
-        <textarea id="postContent" placeholder="Write something..."></textarea>
-        <button id="savePost">Save</button>
-    </div>
         <div class="bulletin-hero">
-         <!-- insert post-it note HTML here -->
+            <!-- Form where user populates title and content!! -->
+                <div class="blue" id="postForm" style="display: none;">
+                    <input id="postTitle" placeholder="Title" maxlength="200"/>
+                    <p class="xt-small-text">Max Characters: 200</p>
+                    <textarea id="postContent" placeholder="Write something..." maxlength="1000"></textarea>
+                    <p class="xt-small-text">Max Characters: 1000</p>
+                    <button class="btn-secondary" id="postSubmit">Post It</button>
+                    <div class="like-save">
+                        <button id="likePost"><span class="material-icons-outlined">favorite_border</span></button>
+                        <button id="savePost"><span class="material-icons-outlined">bookmark_border</span></button>  
+                    </div>  
         <div class="postItContainer" id="board">
-            <div class="postIt blue" id="">
-                <div>
-                    <h5>Lorem Ipsum</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur. Ultrices nunc quis arcu sed sit viverra. Faucibus dui tellus viverra neque ultrices.</p>
-                </div>
-                <div class="like-save">
-                    <span class="material-icons-outlined">favorite_border</span>
-                    <span class="material-icons-outlined">bookmark_border</span>
-                </div>
 
-            </div>
-            <div class="postIt pink" id="">
-                <div>
-                    <h5>Lorem Ipsum</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur. Ultrices nunc quis arcu sed sit viverra. Faucibus dui tellus viverra neque ultrices.</p>
-                </div>
-                <div class="like-save">
-                    <span class="material-icons-outlined">favorite_border</span>
-                    <span class="material-icons-outlined">bookmark_border</span>
-                </div>
-
-            </div>
-            <div class="postIt  yellow" id="">
-                <div>
-                    <h5>Lorem Ipsum</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur. Ultrices nunc quis arcu sed sit viverra. Faucibus dui tellus viverra neque ultrices.</p>
-                </div>
-                <div class="like-save">
-                    <span class="material-icons-outlined">favorite_border</span>
-                    <span class="material-icons-outlined">bookmark_border</span>
-                </div>
-
-            </div>
+        </div>
 
         </div>
             <div class="addMsg">
@@ -103,5 +77,5 @@
         <p class=".small-text">Created for academic purposes as part of the MSc Interactive Digital Media at Trinity College Dublin</p>
     </footer>
 </body>
-<script type="module" src="/app/JS/postit.js"></script>
+
 </html>
