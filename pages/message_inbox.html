@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="/my-app/app/globals.css">
     <link rel="stylesheet" href="/app/CSS/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <script src="/app/JS/script.js" defer></script>
     <script src="/my-app/app/layout.tsx" defer></script>
     <script src="/my-app/app/page.tsx" defer></script>
@@ -54,64 +55,78 @@
         </aside>
 
         <!-- Content Area -->
+        <!-- Content Area -->
         <main aria-label="Message Inbox" class="messageStack-content">
 
             <div id="messageStack" class="message-stack">
-                <!-- Stacked Cards -->
-                <div class="card cardBack-3">
-                        <div class="card-content">
-                        <h3>Subject: Project Update</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
-                        <button class="btn-primary">Open Message</button>
+                <div class="swiper message-swiper">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="card cardBack-3">
+                                <div class="card-content">
+                                    <h3>Subject: Project Update</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <button class="btn-primary">Open Message</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card cardBack-2">
+                                <div class="card-content">
+                                    <h3>Subject: Project Update</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <button class="btn-primary">Open Message</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card cardBack-1">
+                                <div class="card-content">
+                                    <h3>Subject: Project Update</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <button class="btn-primary">Open Message</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card cardFront">
+                                <div class="card-content">
+                                    <h3>Subject: Project Update</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <button class="btn-primary">Open Message</button>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-                </div>
-                <div class="card cardBack-2">
-                    <div class="card-content">
-                        <h3>Subject: Project Update</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
-                        <button class="btn-primary">Open Message</button>
-                    </div>
-                </div>
-                <div class="card cardBack-1">
-                    <div class="card-content">
-                        <h3>Subject: Project Update</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
-                        <button class="btn-primary">Open Message</button>
-                    </div>
-                </div>
-                <div class="card cardFront">
-                    <div class="card-content">
-                        <h3>Subject: Project Update</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
-                        <button class="btn-primary">Open Message</button>
-                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
 
         </main>
     </div>
 
-<footer aria-label="Main Footer">
-    <p class=".small-text">© 2026 Postd</p>
-    <ul class="footer-links">
-        <li><a href="/pages/account_external.html">Account</a></li>
-        <li><a href="/pages/bulletinboard.html">Bulletin Board</a></li>
-        <li><a href="/pages/message_drafter.html">Message Drafter</a></li>
-        <li><a href="/pages/message_inbox.html">Messages</a></li>
-    </ul>
-    <p class=".small-text">Created for academic purposes as part of the MSc Interactive Digital Media at Trinity College Dublin</p>
-</footer>
+    <footer aria-label="Main Footer">
+        <p class=".small-text">© 2026 Postd</p>
+        <ul class="footer-links">
+            <li><a href="/pages/account_external.html">Account</a></li>
+            <li><a href="/pages/bulletinboard.html">Bulletin Board</a></li>
+            <li><a href="/pages/message_drafter.html">Message Drafter</a></li>
+            <li><a href="/pages/message_inbox.html">Messages</a></li>
+        </ul>
+        <p class=".small-text">Created for academic purposes as part of the MSc Interactive Digital Media at Trinity College Dublin</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>

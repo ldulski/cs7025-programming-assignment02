@@ -41,6 +41,36 @@
             </div>
         </div>
     </article>
+    <h2> Set up your profile</h2>
+
+    <form id="profileForm">
+        <!--profile image-->
+        <div id="profile-container">
+            <img id="profileImage" src="aDefaultImage.png" alt="profile image">
+            <input id="imageUpload" type="file" accept="image/*">
+        </div>
+
+        <br>
+
+        <!--pronouns-->
+        <div>
+            <label for="pronouns">Pronouns</label><br>
+            <input type="text" id="pronouns" placeholder="e.g. she/her">
+        </div>
+        <br>
+
+        <!--Bio-->
+        <div>
+            <label for="bio">Bio</label><br>
+            <textarea id="bio" rows="4" placeholder="Tell us a little about yourself!"></textarea>
+        </div>
+        <br>
+
+        <button type="submit"> Save Profile </button>
+    </form>
+</main>
+
+<script type="module" src="/app/JS/profileUpload.js"></script>
 
     <article class="setup-card">
         <div class="setup-bg">

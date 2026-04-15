@@ -591,6 +591,8 @@ body.dark {
     color: var(--parchement-paper);
     width: 32px;
     height: 32px;
+    align-items: center;
+    
   }
 
 
@@ -1133,19 +1135,23 @@ nav li a:hover {
   text-decoration: none;
 }
 
-.sub-menu-link
-
 /* footer styles */
 footer {
   padding: 16px 0px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
   padding-top: 32px;
+  display: flex;
+  flex-direction: row; /* explicitly force row */
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .footer-links {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   gap: 20px;
   list-style-type: none;
 }
@@ -1157,8 +1163,10 @@ footer {
 
 footer p {
   max-width: 250px;
-  ;
+  text-align: right;
 }
+
+
 
 /* body styles end */
 
