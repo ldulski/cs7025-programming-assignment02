@@ -48,3 +48,20 @@ let subMenu = document.getElementById("subMenu");
 function toggleMenu(){
     subMenu.classList.toggle("open-menu");
 }
+
+//swiper js for messages
+const swiper = new Swiper('.message-swiper', {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  loop: false, // for the order, can look at this again later if we wanna change
+  effect: 'cards', 
+  grabCursor: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
