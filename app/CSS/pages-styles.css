@@ -197,7 +197,7 @@ nav {
   }
 }
 
-.login-main{
+.login-main {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -245,6 +245,7 @@ nav {
   font-size: 1.333rem;
   margin-bottom: 1rem;
 }
+
 /* login page styles end */
 
 /* account set up styles end */
@@ -261,23 +262,63 @@ nav {
 }
 
 .postItContainer {
+  min-height: 700px;
   padding: 2rem;
   display: flex;
   gap: 25px;
 }
 
-.postIt {
-  width: 350px;
-  height: 350px;
+#postForm {
+  width: 250px;
+  height: 250px;
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
-  padding: 2rem;
+  gap: 15px;
+  padding: 1rem;
+  overflow: hidden;
 
+  /* will remove later */
+  /* background-color: var(--sky-blue); */
+
+}
+
+#postTitle {
+  max-width: 200px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 500;
+  font-size: 1.313rem;
+  padding: 5px 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+}
+
+#postContent {
+  min-width: 200px;
+  border-style: solid;
+  padding: 8px;
+  border-radius: 8px;
+  font-family: "Figtree", sans-serif;
+  border-width: 1px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+#postSubmit {
+  max-width: 200px;
+  margin-bottom: 15px;
 }
 
 .like-save {
   display: flex;
+}
+
+.like-save button {
+  background-color: transparent;
+  border-style: none;
+  justify-content: center;
+  padding: 0;
 }
 
 .addMsg {
@@ -910,7 +951,7 @@ aside.inbox-sidebar li {
 
 .inbox-container {
   display: flex;
-  flex-flow: row nowrap; 
+  flex-flow: row nowrap;
   align-items: flex-start;
   height: 100vh;
 }
