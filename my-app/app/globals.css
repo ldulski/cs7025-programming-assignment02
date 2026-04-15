@@ -421,12 +421,6 @@ body {
     color: var(--deep-sea);
   }
 
-  #index-stamp {
-    border: 2px solid var(--moss-green);
-    color: var(--moss-green);
-    background: transparent;
-  }
-
   .postCard-content {
     background-color: var(--light-green);
     aspect-ratio: 1;
@@ -862,11 +856,6 @@ body.dark {
     color: var(--deep-sea)
   }
 
-  #index-stamp {
-    border: 2px solid var(--moss-green);
-    color: var(--moss-green);
-    background: transparent;
-  }
 
   .postCard-content {
     background-color: var(--light-green);
