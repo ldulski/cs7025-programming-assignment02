@@ -50,18 +50,75 @@ function toggleMenu(){
 }
 
 //swiper js for messages
-const swiper = new Swiper('.message-swiper', {
-  slidesPerView: 1,
-  spaceBetween: 0,
-  loop: false, // for the order, can look at this again later if we wanna change
-  effect: 'cards', 
-  grabCursor: true,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-});
+
+// Templates
+
+//Hook up to message content
+  const inboxSlides = [
+    { subject: "Inbox", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+    { subject: "Inbox", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+    { subject: "Inbox", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+    { subject: "Inbox", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+  ];
+
+  const outboxSlides = [
+    { subject: "Outbox", body: "Outbox message this is a sent item. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt." },
+    { subject: "Outboxg", body: "Outbox message this is a sent item. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt." },
+    { subject: "Outbox", body: "Outbox message  this is a sent item. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt." },
+    { subject: "Outbox", body: "Outbox message  this is a sent item. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt." },
+  ];
+
+  const cardClasses = ['cardBack-3', 'cardBack-2', 'cardBack-1', 'cardFront'];
+
+  let swiper = null;
+
+  function initSwiper() {
+    if (swiper) swiper.destroy(true, true);
+    swiper = new Swiper('.message-swiper', {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: false, // for the order, can look at this again later if we wanna change
+      effect: 'cards', 
+      grabCursor: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+  }
+
+  function buildSlides(data) {
+    const wrapper = document.querySelector('.swiper-wrapper');
+    wrapper.innerHTML = data.map((msg, i) => `
+      <div class="swiper-slide">
+        <div class="card ${cardClasses[i] || ''}">
+          <div class="card-content">
+            <h3>Subject: ${msg.subject}</h3>
+            <p>${msg.body}</p>
+            <button class="btn-primary">Open Message</button>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function showInbox() {
+    document.querySelectorAll('.menu-item').forEach(el => el.classList.remove('active'));
+    document.querySelector('.menu-item:first-child').classList.add('active');
+    buildSlides(inboxSlides);
+    initSwiper();
+  }
+
+  function showOutbox() {
+    document.querySelectorAll('.menu-item').forEach(el => el.classList.remove('active'));
+    document.querySelector('.menu-item:last-child').classList.add('active');
+    buildSlides(outboxSlides);
+    initSwiper();
+  }
+
+  // Initialize with inbox on page load
+  initSwiper();
