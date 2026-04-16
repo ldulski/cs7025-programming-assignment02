@@ -11,134 +11,64 @@
     <script src="/my-app/app/layout.tsx" defer></script>
     <script src="/my-app/app/page.tsx" defer></script>
 </head>
+
 <body>
-    <header>
-        <nav aria-label="Main Navigation">
-            <div aria-label="Postd Logomark" class="logo"><a href="#">Postd</a></div>
-            <ul>
-                <li><a href="/pages/bulletinboard.html" class="nav-links">Bulletin Board</a></li>
-                <li><a href="/pages/message_drafter.html"class="nav-links">Message Drafter</a></li>
-                <li><a href="/pages/message_inbox.html"class="nav-links">Messages</a></li>
-                <li><a class="dropdown-button" onclick="toggleMenu()"><span class="material-icons-outlined">account_circle</span></a></li>
-                <li><div class="toggle"></div></li>
-        </ul> 
-        <div aria-label="Account Sub-Navigation" class="sub-menu-wrap" id="subMenu">
-                    <div class="sub-menu">
-                    <a href="/pages/account_external.html" class="sub-menu-link">Profile</a>
-                    <a href="/pages/account_internal.html" class="sub-menu-link">Settings</a>
-                    <a href="#" class="sub-menu-link">Help</a>
-                    <a href="#" class="sub-menu-link">Logout</a>
-                    </div>
-                </div>
+
+<header>
+    <nav aria-label="Main Navigation">
+        <div class="logo"><a href="#">Postd</a></div>
+
+        <ul>
+            <li><a href="/pages/bulletinboard.html" class="nav-links">Bulletin Board</a></li>
+            <li><a href="/pages/message_drafter.html" class="nav-links">Message Drafter</a></li>
+            <li><a href="/pages/message_inbox.html" class="nav-links">Messages</a></li>
+
+            <li>
+                <a class="dropdown-button" onclick="toggleMenu()">
+                    <span class="material-icons-outlined">account_circle</span>
+                </a>
+            </li>
+
+            <li><div class="toggle"></div></li>
+        </ul>
+
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <a href="/pages/account_external.html" class="sub-menu-link">Profile</a>
+                <a href="/pages/account_internal.html" class="sub-menu-link">Settings</a>
+                <a href="#" class="sub-menu-link">Help</a>
+
+                <!-- ✅ UPDATED LOGOUT -->
+                <a href="#" class="sub-menu-link" onclick="logoutUser()">Logout</a>
+            </div>
         </div>
-        </nav>
-    </header>
-    <section class="tab">
-        <div class="tab-button">
-            <button  class="tab-link" data-tab-target="#tab-general"><span class="material-icons-outlined">settings</span>General</button>
-            <button class="tab-link" data-tab-target="#tab-notif"><span class="material-icons-outlined">notifications</span>Notification</button>
-            <button  class="tab-link" data-tab-target="#tab-password"><span class="material-icons-outlined">password</span>Password</button>
+    </nav>
+</header>
+
+<section class="tab">
+    <div class="tab-button">
+        <button class="tab-link" data-tab-target="#tab-general">General</button>
+        <button class="tab-link" data-tab-target="#tab-notif">Notification</button>
+        <button class="tab-link" data-tab-target="#tab-password">Password</button>
+    </div>
+
+    <div class="tab-content">
+
+        <div id="tab-general" data-tab-content class="active">
+            <h4>My Account</h4>
+            <h5 id="username">Jane Doe</h5>
         </div>
-        <div class="tab-content">
 
-            <div aria-label="Account General Settings"id="tab-general" data-tab-content class="active">
-            <div class="tab-nav">
-            <h4>My Account</h4>
-            <span><a href="#">Profile</a> <span>&#62;</span> <a href="#">General</a></span>
-            <hr>
-            </div>
-            <div class="user-info">
-                <div id="profile-container">
-                    <image id="profileImage" src="aDefaultImage.png" />
-                        <form>
-                            <input id="image" type="file" name="profile_photo" placeholder="Photo" required="" capture> 
-                        </form>
-                </div>
-            <!-- Automatically updated to users name -->
-            <h5 id="username">Jane Doe</h5> 
-            </div>
-            <form class="account-form">
-                <div>
-                    <label for="fname">First Name</label>
-                    <input type="text" id="fname" name="fname" value="Jane">
-                </div>
-                <div>
-                    <label for="lname">Last Name</label>
-                    <input type="text" id="lname" name="lname" value="Doe">
-                </div>
-                <div>
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" value="youremail@tcd.ie">
-                </div>
-                <div>
-                    <label for="quantity">TCD Student ID</label>
-                    <input type="text" id="tcdId" name="tcdId" value="00000000">
-                </div>
-            </form>
-            </div>
-            <div  aria-label="Account Notification Settings" id="tab-notif" data-tab-content>
-            <div class="tab-nav">
-            <h4>My Account</h4>
-                <span><a href="#">Profile</a><span>&#62;</span><a href="#">Notifications</a></span>
-            </div>
-            <hr>
-
-            <div>
-                <h5>Postd Notifications</h5>
-            </div>
-            <p class="subheader-02">I agree to notifications from Postd form:</p>
-            <form class="checkbox-form">
-                <div>
-                    <input class="checkbox" type="checkbox" id="emailnotif" name="email01">
-                    <label for="option01">Email Notifications</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="option02" name="option02">
-                    <label for="option02">Push Notifications for Inbox</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="option03" name="option03">
-                    <label for="option03">Push Notifications for Like, Pins, and Comments</label>
-                </div>
-
-            </form>
-            </div>
-            <div aria-label="Account Password Settings" id="tab-password"data-tab-content>
-            <div class="tab-nav">
-            <h4>My Account</h4>
-            <span><a href="#">Profile</a><span>&#62;</span><a href="#">Password</a></span>
-            <hr>
-            </div>
-                <div class="tab-header">
-                    <h5>Change Password</h5>
-                </div>
-                <form class="account-form">
-                <div>
-                    <label for="pwd">Current Password:</label>
-                    <input type="password" id="pwd" name="pwd">
-                </div>
-                <div>
-                    <label for="pwd">New Password:</label>
-                    <input type="password" id="pwd" name="pwd">
-                </div>
-                    <button class="btn-primary" type="submit" value="Submit">Submit</button>
-                </form>
-            </div>
-
+        <div id="tab-notif" data-tab-content>
+            <h4>Notifications</h4>
         </div>
-        </section>
 
-    <footer aria-label="Main Footer">
-    <p class=".small-text">© 2026 Postd</p>
-<ul class="footer-links">
-    <li><a href="/pages/account_external.html">Account</a></li>
-    <li><a href="/pages/bulletinboard.html">Bulletin Board</a></li>
-    <li><a href="/pages/message_drafter.html">Message Drafter</a></li>
-     <li><a href="/pages/message_inbox.html">Messages</a></li>
-</ul>
-<p class=".small-text">Created for academic purposes as part of the MSc Interactive Digital Media at Trinity College Dublin</p>
-</footer>
-<script src="/app/JS/updateName.js" type="module" defer></script>
-<script src="/app/JS/profileUpload.js" type="module" defer></script>
+        <div id="tab-password" data-tab-content>
+            <h4>Password</h4>
+        </div>
+
+    </div>
+</section>
+
 </body>
 </html>
