@@ -2,19 +2,15 @@ function flipCard() {
     document.getElementById('previewBox').classList.toggle('flipped');
 }
 
-
-// =======================
-// Preview message
-// =======================
 function previewMessage() {
     const recipient = document.getElementById('recipient').value.trim();
     const message = document.getElementById('messageInput').value.trim();
 
     document.getElementById('cardRecipient').textContent =
-        recipient || 'Dear Friend,';
+     recipient || 'Dear Friend,';
 
     document.getElementById('cardMessage').textContent =
-        message || 'Your message will appear here.';
+    message || 'Your message will appear here.';
 
     document.getElementById('previewBox').classList.add('flipped');
 
@@ -23,10 +19,7 @@ function previewMessage() {
     }
 }
 
-
-// =======================
 // Image upload
-// =======================
 function handleImageUpload(event) {
     loadImages(Array.from(event.target.files));
     document.getElementById('cardFront').style.backgroundImage = '';
@@ -60,11 +53,6 @@ function loadImages(files) {
     front.classList.add('has-images');
     front.onclick = null;
 }
-
-
-// =======================
-// Word counter
-// =======================
 const MAX_WORDS = 300;
 
 function updateWordCount() {
@@ -81,11 +69,6 @@ function updateWordCount() {
         el.classList.add('near-limit');
     }
 }
-
-
-// =======================
-// Save message
-// =======================
 function saveMessage() {
     const recipient = document.getElementById('recipient').value.trim();
     const message = document.getElementById('messageInput').value.trim();
@@ -112,10 +95,6 @@ function saveMessage() {
     }
 }
 
-
-// =======================
-// Send message
-// =======================
 function sendMessage() {
     const user = JSON.parse(localStorage.getItem("user"));
 
@@ -150,10 +129,6 @@ function sendMessage() {
     }, 800);
 }
 
-
-// =======================
-// Sidebar dropdowns
-// =======================
 document.querySelectorAll('.sidebar li[data-toggle]').forEach(li => {
     li.addEventListener('click', () => {
         const target = document.querySelector(li.dataset.toggle);
@@ -166,10 +141,6 @@ document.querySelectorAll('.sidebar li[data-toggle]').forEach(li => {
     });
 });
 
-
-// =======================
-// Templates
-// =======================
 const templates = [
     // (UNCHANGED — your full template array stays exactly the same)
 ];
@@ -185,10 +156,7 @@ function applyTemplate(index) {
     Object.assign(body.style, t.body);
 }
 
-
-// =======================
 // Stickers
-// =======================
 function addSticker(src) {
     const isFlipped = document.getElementById('previewBox').classList.contains('flipped');
     const target = isFlipped
@@ -247,10 +215,7 @@ function makeDraggable(el, bounds) {
     }
 }
 
-
-// =======================
 // Backgrounds
-// =======================
 function applyBackground(src) {
     const front = document.getElementById('cardFront');
     const imageGrid = document.getElementById('imageGrid');
