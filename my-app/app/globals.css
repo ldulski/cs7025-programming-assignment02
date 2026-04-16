@@ -159,7 +159,7 @@ body {
 
   /* icon color styles */
   span.material-icons-outlined {
-    color: var(--deep-sea);
+    color: inherit;
     width: 50px;
     height: 50px;
   }
@@ -1010,7 +1010,6 @@ label {
   font-family: "Figtree", sans-serif;
   font-weight: 400;
   font-size: 0.694rem;
-  margin: 2px 0px 10px 0px;
 }
 
 .subheader-01 {
@@ -1204,8 +1203,19 @@ footer p {
 input:invalid {
   border-color: #dc2626;
 }
+
 input:valid {
   border-color: #16a34a;
+}
+
+.accountSetUp-form button {
+  background-color: var(--sky-blue);
+  color: var(--deep-sea);
+}
+
+.accountSetUp-form button:hover {
+  background-color: var(--deep-sea);
+  color: var(--parchement-paper);
 }
 
 /* form styles end */
