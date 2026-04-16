@@ -2,7 +2,7 @@ export function displayPosts(posts, currentUserId) {
   const board = document.getElementById("board");
   board.innerHTML = "";
 
-  const colors = ["blue", "pink", "yellow"];
+  const colors = ["blue", "pink", "orange"];
 
   posts.forEach((post, index) => {
     const color = colors[index % colors.length];

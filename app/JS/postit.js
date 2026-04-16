@@ -4,9 +4,7 @@ import { displayPosts } from "./bulletin.js";
 
 let currentUserId = null;
 
-// =========================
-// AUTH CHECK
-// =========================
+
 auth.onAuthStateChanged(user => {
     if (!user) {
         console.log("no user logged in");
@@ -22,9 +20,7 @@ auth.onAuthStateChanged(user => {
     loadPosts();
 });
 
-// =========================
-// LOAD POSTS
-// =========================
+//load posts
 async function loadPosts() {
     try {
         const posts = await getPosts();
@@ -38,18 +34,15 @@ async function loadPosts() {
     }
 }
 
-// =========================
-// TOGGLE POST FORM
-// =========================
+//post form toggle
 document.getElementById("addPostBtn").onclick = () => {
     const form = document.getElementById("postForm");
     form.style.display = form.style.display === "none" ? "block" : "none";
 };
 
-// =========================
-// CREATE POST
-// =========================
-document.getElementById("savePost").onclick = async () => {
+//create post
+document.getElementById("postSubmit").onclick = async (e) => {
+    e.preventDefault();
     if (!currentUserId) {
         window.showNotification?.("No user loaded", "error");
         return;
@@ -84,9 +77,7 @@ document.getElementById("savePost").onclick = async () => {
     }
 };
 
-// =========================
-// LIKE POST
-// =========================
+//like post
 window.handleLike = async (postId) => {
     try {
         await toggleLike(postId, currentUserId);
@@ -98,9 +89,7 @@ window.handleLike = async (postId) => {
     }
 };
 
-// =========================
-// BOOKMARK POST
-// =========================
+//bookmark post
 window.handleBookmark = async (postId) => {
     try {
         await toggleBookmark(postId, currentUserId);

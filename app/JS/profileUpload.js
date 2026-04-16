@@ -3,7 +3,7 @@ import { ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/fireba
 import { doc, setDoc } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
 
-// safe notification helper
+//notifications
 function notify(message, type = "success") {
     if (typeof window.showNotification === "function") {
         window.showNotification(message, type);
@@ -34,16 +34,11 @@ onAuthStateChanged(auth, (user) => {
 
     let selectedFile = null;
 
-    // =========================
-    // click image to upload
-    // =========================
     profileImage.addEventListener("click", () => {
         imageUpload.click();
     });
 
-    // =========================
-    // preview image
-    // =========================
+    //preview image 
     imageUpload.addEventListener("change", (e) => {
         const file = e.target.files[0];
         if (!file) return;
@@ -54,9 +49,7 @@ onAuthStateChanged(auth, (user) => {
         notify("Image selected", "success");
     });
 
-    // =========================
-    // save profile
-    // =========================
+    //save profile
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
@@ -67,9 +60,7 @@ onAuthStateChanged(auth, (user) => {
 
             let imageURL = null;
 
-            // =========================
-            // upload image if selected
-            // =========================
+            //upload image
             if (selectedFile) {
                 const storageRef = ref(
                     auth.app._storage, 
@@ -80,9 +71,7 @@ onAuthStateChanged(auth, (user) => {
                 imageURL = await getDownloadURL(storageRef);
             }
 
-            // =========================
-            // save Firestore data
-            // =========================
+            //save in firebase
             await setDoc(doc(db, "users", user.uid), {
                 pronouns,
                 bio,
@@ -91,7 +80,7 @@ onAuthStateChanged(auth, (user) => {
 
             notify("Profile updated successfully", "success");
 
-            // redirect after short delay (so user sees message)
+            //redirect
             setTimeout(() => {
                 window.location.href = "/pages/account_external.html";
             }, 800);
