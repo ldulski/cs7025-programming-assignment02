@@ -154,7 +154,7 @@ body {
 
   /* icon color styles */
   span.material-icons-outlined {
-    color: var(--deep-sea);
+    color: inherit;
     width: 50px;
     height: 50px;
   }
@@ -1009,7 +1009,6 @@ label {
   font-family: "Figtree", sans-serif;
   font-weight: 400;
   font-size: 0.694rem;
-  margin: 2px 0px 10px 0px;
 }
 
 .subheader-01 {
@@ -1184,17 +1183,7 @@ nav li .dropdown-button:hover {
   max-height: 400px;
 }
 
-/* #userProfileMini {
-  width: 50px;
-  height: 50px;
-  overflow: hidden;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
-  margin-bottom: 15px;
-} */
+
 
 .sub-menu {
   display: flex;
@@ -1208,11 +1197,6 @@ nav li .dropdown-button:hover {
   width: 300px;
 }
 
-/* user-info {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-} */
 
 .sub-menu-link {
   display: flex;
@@ -1290,3 +1274,24 @@ footer p {
 }
 
 /* button styles end */
+
+/* form styles start */
+input:invalid {
+  border-color: #dc2626;
+}
+
+input:valid {
+  border-color: #16a34a;
+}
+
+.accountSetUp-form button {
+  background-color: var(--sky-blue);
+  color: var(--deep-sea);
+}
+
+.accountSetUp-form button:hover {
+  background-color: var(--deep-sea);
+  color: var(--parchement-paper);
+}
+
+/* form styles end */

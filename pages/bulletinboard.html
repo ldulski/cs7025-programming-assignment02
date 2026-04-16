@@ -13,23 +13,22 @@
     <script type="module" src="/app/JS/postit.js" defer></script> 
 </head>
 <body>
-    <header>
-        <nav aria-label="Main Navigation">
-            <div aria-label="Postd Logomark" class="logo"><a href="#">Postd</a></div>
-            <ul>
-                <li><a href="/pages/bulletinboard.html" class="nav-links">Bulletin Board</a></li>
-                <li><a href="/pages/message_drafter.html"class="nav-links">Message Drafter</a></li>
-                <li><a href="/pages/message_inbox.html"class="nav-links">Messages</a></li>
-                <li><a class="dropdown-button" onclick="toggleMenu()"><span class="material-icons-outlined">account_circle</span></a></li>
-                <li><div class="toggle"></div></li>
-        </ul> 
-        <div aria-label="Account Sub-Navigation" class="sub-menu-wrap" id="subMenu">
-                    <div class="sub-menu">
-                    <a href="/pages/account_external.html" class="sub-menu-link">Profile</a>
-                    <a href="/pages/account_internal.html" class="sub-menu-link">Settings</a>
-                    <a href="#" class="sub-menu-link">Help</a>
-                    <a href="#" class="sub-menu-link">Logout</a>
-                    </div>
+<header>
+    <nav aria-label="Main Navigation">
+        <div aria-label="Postd Logomark" class="logo"><a href="#">Postd</a></div>
+        <ul>
+            <li><a href="/pages/bulletinboard.html" class="nav-links">Bulletin Board</a></li>
+            <li><a href="/pages/message_drafter.html"class="nav-links">Message Drafter</a></li>
+            <li><a href="/pages/message_inbox.html"class="nav-links">Messages</a></li>
+            <li><a class="dropdown-button" onclick="toggleMenu()"><span class="material-icons-outlined">account_circle</span></a></li>
+            <li><div class="toggle"></div></li>
+       </ul> 
+       <div aria-label="Account Sub-Navigation" class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                <a href="/pages/account_external.html" class="sub-menu-link">Profile</a>
+                <a href="/pages/account_internal.html" class="sub-menu-link">Settings</a>
+                <a href="#" class="sub-menu-link">Help</a>
+                <a href="#" class="sub-menu-link">Logout</a>
                 </div>
         </div>
         </nav>
@@ -39,7 +38,7 @@
         <div class="bulletin-hero">
             <!-- Form where user populates title and content!! -->
                 <div class="blue" id="postForm" style="display: none;">
-                    <input id="postTitle" placeholder="Title" maxlength="200"/>
+                    <input id="postTitle" placeholder="Title" maxlength="200" required/>
                     <p class="xt-small-text">Max Characters: 200</p>
                     <textarea id="postContent" placeholder="Write something..." maxlength="1000"></textarea>
                     <p class="xt-small-text">Max Characters: 1000</p>

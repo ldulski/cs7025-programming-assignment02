@@ -12,23 +12,22 @@
     <script src="/my-app/app/page.tsx" defer></script>
 </head>
 <body>
-    <header>
-        <nav aria-label="Main Navigation">
-            <div aria-label="Postd Logomark" class="logo"><a href="#">Postd</a></div>
-            <ul>
-                <li><a href="/pages/bulletinboard.html" class="nav-links">Bulletin Board</a></li>
-                <li><a href="/pages/message_drafter.html"class="nav-links">Message Drafter</a></li>
-                <li><a href="/pages/message_inbox.html"class="nav-links">Messages</a></li>
-                <li><a class="dropdown-button" onclick="toggleMenu()"><span class="material-icons-outlined">account_circle</span></a></li>
-                <li><div class="toggle"></div></li>
-        </ul> 
-        <div aria-label="Account Sub-Navigation" class="sub-menu-wrap" id="subMenu">
-                    <div class="sub-menu">
-                    <a href="/pages/account_external.html" class="sub-menu-link">Profile</a>
-                    <a href="/pages/account_internal.html" class="sub-menu-link">Settings</a>
-                    <a href="#" class="sub-menu-link">Help</a>
-                    <a href="#" class="sub-menu-link">Logout</a>
-                    </div>
+<header>
+    <nav aria-label="Main Navigation">
+        <div aria-label="Postd Logomark" class="logo"><a href="#">Postd</a></div>
+        <ul>
+            <li><a href="/pages/bulletinboard.html" class="nav-links">Bulletin Board</a></li>
+            <li><a href="/pages/message_drafter.html"class="nav-links">Message Drafter</a></li>
+            <li><a href="/pages/message_inbox.html"class="nav-links">Messages</a></li>
+            <li><a class="dropdown-button" onclick="toggleMenu()"><span class="material-icons-outlined">account_circle</span></a></li>
+            <li><div class="toggle"></div></li>
+       </ul> 
+       <div aria-label="Account Sub-Navigation" class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                <a href="/pages/account_external.html" class="sub-menu-link">Profile</a>
+                <a href="/pages/account_internal.html" class="sub-menu-link">Settings</a>
+                <a href="#" class="sub-menu-link">Help</a>
+                <a href="#" class="sub-menu-link">Logout</a>
                 </div>
         </div>
         </nav>
@@ -60,19 +59,19 @@
             <form class="account-form">
                 <div>
                     <label for="fname">First Name</label>
-                    <input type="text" id="fname" name="fname" value="Jane">
+                    <input type="text" id="fname" name="fname" value="Jane" required>
                 </div>
                 <div>
                     <label for="lname">Last Name</label>
-                    <input type="text" id="lname" name="lname" value="Doe">
+                    <input type="text" id="lname" name="lname" value="Doe" required>
                 </div>
                 <div>
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" value="youremail@tcd.ie">
+                    <input type="email" id="email" name="email" value="youremail@tcd.ie" required>
                 </div>
                 <div>
                     <label for="quantity">TCD Student ID</label>
-                    <input type="text" id="tcdId" name="tcdId" value="00000000">
+                    <input type="text" id="tcdId" name="tcdId" value="00000000" required>
                 </div>
             </form>
             </div>
@@ -115,11 +114,11 @@
                 <form class="account-form">
                 <div>
                     <label for="pwd">Current Password:</label>
-                    <input type="password" id="pwd" name="pwd">
+                    <input type="password" id="pwd" name="pwd" required>
                 </div>
                 <div>
                     <label for="pwd">New Password:</label>
-                    <input type="password" id="pwd" name="pwd">
+                    <input type="password" id="pwd" name="pwd" required>
                 </div>
                     <button class="btn-primary" type="submit" value="Submit">Submit</button>
                 </form>

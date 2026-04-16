@@ -31,47 +31,87 @@
                 <span class="material-icons-outlined">account_circle</span>
             </a></li>
             <li><div class="toggle"></div></li>
-        </ul>
+       </ul> 
+       <div aria-label="Account Sub-Navigation" class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                <a href="/pages/account_external.html" class="sub-menu-link">Profile</a>
+                <a href="/pages/account_internal.html" class="sub-menu-link">Settings</a>
+                <a href="#" class="sub-menu-link">Help</a>
+                <a href="#" class="sub-menu-link">Logout</a>
+                </div>
+            </div>
+       </div>
+    </nav>
+    </header>
 
-```
-    <div class="sub-menu-wrap" id="subMenu">
-        <div class="sub-menu">
-            <a href="/pages/account_external.html" class="sub-menu-link">Profile</a>
-            <a href="/pages/account_internal.html" class="sub-menu-link">Settings</a>
-            <a href="#" class="sub-menu-link">Help</a>
-            <a href="#" class="sub-menu-link">Logout</a>
-        </div>
-    </div>
-</nav>
-```
+    <!-- Main Layout -->
+    <div aria-label="Messages Sub-Navigation"class="inbox-container">
 
-</header>
+        <!-- Sidebar -->
+        <aside class="inbox-sidebar">
+            <ul>
+                <li class="menu-item active" onclick="showInbox()"><span class="material-icons-outlined">inbox</span> Inbox</li>
+                <li class="menu-item" onclick="showOutbox()"><span class="material-icons-outlined">outbox</span> Outbox</li>
+            </ul>
+        </aside>
 
-<!-- Main Layout -->
+        <!-- Content Area -->
+        <!-- Content Area -->
+        <main aria-label="Message Inbox" class="messageStack-content">
 
-<div class="inbox-container">
+            <div id="messageStack" class="message-stack">
+                <div class="swiper message-swiper">
+                    <div class="swiper-wrapper">
 
-```
-<!-- Sidebar -->
-<aside class="inbox-sidebar">
-    <ul>
-        <li class="menu-item active" onclick="showInbox()">
-            <span class="material-icons-outlined">inbox</span> Inbox
-        </li>
-        <li class="menu-item" onclick="showOutbox()">
-            <span class="material-icons-outlined">outbox</span> Outbox
-        </li>
-    </ul>
-</aside>
+                        <div class="swiper-slide">
+                            <div class="card cardBack-3">
+                                <div class="card-content">
+                                    <h3>Subject: Project Update</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <button class="btn-primary">Open Message</button>
+                                </div>
+                            </div>
+                        </div>
 
-<!-- Content Area -->
-<main class="messageStack-content">
+                        <div class="swiper-slide">
+                            <div class="card cardBack-2">
+                                <div class="card-content">
+                                    <h3>Subject: Project Update</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <button class="btn-primary">Open Message</button>
+                                </div>
+                            </div>
+                        </div>
 
-    <!-- ✅ THIS IS NOW EMPTY — JS WILL POPULATE -->
-    <div id="messageStack" class="message-stack">
-        <div class="swiper message-swiper">
-            <div class="swiper-wrapper">
-                <!-- 🔥 Messages will be injected here dynamically -->
+                        <div class="swiper-slide">
+                            <div class="card cardBack-1">
+                                <div class="card-content">
+                                    <h3>Subject: Project Update</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <button class="btn-primary">Open Message</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card cardFront">
+                                <div class="card-content">
+                                    <h3>Subject: Project Update</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <button class="btn-primary">Open Message</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
             </div>
 
             <div class="swiper-button-next"></div>
