@@ -329,7 +329,6 @@ nav {
 .tab {
   display: flex;
   gap: 32px;
-
 }
 
 .tab-content {
@@ -386,8 +385,8 @@ div.tab-button {
 
 .account-form {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
+  flex-flow: row wrap;
+  justify-content: flex-start;
   gap: 25px;
   max-height: 450px;
 }
