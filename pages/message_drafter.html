@@ -34,10 +34,8 @@
     </header>
 
 <div class="layout">
-    <!-- for the file upload -->
     <input type="file" id="imageUpload" accept="image/*" multiple onchange="handleImageUpload(event)">
 
-    <!-- LEFT TOOLBAR -->
 <div aria-label="Message Drafter Sub-Navigation" class="template-dropdown"></div>
     <aside class="sidebar">
         <ul>
@@ -87,13 +85,11 @@
         </ul>
     </aside>
 
-    <!-- MAIN CONTENT -->
     <main aria-label="Postcard Designer" class="main-content">
         <div class="preview-section">
             <div class="preview-scene">
                 <div class="preview-box" id="previewBox">
 
-                    <!-- Front for the image upload -->
                     <div class="card-front" id="cardFront" onclick="document.getElementById('imageUpload').click()">
                         <div class="upload-hint" id="uploadHint">
                             <p>Click or drag images here<br>to decorate your postcard</p>
@@ -115,17 +111,12 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Floating Buttons -->
-            <div class="floating-buttons">
+ <div class="floating-buttons">
                 <button class="circle-btn" onclick="flipCard()" title="Flip card">↺</button>
                 <button class="circle-btn" title="Add element">+</button>
             </div>
-        
         </div>
-
         <hr>
-
         <input type="text" id="recipient" placeholder="Dear John Doe">
 
         <textarea id="messageInput" placeholder="Write your message here..."></textarea>
