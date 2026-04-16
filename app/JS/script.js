@@ -1,124 +1,144 @@
-console.log('HELLO')
+console.log("app loaded");
 
-//light + dark mode toggle
 const body = document.querySelector("body");
-toggle = document.querySelector(".toggle");
+const toggle = document.querySelector(".toggle");
 
-//setting what color mode it's in
-let getMode = localStorage.getItem("mode");
-console.log(getMode);
-if (getMode && getMode === "dark") {
-    body.classList.toggle("dark");
-    toggle.classList.toggle("active")
+const savedMode = localStorage.getItem("mode");
+
+if (savedMode === "dark") {
+    body.classList.add("dark");
+    toggle.classList.add("active");
 }
 
-//toggling light vs dark mode
 toggle.addEventListener("click", () => {
     body.classList.toggle("dark");
 
-    if (!body.classList.contains("dark")) {
-        return localStorage.setItem("mode", "light");
-    }
-    localStorage.setItem("mode", "dark");
-})
+    const isDark = body.classList.contains("dark");
+    localStorage.setItem("mode", isDark ? "dark" : "light");
 
-// activating toggle on click
-toggle.addEventListener("click", () => toggle.classList.toggle("active"));
+    toggle.classList.toggle("active");
+});
 
-
-
-
-//tab script
-const tabs = document.querySelectorAll('[data-tab-target')
-const tabContents = document.querySelectorAll('[data-tab-content]')
+const tabs = document.querySelectorAll("[data-tab-target]");
+const tabContents = document.querySelectorAll("[data-tab-content]");
 
 tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        const target = document.querySelector(tab.dataset.tabTarget)
-        tabContents.forEach(tabContent => {
-            tabContent.classList.remove('active')
-        })
-        target.classList.add('active');
-    })
-})
+    tab.addEventListener("click", () => {
+        const target = document.querySelector(tab.dataset.tabTarget);
 
-//profile in nav opening sub-menu 
-let subMenu = document.getElementById("subMenu");
+        tabContents.forEach(section => section.classList.remove("active"));
+        target.classList.add("active");
+    });
+});
 
-function toggleMenu(){
+const subMenu = document.getElementById("subMenu");
+
+function toggleMenu() {
     subMenu.classList.toggle("open-menu");
 }
 
-//swiper js for messages
+function getCurrentUser() {
+    return JSON.parse(localStorage.getItem("user"));
+}
 
-// Templates
+function getAllMessages() {
+    return JSON.parse(localStorage.getItem("messages")) || [];
+}
 
-//Hook up to message content
-  const inboxSlides = [
-    { subject: "Inbox", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-    { subject: "Inbox", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-    { subject: "Inbox", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-    { subject: "Inbox", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-  ];
+let swiper = null;
 
-  const outboxSlides = [
-    { subject: "Outbox", body: "Outbox message this is a sent item. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt." },
-    { subject: "Outboxg", body: "Outbox message this is a sent item. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt." },
-    { subject: "Outbox", body: "Outbox message  this is a sent item. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt." },
-    { subject: "Outbox", body: "Outbox message  this is a sent item. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt." },
-  ];
-
-  const cardClasses = ['cardBack-3', 'cardBack-2', 'cardBack-1', 'cardFront'];
-
-  let swiper = null;
-
-  function initSwiper() {
+function initSwiper() {
     if (swiper) swiper.destroy(true, true);
-    swiper = new Swiper('.message-swiper', {
-      slidesPerView: 1,
-      spaceBetween: 0,
-      loop: false, // for the order, can look at this again later if we wanna change
-      effect: 'cards', 
-      grabCursor: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
+
+    swiper = new Swiper(".message-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        loop: false,
+        effect: "cards",
+        grabCursor: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+        }
     });
-  }
+}
 
-  function buildSlides(data) {
-    const wrapper = document.querySelector('.swiper-wrapper');
-    wrapper.innerHTML = data.map((msg, i) => `
-      <div class="swiper-slide">
-        <div class="card ${cardClasses[i] || ''}">
-          <div class="card-content">
-            <h3>Subject: ${msg.subject}</h3>
-            <p>${msg.body}</p>
-            <button class="btn-primary">Open Message</button>
-          </div>
-        </div>
-      </div>
-    `).join('');
-  }
+function buildSlides(messages) {
+    const wrapper = document.querySelector(".swiper-wrapper");
 
-  function showInbox() {
-    document.querySelectorAll('.menu-item').forEach(el => el.classList.remove('active'));
-    document.querySelector('.menu-item:first-child').classList.add('active');
-    buildSlides(inboxSlides);
+    if (!wrapper) return;
+
+    if (!messages.length) {
+        wrapper.innerHTML = `
+            <div class="swiper-slide">
+                <div class="card cardFront">
+                    <div class="card-content">
+                        <h3>No messages</h3>
+                        <p>Nothing to show here yet.</p>
+                    </div>
+                </div>
+            </div>
+        `;
+        return;
+    }
+
+    wrapper.innerHTML = messages
+        .map(msg => {
+            return `
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Subject: ${msg.subject}</h3>
+                            <p>${msg.body}</p>
+                            <small>From: ${msg.from} → To: ${msg.to}</small>
+                            <button class="btn-primary">Open Message</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        })
+        .join("");
+}
+
+function showInbox() {
+    const user = getCurrentUser();
+    if (!user) return;
+
+    const messages = getAllMessages();
+    const inbox = messages.filter(msg => msg.to === user.id);
+
+    setActiveMenu(0);
+    buildSlides(inbox);
     initSwiper();
-  }
+}
 
-  function showOutbox() {
-    document.querySelectorAll('.menu-item').forEach(el => el.classList.remove('active'));
-    document.querySelector('.menu-item:last-child').classList.add('active');
-    buildSlides(outboxSlides);
+function showOutbox() {
+    const user = getCurrentUser();
+    if (!user) return;
+
+    const messages = getAllMessages();
+    const outbox = messages.filter(msg => msg.from === user.id);
+
+    setActiveMenu(1);
+    buildSlides(outbox);
     initSwiper();
-  }
+}
 
-  // Initialize with inbox on page load
-  initSwiper();
+function setActiveMenu(index) {
+    const items = document.querySelectorAll(".menu-item");
+
+    items.forEach(item => item.classList.remove("active"));
+
+    if (items[index]) {
+        items[index].classList.add("active");
+    }
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+    initSwiper();
+    showInbox();
+});
