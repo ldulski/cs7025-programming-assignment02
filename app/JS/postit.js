@@ -1,13 +1,20 @@
 import { auth } from "./firebase.js";
 import { getPosts, createPost, toggleLike, toggleBookmark } from "./postitService.js";
-
 import { displayPosts } from "./bulletin.js";
 
 let currentUserId = null;
 
+// =========================
+// AUTH CHECK
+// =========================
 auth.onAuthStateChanged(user => {
-    if(!user) {
+    if (!user) {
         console.log("no user logged in");
+
+        if (window.showNotification) {
+            window.showNotification("Please log in to use bulletin board", "error");
+        }
+
         return;
     }
 
@@ -15,51 +22,92 @@ auth.onAuthStateChanged(user => {
     loadPosts();
 });
 
+// =========================
+// LOAD POSTS
+// =========================
 async function loadPosts() {
-    const posts = await getPosts();
-    displayPosts(posts, currentUserId);
+    try {
+        const posts = await getPosts();
+        displayPosts(posts, currentUserId);
+    } catch (err) {
+        console.error("Failed to load posts:", err);
+
+        if (window.showNotification) {
+            window.showNotification("Failed to load posts", "error");
+        }
+    }
 }
 
+// =========================
+// TOGGLE POST FORM
+// =========================
 document.getElementById("addPostBtn").onclick = () => {
     const form = document.getElementById("postForm");
     form.style.display = form.style.display === "none" ? "block" : "none";
 };
 
+// =========================
+// CREATE POST
+// =========================
 document.getElementById("savePost").onclick = async () => {
-    if (!currentUserId){
-        alert("no user loaded");
+    if (!currentUserId) {
+        window.showNotification?.("No user loaded", "error");
         return;
     }
 
-    const title = document.getElementById("postTitle").value;
-    const content = document.getElementById("postContent").value;
+    const title = document.getElementById("postTitle").value.trim();
+    const content = document.getElementById("postContent").value.trim();
 
-    if(!title || !content){
-        alert("Please fill in both fields");
+    if (!title || !content) {
+        window.showNotification?.("Please fill in both fields", "error");
         return;
     }
 
-    await createPost({
-        userId: currentUserId,
-        title: title,
-        content: content
-    });
+    try {
+        await createPost({
+            userId: currentUserId,
+            title,
+            content
+        });
 
-    document.getElementById("postTitle").value = "";
-    document.getElementById("postContent").value = "";
-    document.getElementById("postForm").style.display = "none";
+        document.getElementById("postTitle").value = "";
+        document.getElementById("postContent").value = "";
+        document.getElementById("postForm").style.display = "none";
 
-    loadPosts();
+        loadPosts();
+
+        window.showNotification?.("Post published successfully", "success");
+
+    } catch (err) {
+        console.error("Error creating post:", err);
+        window.showNotification?.("Failed to publish post", "error");
+    }
 };
 
-//NOT FUNCTIONAL
-
+// =========================
+// LIKE POST
+// =========================
 window.handleLike = async (postId) => {
-    await toggleLike(postId, currentUserId);
-    loadPosts();
+    try {
+        await toggleLike(postId, currentUserId);
+        loadPosts();
+        window.showNotification?.("Reaction updated", "success");
+    } catch (err) {
+        console.error(err);
+        window.showNotification?.("Failed to update like", "error");
+    }
 };
 
+// =========================
+// BOOKMARK POST
+// =========================
 window.handleBookmark = async (postId) => {
-    await toggleBookmark(postId, currentUserId);
-    loadPosts();
+    try {
+        await toggleBookmark(postId, currentUserId);
+        loadPosts();
+        window.showNotification?.("Saved to activity", "success");
+    } catch (err) {
+        console.error(err);
+        window.showNotification?.("Failed to save post", "error");
+    }
 };
