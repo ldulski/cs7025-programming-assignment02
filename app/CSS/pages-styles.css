@@ -333,6 +333,8 @@ nav {
 
 .tab-content {
   padding: 0px 12px;
+  margin: 40px;
+  margin-top: 0px;
 }
 
 [data-tab-content] {
@@ -363,7 +365,7 @@ nav {
 }
 
 div.tab-button {
-  max-width: 200px;
+  max-width: 300px;
 }
 
 .tab-nav {
@@ -389,10 +391,11 @@ div.tab-button {
   justify-content: flex-start;
   gap: 25px;
   max-height: 450px;
+  margin-bottom: 20px;
 }
 
 .account-form div {
-  min-width: 375px;
+  min-width: 400px;
   display: flex;
   flex-flow: column wrap;
   gap: 10px;
@@ -404,6 +407,11 @@ div.tab-button {
   font-family: "Figtree", sans-serif;
   font-weight: 400;
   font-size: 1rem;
+}
+.account-form button{
+  width: 400px;
+  justify-content: center;
+  align-items: center;
 }
 
 
