@@ -1,3 +1,5 @@
+import { logoutUser } from "./auth.js";
+
 console.log("app loaded");
 
 const body = document.querySelector("body");
@@ -141,4 +143,28 @@ function setActiveMenu(index) {
 window.addEventListener("DOMContentLoaded", () => {
     initSwiper();
     showInbox();
+});
+
+window.showNotification = (message, type = "success") => {
+    const notif = document.createElement("div");
+
+    notif.textContent = message;
+    notif.className = `notification ${type}`;
+
+    document.body.appendChild(notif);
+
+    setTimeout(() => {
+        notif.remove();
+    }, 3000);
+};
+window.toggleMenu = toggleMenu;
+
+//logout functionality
+//window.logoutUser = logoutUser;
+document.addEventListener("DOMContentLoaded", () => {
+    const logoutBtn = document.querySelector(".logout-btn");
+
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", logoutUser);
+    }
 });

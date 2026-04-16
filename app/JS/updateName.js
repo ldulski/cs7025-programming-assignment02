@@ -2,7 +2,6 @@ import { auth, db } from "/app/JS/firebase.js";
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
 
-// safe notification helper (works even if script.js not loaded yet)
 function notify(message, type = "success") {
   if (typeof window.showNotification === "function") {
     window.showNotification(message, type);
@@ -31,9 +30,7 @@ onAuthStateChanged(auth, async (user) => {
 
     const data = docSnap.data();
 
-    // =========================
-    // Load user profile data
-    // =========================
+    //Load user profile data
     document.getElementById("username").innerText = data.name || "not set";
 
     const pronounsEl = document.getElementById("user-pronouns");
