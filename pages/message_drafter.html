@@ -2,134 +2,122 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Message Drafter</title>
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="/my-app/app/globals.css">
     <link rel="stylesheet" href="/app/CSS/pages-styles.css">
+
     <script src="/app/JS/script.js" defer></script>
-    <script src="/my-app/app/layout.tsx" defer></script>
-    <script src="/my-app/app/page.tsx" defer></script>
     <script src="/app/JS/drafter.js" defer></script>
+</head>
+
 <body>
 
-    <header>
-        <nav aria-label="Main Navigation">
-            <div aria-label="Postd Logomark" class="logo"><a href="#">Postd</a></div>
-            <ul>
-                <li><a href="/pages/bulletinboard.html" class="nav-links">Bulletin Board</a></li>
-                <li><a href="/pages/message_drafter.html"class="nav-links">Message Drafter</a></li>
-                <li><a href="/pages/message_inbox.html"class="nav-links">Messages</a></li>
-                <li><a class="dropdown-button" onclick="toggleMenu()"><span class="material-icons-outlined">account_circle</span></a></li>
-                <li><div class="toggle"></div></li>
-        </ul> 
-        <div aria-label="Account Sub-Navigation" class="sub-menu-wrap" id="subMenu">
-                    <div class="sub-menu">
-                    <a href="/pages/account_external.html" class="sub-menu-link">Profile</a>
-                    <a href="/pages/account_internal.html" class="sub-menu-link">Settings</a>
-                    <a href="#" class="sub-menu-link">Help</a>
-                    <a href="#" class="sub-menu-link">Logout</a>
-                    </div>
-                </div>
+<header>
+    <nav aria-label="Main Navigation">
+        <div class="logo"><a href="#">Postd</a></div>
+
+        <ul>
+            <li><a href="/pages/bulletinboard.html" class="nav-links">Bulletin Board</a></li>
+            <li><a href="/pages/message_drafter.html" class="nav-links">Message Drafter</a></li>
+            <li><a href="/pages/message_inbox.html" class="nav-links">Messages</a></li>
+
+            <li>
+                <a class="dropdown-button" onclick="toggleMenu()">
+                    <span class="material-icons-outlined">account_circle</span>
+                </a>
+            </li>
+
+            <li><div class="toggle"></div></li>
+        </ul>
+
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <a href="/pages/account_external.html" class="sub-menu-link">Profile</a>
+                <a href="/pages/account_internal.html" class="sub-menu-link">Settings</a>
+                <a href="#" class="sub-menu-link">Help</a>
+                <a href="#" class="sub-menu-link">Logout</a>
+            </div>
         </div>
-        </nav>
-    </header>
+    </nav>
+</header>
 
 <div class="layout">
-    <!-- for the file upload -->
+
     <input type="file" id="imageUpload" accept="image/*" multiple onchange="handleImageUpload(event)">
 
-    <!-- LEFT TOOLBAR -->
-<div aria-label="Message Drafter Sub-Navigation" class="template-dropdown"></div>
     <aside class="sidebar">
         <ul>
-            <li id="sideUpload" onclick="document.getElementById('imageUpload').click()"><span class="material-icons-outlined">file_upload</span>Upload</li>
-            <li data-toggle="templates-drop"><span class="material-icons-outlined">auto_awesome_mosaic</span>Templates</li>
-                <div class="sidebar-dropdown templates-dropdown-content" id="templates-drop">
-                    <p class="small-text">Pick your template</p>
-                    <div class="themeImgContainer xt-small-text" onclick="applyTemplate(0)" id=""><img src="/app/Images/templates/Classic.png">Classic</div>
-                    <div class="themeImgContainer xt-small-text" onclick="applyTemplate(1)" id=""><img src="/app/Images/templates/Modern.png">Modern</div>
-                    <div class="themeImgContainer xt-small-text" onclick="applyTemplate(2)" id=""><img src="/app/Images/templates/Vintage.png">Vintage</div>
-                    <div class="themeImgContainer xt-small-text" onclick="applyTemplate(3)" id=""><img src="/app/Images/templates/Techno.png">Techno</div>
-                    <div class="themeImgContainer xt-small-text" onclick="applyTemplate(4)" id=""><img src="/app/Images/templates/Icy.png">Icy</div>
-                    <div class="themeImgContainer xt-small-text" onclick="applyTemplate(5)" id=""><img src="/app/Images/templates/Lovebug.png">Lovebug</div>
-                    <div class="themeImgContainer xt-small-text" onclick="applyTemplate(6)" id=""><img src="/app/Images/templates/Earthy.png">Earthy</div>
-                    <div class="themeImgContainer xt-small-text" onclick="applyTemplate(7)" id=""><img src="/app/Images/templates/Pride.png">Pride</div>
-                    <div class="themeImgContainer xt-small-text" onclick="applyTemplate(8)" id=""><img src="/app/Images/templates/Cotton Candy.png">Candy</div>
+            <li onclick="document.getElementById('imageUpload').click()">
+                <span class="material-icons-outlined">file_upload</span> Upload
+            </li>
 
-                </div>
-            <li data-toggle="elements-drop"><span class="material-icons-outlined">add_box</span>Elements</li>
-                <div class="sidebar-dropdown elements-dropdown-content" id="elements-drop">
-                    <p class="small-text">Pick your element</p>
-                    <div class="themeImgContainer" onclick="addSticker('/app/Images/awesome.png')" id=""><img src="/app/Images/awesome.png"></div>
-                    <div class="themeImgContainer" onclick="addSticker('/app/Images/best-friends.png')" id=""><img src="/app/Images/best-friends.png"></div>
-                    <div class="themeImgContainer" onclick="addSticker('/app/Images/coffee-cup.png')" id=""><img src="/app/Images/coffee-cup.png"></div>
-                    <div class="themeImgContainer" onclick="addSticker('/app/Images/mail-box.png')" id=""><img src="/app/Images/mail-box.png"></div>
-                    <div class="themeImgContainer" onclick="addSticker('/app/Images/no.png')" id=""><img src="/app/Images/no.png"></div>
-                    <div class="themeImgContainer" onclick="addSticker('/app/Images/send-message.png')" id=""><img src="/app/Images/send-message.png"></div>
-                    <div class="themeImgContainer" onclick="addSticker('/app/Images/lips.png')" id=""><img src="/app/Images/lips.png"></div>
-                    <div class="themeImgContainer" onclick="addSticker('/app/Images/match.png')" id=""><img src="/app/Images/match.png"></div>                                      
-                </div>
-            <li data-toggle="backgrounds-drop"><span class="material-icons-outlined">fit_screen</span> Backgrounds</li>
-                <div class="sidebar-dropdown backgrounds-dropdown-content" id="backgrounds-drop">
-                    <p class="small-text">Pick your background</p>
-                    <div class="themeImgContainer" onclick="applyBackground('/app/Images/snowy-landscape.jpg')" id=""><img src="/app/Images/snowy-landscape.jpg"></div>
-                    <div class="themeImgContainer" onclick="applyBackground('/app/Images/cherry-blossoms.jpg')" id=""><img src="/app/Images/cherry-blossoms.jpg"></div>
-                    <div class="themeImgContainer" onclick="applyBackground('/app/Images/puffin.jpg')" id=""><img src="/app/Images/puffin.jpg"></div>
-                    <div class="themeImgContainer" onclick="applyBackground('/app/Images/ladybug.jpg')" id=""><img src="/app/Images/ladybug.jpg"></div>
-                    <div class="themeImgContainer" onclick="applyBackground('/app/Images/red-bg.jpg')" id=""><img src="/app/Images/red-bg.png"></div>
-                    <div class="themeImgContainer" onclick="applyBackground('/app/Images/gold-bg.jpg')" id=""><img src="/app/Images/gold-bg.png"></div>
-                    <div class="themeImgContainer" onclick="applyBackground('/app/Images/green-bg.jpg')" id=""><img src="/app/Images/green-bg.png"></div>
-                    <div class="themeImgContainer" onclick="applyBackground('/app/Images/pink-bg.jpg')" id=""><img src="/app/Images/pink-bg.png"></div>
-                </div>
-            <li data-toggle="drafts-drop"><span class="material-icons-outlined">note</span> Drafts</li>
-                <div class="sidebar-dropdown drafts-dropdown-content" id="drafts-drop">
-                    <!-- fill with drafts -->
-                </div>
+            <li>
+                <span class="material-icons-outlined">auto_awesome_mosaic</span> Templates
+            </li>
+
+            <li>
+                <span class="material-icons-outlined">add_box</span> Elements
+            </li>
+
+            <li>
+                <span class="material-icons-outlined">fit_screen</span> Backgrounds
+            </li>
+
+            <li>
+                <span class="material-icons-outlined">note</span> Drafts
+            </li>
         </ul>
     </aside>
 
-    <!-- MAIN CONTENT -->
-    <main aria-label="Postcard Designer" class="main-content">
+    <main class="main-content">
+
         <div class="preview-section">
+
             <div class="preview-scene">
                 <div class="preview-box" id="previewBox">
 
-                    <!-- Front for the image upload -->
                     <div class="card-front" id="cardFront" onclick="document.getElementById('imageUpload').click()">
                         <div class="upload-hint" id="uploadHint">
-                            <p>Click or drag images here<br>to decorate your postcard</p>
+                            <p>Click or drag images here to decorate your postcard</p>
                             <span class="small-text">Upload JPG or PNG</span>
                         </div>
 
                         <div class="image-grid" id="imageGrid" style="display:none"></div>
                     </div>
 
-                    <!-- Back for the message to preview the card after they write the content -->
                     <div class="card-back" id="cardBack">
                         <div class="card-back-message">
-                            <div class="card-back-recipient" id="cardRecipient">Dear Friend,</div>
-                            <div class="card-back-body" id="cardMessage">Your message will appear here after you click Preview.</div>
+                            <div class="card-back-recipient" id="cardRecipient">
+                                Dear Friend,
+                            </div>
+
+                            <div class="card-back-body" id="cardMessage">
+                                Your message will appear here after preview.
+                            </div>
                         </div>
+
                         <div class="card-back-stamp">Stamp</div>
-                        <!-- add an image upload for the stamp too -->
-                        <!-- add an image upload for the stamp -->
                     </div>
+
                 </div>
             </div>
 
-            <!-- Floating Buttons -->
             <div class="floating-buttons">
-                <button class="circle-btn" onclick="flipCard()" title="Flip card">↺</button>
-                <button class="circle-btn" title="Add element">+</button>
+                <button class="circle-btn" onclick="flipCard()">↺</button>
+                <button class="circle-btn">+</button>
             </div>
-        
+
         </div>
 
         <hr>
 
-        <input type="text" id="recipient" placeholder="Dear John Doe">
-
-        <textarea id="messageInput" placeholder="Write your message here..."></textarea>
+        <!-- ✅ IMPORTANT: THESE IDS ARE REQUIRED FOR sendMessage() -->
+        <input type="text" id="toUser" placeholder="Send to (user id)">
+        <input type="text" id="subject" placeholder="Subject">
+        <textarea id="body" placeholder="Write your message here..."></textarea>
 
         <div class="word-counter small-text">
             <span id="wordCount">0</span>/300
@@ -140,18 +128,23 @@
             <button class="teal-btn" onclick="previewMessage()">Preview</button>
             <button class="teal-btn" onclick="sendMessage()">Send</button>
         </div>
+
     </main>
 </div>
 
-<footer aria-label="Main Footer">
-    <p class=".small-text">© 2026 Postd</p>
+<footer>
+    <p>© 2026 Postd</p>
+
     <ul class="footer-links">
         <li><a href="/pages/account_external.html">Account</a></li>
         <li><a href="/pages/bulletinboard.html">Bulletin Board</a></li>
         <li><a href="/pages/message_drafter.html">Message Drafter</a></li>
         <li><a href="/pages/message_inbox.html">Messages</a></li>
     </ul>
-    <p class=".small-text">Created for academic purposes as part of the MSc Interactive Digital Media at Trinity College Dublin</p>
+
+    <p>
+        Created for academic purposes as part of the MSc Interactive Digital Media at Trinity College Dublin
+    </p>
 </footer>
 
 </body>
