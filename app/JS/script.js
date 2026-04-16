@@ -1,124 +1,103 @@
-console.log('HELLO')
+console.log('HELLO');
 
-//light + dark mode toggle
+// =======================
+// 🌙 LIGHT + DARK MODE
+// =======================
 const body = document.querySelector("body");
-toggle = document.querySelector(".toggle");
+const toggle = document.querySelector(".toggle");
 
-//setting what color mode it's in
 let getMode = localStorage.getItem("mode");
-console.log(getMode);
+
 if (getMode && getMode === "dark") {
-    body.classList.toggle("dark");
-    toggle.classList.toggle("active")
+    body.classList.add("dark");
+    toggle.classList.add("active");
 }
 
-//toggling light vs dark mode
 toggle.addEventListener("click", () => {
     body.classList.toggle("dark");
 
     if (!body.classList.contains("dark")) {
-        return localStorage.setItem("mode", "light");
+        localStorage.setItem("mode", "light");
+    } else {
+        localStorage.setItem("mode", "dark");
     }
-    localStorage.setItem("mode", "dark");
-})
 
-// activating toggle on click
-toggle.addEventListener("click", () => toggle.classList.toggle("active"));
+    toggle.classList.toggle("active");
+});
 
-
-
-
-//tab script
-const tabs = document.querySelectorAll('[data-tab-target')
-const tabContents = document.querySelectorAll('[data-tab-content]')
+// =======================
+// 📑 TABS
+// =======================
+const tabs = document.querySelectorAll('[data-tab-target]');
+const tabContents = document.querySelectorAll('[data-tab-content]');
 
 tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-        const target = document.querySelector(tab.dataset.tabTarget)
-        tabContents.forEach(tabContent => {
-            tabContent.classList.remove('active')
-        })
-        target.classList.add('active');
-    })
-})
+        const target = document.querySelector(tab.dataset.tabTarget);
 
-//profile in nav opening sub-menu 
+        tabContents.forEach(tabContent => {
+            tabContent.classList.remove('active');
+        });
+
+        target.classList.add('active');
+    });
+});
+
+// =======================
+// 👤 PROFILE MENU
+// =======================
 let subMenu = document.getElementById("subMenu");
 
-function toggleMenu(){
+function toggleMenu() {
     subMenu.classList.toggle("open-menu");
 }
 
-//swiper js for messages
+// =======================
+// 📢 NOTIFICATION HELPER (GLOBAL)
+// =======================
+function showNotification(message, type = "success") {
+    console.log(`[${type.toUpperCase()}] ${message}`);
 
-// Templates
-
-//Hook up to message content
-  const inboxSlides = [
-    { subject: "Inbox", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-    { subject: "Inbox", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-    { subject: "Inbox", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-    { subject: "Inbox", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-  ];
-
-  const outboxSlides = [
-    { subject: "Outbox", body: "Outbox message this is a sent item. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt." },
-    { subject: "Outboxg", body: "Outbox message this is a sent item. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt." },
-    { subject: "Outbox", body: "Outbox message  this is a sent item. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt." },
-    { subject: "Outbox", body: "Outbox message  this is a sent item. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt." },
-  ];
-
-  const cardClasses = ['cardBack-3', 'cardBack-2', 'cardBack-1', 'cardFront'];
-
-  let swiper = null;
-
-  function initSwiper() {
-    if (swiper) swiper.destroy(true, true);
-    swiper = new Swiper('.message-swiper', {
-      slidesPerView: 1,
-      spaceBetween: 0,
-      loop: false, // for the order, can look at this again later if we wanna change
-      effect: 'cards', 
-      grabCursor: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
+    // If you later have a UI toast system, it will hook here
+    const event = new CustomEvent("notify", {
+        detail: { message, type }
     });
-  }
 
-  function buildSlides(data) {
-    const wrapper = document.querySelector('.swiper-wrapper');
-    wrapper.innerHTML = data.map((msg, i) => `
-      <div class="swiper-slide">
-        <div class="card ${cardClasses[i] || ''}">
-          <div class="card-content">
-            <h3>Subject: ${msg.subject}</h3>
-            <p>${msg.body}</p>
-            <button class="btn-primary">Open Message</button>
-          </div>
-        </div>
-      </div>
-    `).join('');
-  }
+    window.dispatchEvent(event);
+}
 
-  function showInbox() {
-    document.querySelectorAll('.menu-item').forEach(el => el.classList.remove('active'));
-    document.querySelector('.menu-item:first-child').classList.add('active');
-    buildSlides(inboxSlides);
-    initSwiper();
-  }
+// expose globally so other files can use it
+window.showNotification = showNotification;
 
-  function showOutbox() {
-    document.querySelectorAll('.menu-item').forEach(el => el.classList.remove('active'));
-    document.querySelector('.menu-item:last-child').classList.add('active');
-    buildSlides(outboxSlides);
-    initSwiper();
-  }
+// =======================
+// 🚪 LOGOUT SYSTEM (NEW)
+// =======================
+function logoutUser() {
+    try {
+        // clear local storage data
+        localStorage.removeItem("user");
+        localStorage.removeItem("mode");
+        localStorage.removeItem("messages");
+        localStorage.removeItem("userProfile");
 
-  // Initialize with inbox on page load
-  initSwiper();
+        // firebase safe logout (if exists)
+        if (window.firebaseAuth && typeof window.firebaseAuth.signOut === "function") {
+            window.firebaseAuth.signOut();
+        }
+
+        showNotification("Logged out successfully", "success");
+
+        console.log("User logged out");
+
+        setTimeout(() => {
+            window.location.href = "/pages/sign-in.html";
+        }, 800);
+
+    } catch (error) {
+        console.error("Logout failed:", error);
+        showNotification("Logout failed", "error");
+    }
+}
+
+// expose globally so HTML can call it
+window.logoutUser = logoutUser;
