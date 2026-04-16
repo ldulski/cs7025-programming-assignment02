@@ -92,72 +92,204 @@ const templates = [
   {
     name: "Classic",
     cardBack: {
-      background: "var(--pure-white)",
-      background: "#fffdf5",
+      background: "var(--sky-blue)",
       padding: "2rem 2.5rem"
     },
     recipient: {
       fontFamily: "'Georgia', serif",
       fontSize: "1.1rem",
-      color: "var(--pure-black)",
-      color: "#2c2c2c",
-      fontStyle: "italic"
+      color: "var(--pure-white)",
+      fontStyle: "italic",
+      textTransform: "capitalize",
+      textShadow: "1px 1px 3px rgba(9,47,51,0.25)"  // deep-sea tint
     },
     body: {
       fontFamily: "'Georgia', serif",
       fontSize: "1rem",
-      color: "var(--pure-black)",
-      color: "#2c2c2c",
-      lineHeight: "1.8"
+      color: "var(--pure-white)",
+      lineHeight: "1.8",
+      textShadow: "none"
     }
   },
   {
     name: "Modern",
     cardBack: {
-      background: "var(--sky-blue)",
-      background: "#f0f4ff",
+      background: "var(--pure-white)",
       padding: "2rem"
     },
     recipient: {
       fontFamily: "'Figtree', sans-serif",
       fontSize: "1.2rem",
-      color: "var(--pure-black)",
-      color: "#1a1a2e",
-      fontStyle: "normal"
+      color: "var(--deep-sea)",
+      fontStyle: "normal",
+      textTransform: "uppercase",
+      letterSpacing: "0.12em",
+      textShadow: "none"
     },
     body: {
       fontFamily: "'Figtree', sans-serif",
       fontSize: "1rem",
       color: "var(--pure-black)",
-      color: "#1a1a2e",
-      lineHeight: "1.6"
+      lineHeight: "1.6",
+      textShadow: "none"
     }
   },
   {
     name: "Vintage",
     cardBack: {
       background: "var(--parchement-paper)",
-      background: "#fdf3e3",
       padding: "2.5rem"
     },
     recipient: {
       fontFamily: "'Courier New', monospace",
       fontSize: "1rem",
-      color: "var(--pure-black)",
-      color: "#5c4033",
-      fontStyle: "normal"
+      color: "var(--terracotta)",
+      fontStyle: "normal",
+      textTransform: "capitalize",
+      textShadow: "1px 1px 0px rgba(175,80,49,0.3)"  // terracotta tint
     },
     body: {
       fontFamily: "'Courier New', monospace",
       fontSize: "0.9rem",
-      color: "var(--pure-black)",
-      lineHeight: "1.7"
+      color: "var(--deep-sea)",
+      lineHeight: "1.7",
+      textShadow: "none"
     }
-
-    //add more, for the rest
-    //   color: "#5c4033",
-    //   lineHeight: "1.7"
-    // }
+  },
+  {
+    name: "Techno",
+    cardBack: {
+      background: "var(--pure-black)",
+      padding: "2rem"
+    },
+    recipient: {
+      fontFamily: "'Courier New', monospace",
+      fontSize: "1rem",
+      color: "var(--sky-blue)",
+      fontStyle: "normal",
+      textTransform: "uppercase",
+      letterSpacing: "0.15em",
+      textShadow: "0 0 8px var(--sky-blue), 0 0 20px rgba(127,199,204,0.4)"  // sky-blue glow
+    },
+    body: {
+      fontFamily: "'Courier New', monospace",
+      fontSize: "0.85rem",
+      color: "var(--default-gray)",
+      lineHeight: "1.7",
+      letterSpacing: "0.03em",
+      textShadow: "none"
+    }
+  },
+  {
+    name: "Icy",
+    cardBack: {
+      background: "linear-gradient(135deg, #dff4f7 0%, var(--pure-white) 50%, #e8f6fa 100%)",
+      padding: "2rem 2.5rem"
+    },
+    recipient: {
+      fontFamily: "'Palatino Linotype', Palatino, serif",
+      fontSize: "1.1rem",
+      color: "var(--sky-blue)",
+      fontStyle: "italic",
+      textTransform: "capitalize",
+      textShadow: "0 1px 4px rgba(127,199,204,0.6), 0 0 12px rgba(127,199,204,0.2)"  // sky-blue frost
+    },
+    body: {
+      fontFamily: "'Palatino Linotype', Palatino, serif",
+      fontSize: "1rem",
+      color: "var(--deep-sea)",
+      lineHeight: "1.8",
+      textShadow: "none"
+    }
+  },
+  {
+    name: "Lovebug",
+    cardBack: {
+      background: "#fdf0f0",
+      padding: "2rem 2.5rem"
+    },
+    recipient: {
+      fontFamily: "'Brush Script MT', 'Segoe Script', cursive",
+      fontSize: "1.4rem",
+      color: "var(--red-wine)",
+      fontStyle: "normal",
+      textTransform: "capitalize",
+      textShadow: "1px 2px 6px rgba(152,2,4,0.2)"  // red-wine blush
+    },
+    body: {
+      fontFamily: "'Georgia', serif",
+      fontSize: "1rem",
+      color: "var(--terracotta)",
+      lineHeight: "1.8",
+      textShadow: "none"
+    }
+  },
+  {
+    name: "Earthy",
+    cardBack: {
+      background: "var(--parchement-paper)",
+      padding: "2rem 2.5rem"
+    },
+    recipient: {
+      fontFamily: "'Trebuchet MS', sans-serif",
+      fontSize: "1.1rem",
+      color: "var(--moss-green)",
+      fontStyle: "normal",
+      textTransform: "capitalize",
+      textShadow: "1px 1px 0px rgba(2,99,58,0.2)"  // moss-green pressed
+    },
+    body: {
+      fontFamily: "'Figtree', sans-serif",
+      fontSize: "1rem",
+      color: "var(--terracotta)",
+      lineHeight: "1.75",
+      textShadow: "none"
+    }
+  },
+  {
+    name: "Pride",
+    cardBack: {
+      background: "linear-gradient(135deg, var(--red-wine), var(--terracotta), var(--sunshine-yellow), var(--moss-green), var(--sky-blue), var(--cherrry-blossom))",
+      padding: "2rem 2.5rem"
+    },
+    recipient: {
+      fontFamily: "'Impact', 'Arial Black', sans-serif",
+      fontSize: "1.2rem",
+      color: "var(--pure-white)",
+      fontStyle: "normal",
+      textTransform: "uppercase",
+      letterSpacing: "0.1em",
+      textShadow: "2px 2px 0px rgba(9,47,51,0.4), 0 0 12px rgba(255,255,255,0.3)"  // deep-sea hard drop + white glow
+    },
+    body: {
+      fontFamily: "'Figtree', sans-serif",
+      fontSize: "1rem",
+      color: "var(--pure-white)",
+      lineHeight: "1.7",
+      textShadow: "0 1px 3px rgba(9,47,51,0.3)"  // deep-sea soft
+    }
+  },
+  {
+    name: "Cotton Candy",
+    cardBack: {
+      background: "linear-gradient(135deg, var(--cherrry-blossom) 0%, #c8e6ff 50%, var(--light-green) 100%)",
+      padding: "2rem 2.5rem"
+    },
+    recipient: {
+      fontFamily: "'Comic Sans MS', 'Chalkboard SE', cursive",
+      fontSize: "1.1rem",
+      color: "var(--deep-sea)",
+      fontStyle: "normal",
+      textTransform: "capitalize",
+      textShadow: "1px 1px 4px rgba(253,171,165,0.6), 0 0 10px rgba(199,217,160,0.4)"  // cherry-blossom + light-green pastel glow
+    },
+    body: {
+      fontFamily: "'Comic Sans MS', 'Chalkboard SE', cursive",
+      fontSize: "0.95rem",
+      color: "var(--deep-sea)",
+      lineHeight: "1.8",
+      textShadow: "none"
+    }
   }
 ];
 
