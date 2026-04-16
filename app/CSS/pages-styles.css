@@ -293,12 +293,10 @@ input {
 
 /* bulletin board page styles start */
 .bulletin-hero {
-  /* max-width: 1300px; */
   background-image: url("/app/Images/corkboard.png");
-  height: auto;
-  background-image: repeat;
-  background-size: cover;
-
+  background-repeat: repeat;
+  background-size: 500px 500px;
+  min-height: 80vh;
 }
 
 .postItContainer {
@@ -375,11 +373,12 @@ input {
 .tab {
   display: flex;
   gap: 32px;
-
 }
 
 .tab-content {
   padding: 0px 12px;
+  margin: 40px;
+  margin-top: 0px;
 }
 
 [data-tab-content] {
@@ -410,7 +409,7 @@ input {
 }
 
 div.tab-button {
-  max-width: 200px;
+  max-width: 300px;
 }
 
 .tab-nav {
@@ -432,14 +431,15 @@ div.tab-button {
 
 .account-form {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
+  flex-flow: row wrap;
+  justify-content: flex-start;
   gap: 25px;
   max-height: 450px;
+  margin-bottom: 20px;
 }
 
 .account-form div {
-  min-width: 375px;
+  min-width: 400px;
   display: flex;
   flex-flow: column wrap;
   gap: 10px;
@@ -451,6 +451,11 @@ div.tab-button {
   font-family: "Figtree", sans-serif;
   font-weight: 400;
   font-size: 1rem;
+}
+.account-form button{
+  width: 400px;
+  justify-content: center;
+  align-items: center;
 }
 
 
