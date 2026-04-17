@@ -126,6 +126,9 @@
 
         document.getElementById(formSteps[currentStep]).style.display = "block";
         stepInfo.textContent = `Step ${currentStep + 1} of ${formSteps.length}`;
+        if (currentStep === 3){
+            updateSummaryValues();
+        }
         navLeft.style.display = currentStep === 0 ? "none" : "block";
         navRight.style.display = currentStep === formSteps.length - 1 ? "none" : "block";
      }
@@ -148,7 +151,7 @@
      });
 
 
-     //validation script for form
+     //validation script for form + summary section content 
     const usernameInput = document.getElementById("username");
     const imageUpload = document.getElementById("imageUpload");
     const shortBio = document.getElementById("shortBio");
@@ -220,7 +223,17 @@
 function updateSummaryValues(){
     usernameVal.textContent = usernameInput.value;
     bioVal.textContent = shortBio.value;
-    pronounVal.textContent = 
+    pronounVal.textContent = pronounInput.value;
+
+    const photoVal = imageUpload.files[0]?.name;
+    if (photoVal){
+    const extension = fileName.split(".").pop();
+    const baseName = fileName.split(".")[0];
+    const truncatedName = baseName.length > 10 ? baseName.substring(0, 10) + "..." : baseName;
+    photoVal.textContent = `${truncatedName}.${extension}`;
+     } else {
+    photoVal.textContent = "No file selected";
+     }
 }
 
 </script>
