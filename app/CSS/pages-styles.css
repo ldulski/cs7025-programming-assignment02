@@ -280,12 +280,9 @@ input {
   cursor: pointer;
 }
 
-#setupForm02 {
-  left: 450px;
-}
-
-#setupForm03 {
-  left: 450px;
+.group-two,
+.group-three {
+  display: none;
 }
 
 /* login page styles end */
