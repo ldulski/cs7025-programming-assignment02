@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postd Chat</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="/my-app/app/globals.css">
+    <link rel="stylesheet" href="/app/CSS/pages-styles.css">
+    <script src="/app/JS/script.js" defer></script>
+    <script type="module" src="/app/JS/chat.js" defer></script>
+</head>
+<body>
+<header>
+    <nav aria-label="Main Navigation">
+        <div class="logo"><a href="/pages/index.html">Postd</a></div>
+        <ul>
+            <li><a href="/pages/bulletinboard.html" class="nav-links">Bulletin Board</a></li>
+            <li><a href="/pages/message_drafter.html" class="nav-links">Message Drafter</a></li>
+            <li><a href="/pages/message_inbox.html" class="nav-links">Messages</a></li>
+            <li><a class="dropdown-button" onclick="toggleMenu()"><span class="material-icons-outlined">account_circle</span></a></li>
+            <li><div class="toggle"></div></li>
+       </ul>
+       <div aria-label="Account Sub-Navigation" class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <a href="/pages/account_external.html" class="sub-menu-link">Profile</a>
+                <a href="/pages/account_internal.html" class="sub-menu-link">Settings</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="chat-layout">
+    <aside class="chat-sidebar">
+        <h3>Chats</h3>
+        <div id="chatContacts" class="chat-contacts"></div>
+    </aside>
+
+    <section class="chat-panel">
+        <div class="chat-panel-header">
+            <h2 id="chatTitle">Choose a pen pal</h2>
+            <p id="chatMeta">Open chat from Bulletin Board, Activity, or Inbox.</p>
+        </div>
+
+        <div id="chatThread" class="chat-thread"></div>
+
+        <form id="chatComposer" class="chat-composer">
+            <textarea id="chatMessage" placeholder="Write a live chat message..." disabled></textarea>
+            <button id="chatSend" class="teal-btn" type="submit" disabled>Send</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Postd</p>
+    <ul class="footer-links">
+        <li><a href="/pages/account_external.html">Account</a></li>
+        <li><a href="/pages/bulletinboard.html">Bulletin Board</a></li>
+        <li><a href="/pages/message_drafter.html">Message Drafter</a></li>
+        <li><a href="/pages/message_inbox.html">Messages</a></li>
+    </ul>
+    <p>Created for academic purposes as part of the MSc Interactive Digital Media at Trinity College Dublin</p>
+</footer>
+</body>
+</html>
