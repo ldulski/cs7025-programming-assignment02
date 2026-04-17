@@ -62,9 +62,13 @@ onAuthStateChanged(auth, (user) => {
 
             //upload image
             if (selectedFile) {
+                if(!selectedFile.type.startsWith("image/")){
+                    notify("Please upload an image file", "error");
+                    return;
+                }
                 const storageRef = ref(
-                    auth.app._storage, 
-                    `profile_images/${user.uid}/profile.jpg`
+                    storage, 
+                    `profile_images/${user.uid}/${Date.now()}.jpg`
                 );
 
                 await uploadBytes(storageRef, selectedFile);

@@ -50,6 +50,7 @@ function getAllMessages() {
 let swiper = null;
 
 function initSwiper() {
+    if(typeof Swiper == "undefined") return;
     if (swiper) swiper.destroy(true, true);
 
     swiper = new Swiper(".message-swiper", {
