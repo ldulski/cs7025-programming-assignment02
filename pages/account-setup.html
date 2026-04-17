@@ -80,7 +80,7 @@
                 </div>
                 <div class="summary-section">
                     <p>Prefered Pronouns:</p>
-                    <p id="pronoun-id"></p>
+                    <p id="pronoun-val"></p>
                     <button type="button" class="edit-btn" id="pronoun-edit"><span class="material-icons-outlined">edit</span></button>
                 </div>
             </div>
@@ -152,7 +152,11 @@
     const usernameInput = document.getElementById("username");
     const imageUpload = document.getElementById("imageUpload");
     const shortBio = document.getElementById("shortBio");
-    
+    const pronounInput = document.getElementById("pronouns");
+    const usernameVal = document.getElementById("username-val");
+    const photoVal = document.getElementById("photo-val");
+    const bioVal = document.getElementById("bio-val");
+    const pronounVal = document.getElementById("pronoun-val");
     const editButtons = {
      "username-edit": 0,
      "photo-edit": 1,
@@ -214,7 +218,9 @@
 }
 
 function updateSummaryValues(){
-    username.textContent = name
+    usernameVal.textContent = usernameInput.value;
+    bioVal.textContent = shortBio.value;
+    pronounVal.textContent = 
 }
 
 </script>
