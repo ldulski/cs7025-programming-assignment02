@@ -21,65 +21,80 @@
 </header>
 
 <main>
-<!-- add js here to move through the account set up one step at a time -->
-<section class="setup-container">
-    <article class="setup-card" id="setupForm01">
-        <div class="setup-bg">
-            <div>
-                <h2>Welcome to Postd!</h2>
-                <p class="subheader-02">Let's finish getting your account set up</p>
+    <form class="setup-container" id="setupForm">
+        <section class="group-one setup-card" id="one">
+            <div class="form-control setup-bg" id="profileForm">
+                    <div>
+                        <h2>Welcome to Postd!</h2>
+                        <p class="subheader-02">Let's finish getting your account set up</p>
+                    </div>
+                    <label class="accountSetup-label">Create a Username</label></br>
+                    <p class="small-text">Usernames must be fewer than 15 characters</p></br>
+                    <input type="text" id="username" maxlength="15" required="required"></br>
             </div>
-            <form class="accountSetUp-form" id="profileForm">
-                <label class="accountSetup-label">Create a Username</label></br>
-                <p class="small-text">Usernames must be fewer than 15 characters</p></br>
-                <input type="text" maxlength="15" required="required"></br>
-                <div class="btn-container">
-                    <button type="button"><span class="material-icons-outlined" id="Next1">arrow_forward_ios</span></button>
+            <div class="form-control">
+            </div>
+        </section>
+        <section class="group-two setup-card" id="two">
+            <div class="form-control setup-bg">
+                <div>
+                    <h2>Almost There!</h2>
+                    <p class="subheader-02">Let's put a face with a name</p>
                 </div>
-                   
-            </form>
-        </div>
-    </article>
-
-    <article class="setup-card" id="setupForm02">
-        <div class="setup-bg">
-            <div>
-                <h2>Almost There!</h2>
-                <p class="subheader-02">Let's put a face with a name</p>
-            </div>
-            <form class="accountSetUp-form">
                 <label class="accountSetup-label">Upload a Profile Picture</label></br>
                 <p class="small-text">Maximum upload size is...</p></br>
                 <img id="profileImage" src="aDefaultImage.png" alt="profile image"></br>
                 <input id="imageUpload" type="file" accept="image/*"></br>
-                <div class="btn-container">
-                    <button type="button"><span class="material-icons-outlined" id="Back1">arrow_back_ios</span></button>
-                    <button type="button"><span class="material-icons-outlined"id="Next2">arrow_forward_ios</span></button>
-                </div>
-            </form>
-        </div>
-    </article>
-
-    <article class="setup-card" id="setupForm03">
-        <div class="setup-bg">
-            <div>
-                <h2>Who are you?</h2>
             </div>
-            <form class="accountSetUp-form">
+        </section>
+        <section class="group-three setup-card" id="three">
+            <div class="form-control setup-bg">
+                <div>
+                    <h2>Tell us about yourself</h2>
+                    <p class="subheader-02">Click submit when you're done!</p>
+                </div>
                 <label class="accountSetup-label" for="bio">Write your bio below:</label></br>
                 <p class="small-text">Maximum 160 characters</p></br>
-                <textarea id="bio" rows="4" type="text" maxlength="160" required="required" placeholder="Tell us a little about yourself!"></textarea></br>
+                <textarea id="bio" id="shortBio" rows="4" type="text" maxlength="160" required="required" placeholder="Tell us a little about yourself!"></textarea></br>
                 <label class="accountSetup-label" for="pronouns">Prefered Pronouns</label></br>
                 <input type="text" id="pronouns" placeholder="e.g. she/her"></br>
-                <div class="btn-container">
-                    <button type="button"><span class="material-icons-outlined"id="Back2">arrow_back_ios</span></button>
-                    <button type="submit">Save Profile</button>
+            </div>
+        </section>
+
+        <section class="group-four setup-card" id="four">
+            <div class="setup-bg">
+                <div class="summary-section">
+                    <p>Username:</p>
+                    <p id="username-val"></p>
+                    <button type="button" class="edit-btn" id="username-edit"><span class="material-icons-outlined">edit</span></button>
                 </div>
-                
-            </form>
+                <div class="summary-section">
+                    <p>Profile Photo:</p>
+                    <p id="photo-val"></p>
+                    <button type="button" class="edit-btn" id="photo-edit"><span class="material-icons-outlined">edit</span></button>
+                </div>
+                <div class="summary-section">
+                    <p>Short Bio:</p>
+                    <p id="bio-val"></p>
+                    <button type="button" class="edit-btn" id="bio-edit"><span class="material-icons-outlined">edit</span></button>
+                </div>
+                <div class="summary-section">
+                    <p>Prefered Pronouns:</p>
+                    <p id="pronoun-val"></p>
+                    <button type="button" class="edit-btn" id="pronoun-edit"><span class="material-icons-outlined">edit</span></button>
+                </div>
+            </div>
+        </section>
+        <!-- button container -->
+        <span id="stepInfo"></span>
+        <div class="btn-container">
+            <div>
+                <button type="button"><span class="material-icons-outlined" id="navLeft">arrow_back_ios</span></button>
+                <button type="button"><span class="material-icons-outlined"id="navRight">arrow_forward_ios</span></button>
+            </div>
+            <button type="submit">Save Profile</button>
         </div>
-    </article>    
-</section>
+    </form>
 </main>
 <footer aria-label="Main Footer">
     <p class=".small-text">© 2026 Postd</p>
@@ -96,32 +111,146 @@
 <!-- making account form multi-step -->
  <!-- logan still making edits but paused here bc they're going insane -->
 <script>
-    var setupForm01 = document.getElementbyID("setupForm01");
-    var setupForm02 = document.getElementbyID("setupForm02");
-    var setupForm03 = document.getElementbyID("setupForm03");
+     const stepInfo = document.getElementbyId("stepInfo");
+     const navLeft = document.getElementById("navLeft");
+     const navRight = document.getElementById("navRight");
+     const form = document.getElementbyId("setupForm");
+     const formSteps = ["one","two", "three", "four"];
 
-    var Next1 = document.getElementbyID("Next1");
-    var Next2 = document.getElementbyID("Next2");
-    var Back1 = document.getElementbyID("Back1");
-    var Back2 = document.getElementbyID("Back2");
+     let currentStep = 0;
 
-    Next1.onclick = function () {
-        setupForm01.style.left = "-450px";
-        setupForm02.style.left = "40px";
+     function updateStepVisibility(){
+        formSteps.forEach((step) => {
+            document.getElementbyId(step).style.display = "none";
+        });
+
+        document.getElementById(formSteps[currentStep]).style.display = "block";
+        stepInfo.textContent = `Step ${currentStep + 1} of ${formSteps.length}`;
+        if (currentStep === 3){
+            updateSummaryValues();
+        }
+        navLeft.style.display = currentStep === 0 ? "none" : "block";
+        navRight.style.display = currentStep === formSteps.length - 1 ? "none" : "block";
+     }
+
+     document.addEveentListener("DOMContentLoaded", () => {
+        navLeft.style.display = "none";
+        updateStepVisibility();
+        navRight.addEventListener("click", () =>{
+            if (currentStep < formStep.length -1){
+                currentStep++;
+                updateStepVisibility();
+            }
+        });
+        navLeft.addEventListener("click", () =>{
+            if (currentStep > 0){
+                currentStep--;
+                updateStepVisibility();
+            }
+        });
+        Object.keys(editButtons).forEach((buttonId) => {
+            const button = document.getElementById(buttonId);
+            button.addEventListener("click", (e) => {
+                currentStep = editButtons[buttonId];
+                updateStepVisibility();
+            });
+        });
+     });
+
+
+     //validation script for form + summary section content 
+    const usernameInput = document.getElementById("username");
+    const imageUpload = document.getElementById("imageUpload");
+    const shortBio = document.getElementById("shortBio");
+    const pronounInput = document.getElementById("pronouns");
+    const usernameVal = document.getElementById("username-val");
+    const photoVal = document.getElementById("photo-val");
+    const bioVal = document.getElementById("bio-val");
+    const pronounVal = document.getElementById("pronoun-val");
+    const editButtons = {
+     "username-edit": 0,
+     "photo-edit": 1,
+     "bio-edit": 0,
+     "pronouns-edit": 0
+    };
+
+
+     function validateStep(step){
+        let isValid = true;
+
+        if(step === 0){
+            if (usernameInput.value.trim() === "")
+            showError(usernameInput, "Username is required");
+            isValid = false;
+        }
+        
+        if (shortBio.value.trim() === ""){
+            showError(shortBio, "A small bio is required");
+            isValid = false;
+        }
+
+        else if (step === 1){
+            if(!imageUpload.files[0]){
+                showError(imageUpload,"A profile photo is required");
+                isValid = false;
+            }
+        }
+
+        return isValid;
+     }
+
+     function showError(input,message){
+        const formControl = input.parentElement;
+        const errorSpan = formControl.querySelector(".error-message");
+        input.classList.add("error");
+        errorSpan.textContent = message;
+     }
+
+     function setupRealtimeValidation(){
+        usernameInput.addEventListener("input", () =>{
+            if (usernameInput.value.trim() !== "") clearError(usernameInput);
+        });
+
+        shortBio.addEventListener("input", () => {
+            if (shortBio.value.trim() !== "") clearError(shortBio);
+        });
+
+        imageUpload.addEventListener("change", () =>{
+            if (imageUpload.files[0]) clearError(imageUpload);
+        })
+     }
+
+    function clearError(input) {
+        const formControl = input.parentElement;
+        const errorSpan = formControl.querySelector(".error-message");
+        input.classList.remove("error");
+         errorSpan.textContent = "";
+}
+
+function updateSummaryValues(){
+    usernameVal.textContent = usernameInput.value;
+    bioVal.textContent = shortBio.value;
+    pronounVal.textContent = pronounInput.value;
+
+    const photoVal = imageUpload.files[0]?.name;
+    if (photoVal){
+    const extension = fileName.split(".").pop();
+    const baseName = fileName.split(".")[0];
+    const truncatedName = baseName.length > 10 ? baseName.substring(0, 10) + "..." : baseName;
+    photoVal.textContent = `${truncatedName}.${extension}`;
+     } else {
+    photoVal.textContent = "No file selected";
+     }
+}
+
+form.addEventListener("submit", (e) =>{
+    e.preventDefault();
+    if(validate(2)){
+        alert("You're All Set!");
+        form.reset();
+        currentFormStep = 0;
+        updateStepVisibility();
     }
-
-    Back1.onclick = function () {
-        setupForm01.style.left = "40px";
-        setupForm02.style.left = "450px";
-    }
-    Next2.onclick = function () {
-        setupForm02.style.left = "-450px";
-        setupForm03.style.left = "40px";
-    }
-
-    Back2.onclick = function () {
-        setupForm02.style.left = "40px";
-        setupForm03.style.left = "450px";
-    }       
+});
 </script>
 </html>

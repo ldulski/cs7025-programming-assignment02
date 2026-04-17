@@ -208,13 +208,15 @@ nav {
   width: 540px;
 }
 
+/* login page styles end */
 /* account set up styles start */
 .setup-container {
   position: relative;
   margin: 8% auto;
-  /* display: flex;
+  display: flex;
+  flex-flow:column wrap;
   justify-content: center;
-  align-content: center; */
+  align-content: center;
 }
 
 .setup-card {
@@ -232,11 +234,11 @@ nav {
   padding: 4rem;
 }
 
-.accountSetUp-form p {
+.setup-container p {
   margin: 0px;
 }
 
-.accountSetUp-form textarea,
+setup-container textarea,
 input {
   min-width: 150px;
   padding: 5px 10px;
@@ -249,7 +251,7 @@ input {
 
 }
 
-.accountSetUp-form button {
+.setup-container button {
   max-width: 150px;
   margin: 15px 0px;
 }
@@ -262,34 +264,49 @@ input {
 
 }
 
-.btn-box {
-  width: 100%;
-  margin: 0;
+.btn-container {
+  max-width: 750px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 }
 
-.accountSetUp-form button {
-  max-width: 110px;
-  height: 40px;
-  margin: 10px 0px;
-  padding: 8px 10px;
-  border: 0;
-  border-radius: 8px;
-  outline: none;
-  cursor: pointer;
+
+.group-two,
+.group-three {
+  display: none;
 }
 
-#setupForm02{
-  left: 450px;
+.summary-section {
+  display: flex;
+  justify-items: center;
+
+  /* gap: 10px; */
 }
 
-#setupForm03{
-  left: 450px;
+.summary-section p:first-child {
+  width: 20%;
+  flex-shrink: 0;
 }
 
-/* login page styles end */
+.summary-section p:nth-child(2) {
+  width: 35%;
+  flex-shrink: 0;
+}
+
+.edit-btn {
+  width: 25%;
+  background-color: transparent;
+  margin-left: auto;
+  padding: 0px;
+  border: none;
+}
+
+button#username-edit.edit-btn {
+  margin: 0px;
+}
 
 /* account set up styles end */
-
 
 /* bulletin board page styles start */
 .bulletin-hero {
@@ -452,7 +469,8 @@ div.tab-button {
   font-weight: 400;
   font-size: 1rem;
 }
-.account-form button{
+
+.account-form button {
   width: 400px;
   justify-content: center;
   align-items: center;
