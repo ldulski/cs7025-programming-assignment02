@@ -208,6 +208,7 @@ nav {
   width: 540px;
 }
 
+/* login page styles end */
 /* account set up styles start */
 .setup-container {
   position: relative;
@@ -285,10 +286,36 @@ input {
   display: none;
 }
 
-/* login page styles end */
+.summary-section {
+  display: flex;
+  justify-items: center;
+
+  /* gap: 10px; */
+}
+
+.summary-section p:first-child {
+  width: 20%;
+  flex-shrink: 0;
+}
+
+.summary-section p:nth-child(2) {
+  width: 35%;
+  flex-shrink: 0;
+}
+
+.edit-btn {
+  width: 25%;
+  background-color: transparent;
+  margin-left: auto;
+  padding: 0px;
+  border: none;
+}
+
+button#username-edit.edit-btn {
+  margin: 0px;
+}
 
 /* account set up styles end */
-
 
 /* bulletin board page styles start */
 .bulletin-hero {

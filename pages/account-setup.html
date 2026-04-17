@@ -60,6 +60,31 @@
                 <input type="text" id="pronouns" placeholder="e.g. she/her"></br>
             </div>
         </section>
+
+        <section class="group-four setup-card" id="four">
+            <div class="setup-bg">
+                <div class="summary-section">
+                    <p>Username:</p>
+                    <p id="username-val"></p>
+                    <button type="button" class="edit-btn" id="username-edit"><span class="material-icons-outlined">edit</span></button>
+                </div>
+                <div class="summary-section">
+                    <p>Profile Photo:</p>
+                    <p id="photo-val"></p>
+                    <button type="button" class="edit-btn" id="photo-edit"><span class="material-icons-outlined">edit</span></button>
+                </div>
+                <div class="summary-section">
+                    <p>Short Bio:</p>
+                    <p id="bio-val"></p>
+                    <button type="button" class="edit-btn" id="bio-edit"><span class="material-icons-outlined">edit</span></button>
+                </div>
+                <div class="summary-section">
+                    <p>Prefered Pronouns:</p>
+                    <p id="pronoun-id"></p>
+                    <button type="button" class="edit-btn" id="pronoun-edit"><span class="material-icons-outlined">edit</span></button>
+                </div>
+            </div>
+        </section>
         <!-- button container -->
         <div class="btn-container">
             <div>
@@ -90,7 +115,7 @@
      const navLeft = document.getElementById("navLeft");
      const navRight = document.getElementById("navRight");
      const form = document.getElementbyId("setupForm");
-     const formSteps = ["one","two", "three"];
+     const formSteps = ["one","two", "three", "four"];
 
      let currentStep = 0;
 
@@ -127,7 +152,14 @@
     const usernameInput = document.getElementById("username");
     const imageUpload = document.getElementById("imageUpload");
     const shortBio = document.getElementById("shortBio");
-    const pronouns = document.getElementById("pronouns")
+    
+    const editButtons = {
+     "username-edit": 0,
+     "photo-edit": 1,
+     "bio-edit": 0,
+     "pronouns-edit": 0
+    };
+
 
      function validateStep(step){
         let isValid = true;
@@ -160,6 +192,30 @@
         errorSpan.textContent = message;
      }
 
-     
+     function setupRealtimeValidation(){
+        usernameInput.addEventListener("input", () =>{
+            if (usernameInput.value.trim() !== "") clearError(usernameInput);
+        });
+
+        shortBio.addEventListener("input", () => {
+            if (shortBio.value.trim() !== "") clearError(shortBio);
+        });
+
+        imageUpload.addEventListener("change", () =>{
+            if (imageUpload.files[0]) clearError(imageUpload);
+        })
+     }
+
+    function clearError(input) {
+        const formControl = input.parentElement;
+        const errorSpan = formControl.querySelector(".error-message");
+        input.classList.remove("error");
+         errorSpan.textContent = "";
+}
+
+function updateSummaryValues(){
+    username.textContent = name
+}
+
 </script>
 </html>
