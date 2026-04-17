@@ -262,9 +262,11 @@ input {
 
 }
 
-.btn-box {
-  width: 100%;
-  margin: 0;
+.btn-container {
+  max-width: 750px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 }
 
 .accountSetUp-form button {
@@ -278,11 +280,11 @@ input {
   cursor: pointer;
 }
 
-#setupForm02{
+#setupForm02 {
   left: 450px;
 }
 
-#setupForm03{
+#setupForm03 {
   left: 450px;
 }
 
@@ -452,7 +454,8 @@ div.tab-button {
   font-weight: 400;
   font-size: 1rem;
 }
-.account-form button{
+
+.account-form button {
   width: 400px;
   justify-content: center;
   align-items: center;
