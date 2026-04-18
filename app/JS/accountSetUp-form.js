@@ -226,7 +226,13 @@ form.addEventListener("submit", (e) => {
     form.reset();
     currentFormStep = 0;
     updateStepVisibility();
+
+    //redirects user to the bulletin board page
+    setTimeout(() => {
+        window.location.href = "/pages/bulletinboard.html";
+    }, 500);
 });
+
 
 
 
