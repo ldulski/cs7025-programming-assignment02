@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="/my-app/app/globals.css">
     <link rel="stylesheet" href="/app/CSS/pages-styles.css">
-    <script type="module" src="/app/JS/script.js" defer></script>
+    <script src="/app/JS/script.js" defer></script>
     <script src="/my-app/app/layout.tsx" defer></script>
     <script src="/my-app/app/page.tsx" defer></script>
     <script type="module" src="/app/JS/profileUpload.js" defer></script>
@@ -30,10 +30,10 @@
                         <h2>Welcome to Postd!</h2>
                         <p class="subheader-02">Let's finish getting your account set up</p>
                     </div>
-                    <label class="accountSetup-label">Create a Username</label></br>
+                    <label class="accountSetup-label" for="username">Create a Username</label></br>
                     <p class="small-text">Usernames must be fewer than 15 characters</p></br>
                     <input type="text" id="username" maxlength="15" required="required"></br>
-                    <span id="name-error" class="error-message" role="alert"></span>
+                    <span id="username-error" class="error-message" role="alert"></span>
             </div>
             <div class="form-control">
             </div>
@@ -44,25 +44,28 @@
                     <h2>Almost There!</h2>
                     <p class="subheader-02">Let's put a face with a name</p>
                 </div>
-                <label class="accountSetup-label">Upload a Profile Picture</label></br>
-                <p class="small-text">Maximum upload size is...</p></br>
+                <label class="accountSetup-label" for="imageUpload">Upload a Profile Picture</label></br>
+                <p class="small-text">Maximum upload size is 5 MB. Accepted formats: JPG, PNG, WEBP.</p></br>
                 <img id="profileImage" src="aDefaultImage.png" alt="profile image"></br>
                 <input id="imageUpload" type="file" accept="image/*"></br>
-                <span id="name-error" class="error-message" role="alert"></span>
+                <span id="photo-error" class="error-message" role="alert"></span>
             </div>
         </section>
         <section class="group-three setup-card" id="three">
             <div class="form-control setup-bg">
                 <div>
                     <h2>Tell us about yourself</h2>
-                    <p class="subheader-02">Click submit when you're done!</p>
+                    <p class="subheader-02">Add your final details before reviewing them on the final step.</p>
                 </div>
-                <label class="accountSetup-label" for="bio">Write your bio below:</label></br>
-                <p class="small-text">Maximum 160 characters</p></br>
-                <textarea id="bio" id="shortBio" rows="4" type="text" maxlength="160" required="required" placeholder="Tell us a little about yourself!"></textarea></br>
-                <label class="accountSetup-label" for="pronouns">Prefered Pronouns</label></br>
+                <label class="accountSetup-label" for="shortBio">Write your bio below:</label>
+                <p class="small-text">Maximum 1500 characters</p></br>
+                <textarea id="bio" rows="4" type="text" maxlength="1500" required="required" placeholder="Tell us a little about yourself!"></textarea></br>
+                <span id="bio-error" class="error-message" role="alert"></span>
+
+
+                <label class="accountSetup-label" for="pronouns">Preferred Pronouns</label></br>
                 <input type="text" id="pronouns" placeholder="e.g. she/her"></br>
-                <span id="name-error" class="error-message" role="alert"></span>
+                <span id="pronouns-error" class="error-message" role="alert"></span>
             </div>
         </section>
 
@@ -86,7 +89,7 @@
                 <div class="summary-section">
                     <p>Prefered Pronouns:</p>
                     <p id="pronoun-val"></p>
-                    <button type="button" class="edit-btn" id="pronoun-edit"><span class="material-icons-outlined">edit</span></button>
+                    <button type="button" class="edit-btn" id="pronouns-edit"><span class="material-icons-outlined">edit</span></button>
                 </div>
             </div>
         </section>
@@ -94,10 +97,15 @@
         <span id="stepInfo"></span>
         <div class="btn-container">
             <div>
-                <button type="button"><span class="material-icons-outlined" id="navLeft">arrow_back_ios</span></button>
-                <button type="button"><span class="material-icons-outlined"id="navRight">arrow_forward_ios</span></button>
+                <button class="btn-primary" type="button" id="navLeft">
+                    <span class="material-icons-outlined">arrow_back_ios</span>
+                </button>
+
+                <button class="btn-primary" type="button" id="navRight">
+                    <span class="material-icons-outlined">arrow_forward_ios</span>
+                </button>
             </div>
-            <button type="submit">Save Profile</button>
+            <button class="btn-primary" type="submit">Submit</button>
         </div>
     </form>
 </main>
