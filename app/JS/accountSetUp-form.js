@@ -7,7 +7,7 @@ const navRight = document.getElementById("navRight");
 
 const usernameInput = document.getElementById("username");
 const imageUpload = document.getElementById("imageUpload");
-const shortBio = document.getElementById("shortBio");
+const shortBio = document.getElementById("bio");
 const pronounInput = document.getElementById("pronouns");
 const usernameVal = document.getElementById("username-val");
 const photoVal = document.getElementById("photo-val");
