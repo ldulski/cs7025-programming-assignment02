@@ -33,6 +33,7 @@
                     <label class="accountSetup-label">Create a Username</label></br>
                     <p class="small-text">Usernames must be fewer than 15 characters</p></br>
                     <input type="text" id="username" maxlength="15" required="required"></br>
+                    <span id="name-error" class="error-message" role="alert"></span>
             </div>
             <div class="form-control">
             </div>
@@ -47,6 +48,7 @@
                 <p class="small-text">Maximum upload size is...</p></br>
                 <img id="profileImage" src="aDefaultImage.png" alt="profile image"></br>
                 <input id="imageUpload" type="file" accept="image/*"></br>
+                <span id="name-error" class="error-message" role="alert"></span>
             </div>
         </section>
         <section class="group-three setup-card" id="three">
@@ -60,6 +62,7 @@
                 <textarea id="bio" id="shortBio" rows="4" type="text" maxlength="160" required="required" placeholder="Tell us a little about yourself!"></textarea></br>
                 <label class="accountSetup-label" for="pronouns">Prefered Pronouns</label></br>
                 <input type="text" id="pronouns" placeholder="e.g. she/her"></br>
+                <span id="name-error" class="error-message" role="alert"></span>
             </div>
         </section>
 
