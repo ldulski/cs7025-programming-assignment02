@@ -146,7 +146,7 @@ function buildResultStage() {
       <p class="eyebrow">Your results are in...</p>
       <h2>We've identitifed your group assignment! You are in the <span class="color-${color}">${color}</span> color group!</h2>
       <p>Based on your answers, this color reflects your vibe, unique personality and the way you engage with the world!</p>
-      <button class="btn-restart">Start Over</button>
+      <button class="btn-restart" id="goSetUp">Continue</button>
     </div>
   `;
 
@@ -216,8 +216,8 @@ viewport.addEventListener("click", e => {
     }
   }
 
-  if (e.target.closest(".btn-restart")) {
-    restartQuiz();
+  if (e.target.closest("#goSetUp")) {
+    window.location.href = "/pages/account-setup.html"
   }
 
 });

@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="/my-app/app/globals.css">
     <link rel="stylesheet" href="/app/CSS/pages-styles.css">
-    <script src="/app/JS/script.js" defer></script>
+    <script type="module" src="/app/JS/script.js" defer></script>
     <script src="/my-app/app/layout.tsx" defer></script>
     <script src="/my-app/app/page.tsx" defer></script>
     <script src="/app/JS/drafter.js" defer></script>
@@ -28,7 +28,7 @@
                 <a href="/pages/account_external.html" class="sub-menu-link">Profile</a>
                 <a href="/pages/account_internal.html" class="sub-menu-link">Settings</a>
                 <a href="#" class="sub-menu-link">Help</a>
-                <a href="#" class="sub-menu-link">Logout</a>
+                <a href="#" class="sub-menu-link logout-btn">Logout</a>
                 </div>
         </div>
         </nav>
@@ -111,16 +111,13 @@
                             <div class="card-back-body" id="cardMessage">Your message will appear here after you click Preview.</div>
                         </div>
                         <div class="card-back-stamp">Stamp</div>
-                        <!-- add an image upload for the stamp too -->
-                        <!-- add an image upload for the stamp -->
                     </div>
                 </div>
             </div>
 
-            <!-- Floating Buttons -->
             <div class="floating-buttons">
                 <button class="circle-btn" onclick="flipCard()" title="Flip card">↺</button>
-                <button class="circle-btn" title="Add element">+</button>
+                <button class="circle-btn" onclick="document.getElementById('imageUpload').click()" title="Add element">+</button>
             </div>
         
         </div>

@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="/my-app/app/globals.css">
     <link rel="stylesheet" href="/app/CSS/pages-styles.css">
-    <script src="/app/JS/script.js" defer></script>
+    <script type="module" src="/app/JS/script.js" defer></script>
     <script src="/my-app/app/layout.tsx" defer></script>
     <script src="/my-app/app/page.tsx" defer></script>
     <script type="module" src="/app/JS/postit.js" defer></script> 
@@ -29,7 +29,7 @@
                 <a href="/pages/account_external.html" class="sub-menu-link">Profile</a>
                 <a href="/pages/account_internal.html" class="sub-menu-link">Settings</a>
                 <a href="#" class="sub-menu-link">Help</a>
-                <a href="#" class="sub-menu-link">Logout</a>
+                <a href="#" class="sub-menu-link logout-btn">Logout</a>
                 </div>
         </div>
         </nav>
@@ -47,7 +47,8 @@
                     <div class="like-save">
                         <button id="likePost"><span class="material-icons-outlined">favorite_border</span></button>
                         <button id="savePost"><span class="material-icons-outlined">bookmark_border</span></button>  
-                    </div>  
+                    </div>
+                </div> 
         <div class="postItContainer" id="board">
 
         </div>
