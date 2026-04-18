@@ -214,7 +214,7 @@ nav {
   position: relative;
   margin: 8% auto;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow:column wrap;
   justify-content: center;
   align-content: center;
 }
@@ -272,7 +272,6 @@ input {
 }
 
 
-
 .group-two,
 .group-three {
   display: none;
@@ -281,6 +280,8 @@ input {
 .summary-section {
   display: flex;
   justify-items: center;
+
+  /* gap: 10px; */
 }
 
 .summary-section p:first-child {
@@ -299,15 +300,6 @@ input {
   margin-left: auto;
   padding: 0px;
   border: none;
-}
-
-#profileImage {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border: 1px solid #d3d3d3;
-    border-radius: 50%; 
-    display: block;
 }
 
 button#username-edit.edit-btn {
@@ -1258,15 +1250,7 @@ span.address-gae {
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-
-/*Notification styles end */
+/*Notification styles end */ 
