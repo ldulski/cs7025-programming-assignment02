@@ -214,7 +214,7 @@ nav {
   position: relative;
   margin: 8% auto;
   display: flex;
-  flex-flow:column wrap;
+  flex-flow: column wrap;
   justify-content: center;
   align-content: center;
 }
@@ -304,6 +304,21 @@ input {
 
 button#username-edit.edit-btn {
   margin: 0px;
+}
+
+#profileImage {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 1px solid #d3d3d3;
+  background-color: var(--default-gray);
+  border-radius: 50%;
+  display: block;
+  cursor: pointer;
+}
+
+#profileImage:hover {
+  background-color: var(--sky-blue);
 }
 
 /* account set up styles end */
@@ -1250,7 +1265,15 @@ span.address-gae {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-/*Notification styles end */ 
+
+/*Notification styles end */
