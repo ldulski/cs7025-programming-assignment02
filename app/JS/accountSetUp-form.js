@@ -1,4 +1,4 @@
-console.log("This is an multi-step account form.")
+console.log("This is a multi-step account form.");
 
 const stepInfo = document.getElementById("stepInfo");
 const navLeft = document.getElementById("navLeft");
@@ -8,99 +8,151 @@ const usernameInput = document.getElementById("username");
 const imageUpload = document.getElementById("imageUpload");
 const shortBio = document.getElementById("bio");
 const pronounInput = document.getElementById("pronouns");
+
 const usernameVal = document.getElementById("username-val");
 const photoVal = document.getElementById("photo-val");
 const bioVal = document.getElementById("bio-val");
 const pronounVal = document.getElementById("pronoun-val");
 
-const form = document.getElementbyId("setupForm");
+const form = document.getElementById("setupForm");
 const formStepsID = ["one", "two", "three", "four"];
 let currentFormStep = 0;
 
 const editButtons = {
     "username-edit": 0,
     "photo-edit": 1,
-    "bio-edit": 0,
-    "pronouns-edit": 0
+    "bio-edit": 2,
+    "pronoun-edit": 2
 };
 
-// summary event listner for form elements
+// Updates summary values on the review step
 function updateSummaryValues() {
-    usernameVal.textContent = usernameInput.value;
-    bioVal.textContent = shortBio.value;
-    pronounVal.textContent = pronounInput.value;
+    usernameVal.textContent = usernameInput.value.trim() || "Not provided";
+    bioVal.textContent = shortBio.value.trim() || "Not provided";
+    pronounVal.textContent = pronounInput.value.trim() || "Not provided";
 
-    const photoVal = imageUpload.files[0]?.name;
-    if (photoVal) {
-        const extension = fileName.split(".").pop();
-        const baseName = fileName.split(".")[0];
-        const truncatedName = baseName.length > 10 ? baseName.substring(0, 10) + "..." : baseName;
-        photoVal.textContent = `${truncatedName}.${extension}`;
+    const selectedFile = imageUpload.files[0];
+
+    if (selectedFile) {
+        const fileName = selectedFile.name;
+        const lastDotIndex = fileName.lastIndexOf(".");
+        const hasExtension = lastDotIndex > 0;
+
+        const baseName = hasExtension ? fileName.substring(0, lastDotIndex) : fileName;
+        const extension = hasExtension ? fileName.substring(lastDotIndex + 1) : "";
+        const truncatedName =
+            baseName.length > 18 ? `${baseName.substring(0, 18)}...` : baseName;
+
+        photoVal.textContent = extension
+            ? `${truncatedName}.${extension}`
+            : truncatedName;
     } else {
         photoVal.textContent = "No file selected";
     }
 }
 
-// hides all sections in form
+// Hides all sections and shows the current one
 function updateStepVisibility() {
-    formStepsID.forEach((step) => {
-        document.getElementbyId(step).style.display = "none";
+    formStepsID.forEach((stepId) => {
+        const stepElement = document.getElementById(stepId);
+        if (stepElement) {
+            stepElement.style.display = "none";
+            stepElement.setAttribute("aria-hidden", "true");
+        }
     });
-    // shows currently active section
-    document.getElementById(formStepsID[currentFormStep]).style.display = "block";
-    //    indicates the user's progress throughout the form
-    stepInfo.textContent = `Step ${currentStep + 1} of ${formSteps.length}`;
-    //loading summary info box
-    if (currentStep === 3) {
+
+    const activeStep = document.getElementById(formStepsID[currentFormStep]);
+    if (activeStep) {
+        activeStep.style.display = "block";
+        activeStep.setAttribute("aria-hidden", "false");
+    }
+
+    stepInfo.textContent = `Step ${currentFormStep + 1} of ${formStepsID.length}`;
+
+    if (currentFormStep === formStepsID.length - 1) {
         updateSummaryValues();
     }
-    // moveent between sections of form
-    navLeft.style.display = currentFormStep === 0 ? "none" : "block";
-    navRight.style.display = currentFormStep === formStepsID.length - 1 ? "none" : "block";
 
-    const currentStep = document.getElementById(formStepsID[currentFormStep]);
-    const firstInput = currentStep.querySelector('input, select, textarea');
+    navLeft.style.display = currentFormStep === 0 ? "none" : "inline-flex";
+    navRight.style.display =
+        currentFormStep === formStepsID.length - 1 ? "none" : "inline-flex";
+
+    const firstInput = activeStep.querySelector("input, select, textarea, button");
     if (firstInput) {
         firstInput.focus();
     }
 }
-//showing + clearing error message
+
+// Shows an error message for a field
 function showError(input, message) {
     const formControl = input.parentElement;
-    const errorSpan = formControl.querySelector(".error-message");
+    const errorSpan = formControl ? formControl.querySelector(".error-message") : null;
+
     input.classList.add("error");
-    input.classList.add('error');
-    input.setAttribute('aria-invalid', 'true');
-    input.setAttribute('aria-describedby', errorSpan.id);
-    errorSpan.textContent = message;
+    input.setAttribute("aria-invalid", "true");
+
+    if (errorSpan) {
+        if (!errorSpan.id) {
+            errorSpan.id = `${input.id}-error`;
+        }
+        input.setAttribute("aria-describedby", errorSpan.id);
+        errorSpan.textContent = message;
+    }
 }
 
-const clearError = (input) => {
+// Clears an error message for a field
+function clearError(input) {
     const formControl = input.parentElement;
-    const errorSpan = formControl.querySelector(".error-message");
+    const errorSpan = formControl ? formControl.querySelector(".error-message") : null;
+
     input.classList.remove("error");
-    input.removeAttribute('aria-invalid');
-    input.removeAttribute('aria-describedby');
-    errorSpan.textContent = '';
+    input.removeAttribute("aria-invalid");
+    input.removeAttribute("aria-describedby");
+
+    if (errorSpan) {
+        errorSpan.textContent = "";
+    }
 }
 
-//validation script for form + summary section content 
-
-const validateStep = (step) => {
+// Validates only the current step
+function validateStep(step) {
     let isValid = true;
 
-    if (currentStep === 0) {
-        if (usernameInput.value.trim() === "")
-            showError(usernameInput, "Username is required");
-        isValid = false;
+    if (step === 0) {
+        clearError(usernameInput);
+
+        if (usernameInput.value.trim() === "") {
+            showError(usernameInput, "Username is required.");
+            isValid = false;
+        }
     }
 
-    if (shortBio.value.trim() === "") {
-        showError(shortBio, "A small bio is required");
-        isValid = false;
-    } else if (step === 1) {
+    if (step === 1) {
+        clearError(imageUpload);
+
         if (!imageUpload.files[0]) {
-            showError(imageUpload, "A profile photo is required");
+            showError(imageUpload, "A profile photo is required.");
+            isValid = false;
+        }
+    }
+
+    if (step === 2) {
+        clearError(shortBio);
+        clearError(pronounInput);
+
+        const bioText = shortBio.value.trim();
+        const pronounText = pronounInput.value.trim();
+
+        if (bioText === "") {
+            showError(shortBio, "A short bio is required.");
+            isValid = false;
+        } else if (bioText.length > 1500) {
+            showError(shortBio, "Your bio must be 1500 characters or fewer.");
+            isValid = false;
+        }
+
+        if (pronounText === "") {
+            showError(pronounInput, "Preferred pronouns are required.");
             isValid = false;
         }
     }
@@ -108,60 +160,83 @@ const validateStep = (step) => {
     return isValid;
 }
 
-
-const realtimeValidation = () => {
+// Real-time validation
+function realtimeValidation() {
     usernameInput.addEventListener("input", () => {
-        if (usernameInput.value.trim() !== '') clearError(usernameInput);
-    })
-
-    shortBio.addEventListener("input", () => {
-        if (shortBio.value.trim() !== "") clearError(shortBio);
-    })
+        if (usernameInput.value.trim() !== "") {
+            clearError(usernameInput);
+        }
+    });
 
     imageUpload.addEventListener("change", () => {
-        if (imageUpload.files[0]) clearError(imageUpload);
-    })
+        if (imageUpload.files[0]) {
+            clearError(imageUpload);
+        }
+    });
+
+    shortBio.addEventListener("input", () => {
+        if (shortBio.value.trim() !== "" && shortBio.value.trim().length <= 1500) {
+            clearError(shortBio);
+        }
+    });
+
+    pronounInput.addEventListener("input", () => {
+        if (pronounInput.value.trim() !== "") {
+            clearError(pronounInput);
+        }
+    });
 }
 
-
-//  eventListener for loading the next and previous sections
-document.addEveentListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
     navLeft.style.display = "none";
     updateStepVisibility();
     realtimeValidation();
 
+    navRight.addEventListener("click", (e) => {
+        e.preventDefault();
 
-    navRight.addEventListener("click", () => {
-        if (currentStep < formStep.length - 1) {
-            currentStep++;
+        if (validateStep(currentFormStep) && currentFormStep < formStepsID.length - 1) {
+            currentFormStep++;
             updateStepVisibility();
         }
     });
-    navLeft.addEventListener("click", () => {
-        if (currentStep > 0) {
-            currentStep--;
+
+    navLeft.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        if (currentFormStep > 0) {
+            currentFormStep--;
             updateStepVisibility();
         }
     });
 
     Object.keys(editButtons).forEach((buttonId) => {
         const button = document.getElementById(buttonId);
-        button.addEventListener("click", (e) => {
-            e.preventDefault();
-            currentStep = editButtons[buttonId];
-            updateStepVisibility();
-        });
+
+        if (button) {
+            button.addEventListener("click", (e) => {
+                e.preventDefault();
+                currentFormStep = editButtons[buttonId];
+                updateStepVisibility();
+            });
+        }
     });
 });
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    if (validateStep(2)) {
-        alert("You're All Set!");
-        form.reset();
-        currentFormStep = 0;
-        updateStepVisibility();
-    }
+
+    updateSummaryValues();
+
+    alert("Woohoo! You're All Set!");
+    form.reset();
+    currentFormStep = 0;
+    updateStepVisibility();
+
+
+    setTimeout(() => {
+        window.location.href = "/pages/bulletinboard.html";
+    }, 500);
 });
 
 
