@@ -271,6 +271,12 @@ input {
   justify-content: space-between;
 }
 
+#stepInfo {
+  font-family: "Figtree", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  margin-top: 20px;
+}
 
 
 .group-two,
@@ -302,12 +308,12 @@ input {
 }
 
 #profileImage {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border: 1px solid #d3d3d3;
-    border-radius: 50%; 
-    display: block;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 1px solid #d3d3d3;
+  border-radius: 50%;
+  display: block;
 }
 
 button#username-edit.edit-btn {
