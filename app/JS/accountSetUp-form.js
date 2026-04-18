@@ -226,6 +226,7 @@ form.addEventListener("submit", (e) => {
     form.reset();
     currentFormStep = 0;
     updateStepVisibility();
+    
 });
 
 
