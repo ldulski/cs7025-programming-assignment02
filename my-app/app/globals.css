@@ -67,6 +67,9 @@ body {
     border-top: 2px solid var(--deep-sea);
   }
 
+  footer p {
+    text-align: left;
+  }
   .footer-links li a:hover {
     color: var(--terracotta);
   }
@@ -387,11 +390,6 @@ body {
     background: var(--sky-blue);
     color: var(--deep-sea);
   }
-
-  /* aside.inbox-sidebar li.active {
-    background: var(--sky-blue);
-    color: var(--deep-sea);
-  } */
 
   aside.inbox-sidebar li svg {
     color: var(--lightmode-links);
@@ -815,10 +813,6 @@ body.dark {
     color: var(--deep-sea);
   }
 
-  /* aside.inbox-sidebar li.active {
-    background: var(--sky-blue);
-    color: var(--deep-sea);
-  } */
 
   aside.inbox-sidebar li svg {
     color: var(--darkmode-links);

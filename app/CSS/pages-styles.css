@@ -130,7 +130,6 @@
 /* Checkbox */
 .checkbox-row {
   display: flex;
-  align-items: flex-start;
   gap: 12px;
   margin-bottom: 22px;
 }
@@ -149,6 +148,10 @@
 
 }
 
+input#terms {
+  max-width: 24px;
+  height: 24px;
+}
 
 /* Fade-in animation */
 @keyframes fadeUp {
@@ -391,6 +394,30 @@ button#username-edit.edit-btn {
   padding: 0;
 }
 
+#likePost span {
+  color: var(--deep-sea);
+}
+
+#likePost span:hover {
+  color: var(--red-wine);
+}
+
+#likePost span:active {
+  color: var(--red-wine);
+}
+
+#savePost span {
+  color: var(--deep-sea);
+}
+
+#savePost span:hover {
+  color: var(--moss-green);
+}
+
+#savePost span:active {
+  color: var(--moss-green);
+}
+
 .addMsg {
   display: flex;
   justify-content: flex-end;
@@ -596,7 +623,6 @@ aside.sidebar ul {
 
 aside.sidebar li {
   display: flex;
-  align-items: center;
   gap: 0.65rem;
   padding: 0.6rem 1rem;
   cursor: pointer;
@@ -1016,7 +1042,6 @@ aside.inbox-sidebar ul {
 
 aside.inbox-sidebar li {
   display: flex;
-  align-items: center;
   gap: 0.65rem;
   padding: 0.6rem 1rem;
   cursor: pointer;
